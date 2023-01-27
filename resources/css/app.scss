@@ -515,6 +515,45 @@ header {
     }
 }
 
+.auth-wrapper {
+    .auth-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px;
+            background: $dark-gray;
+            width: 450px;
+
+            input {
+                height: 25px;
+                width: 300px;
+            }
+
+            label {
+                color: $lighter-gray;
+            }
+        }
+
+        button {
+            padding: 10px;
+        }
+    }
+}
+
 .latest-news {
     justify-content: space-between;
     display: flex;

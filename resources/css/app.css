@@ -432,6 +432,35 @@ header nav div.logo img {
   width: 200px;
 }
 
+.auth-wrapper .auth-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.auth-wrapper .auth-form h1 {
+  margin-bottom: 20px;
+}
+.auth-wrapper .auth-form .input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgb(30, 30, 30);
+  width: 450px;
+}
+.auth-wrapper .auth-form .input input {
+  height: 25px;
+  width: 300px;
+}
+.auth-wrapper .auth-form .input label {
+  color: #f3f4f4;
+}
+.auth-wrapper .auth-form button {
+  padding: 10px;
+}
+
 .latest-news {
   justify-content: space-between;
   display: flex;
