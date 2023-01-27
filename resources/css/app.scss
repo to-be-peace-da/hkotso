@@ -727,6 +727,7 @@ footer {
                 transition: all .4s ease;
                 height: 100%;
 
+                background-position: center !important;
                 background-repeat: no-repeat !important;
                 background-size: cover !important;
             }
@@ -760,6 +761,15 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 40px;
+
+        .img {
+            height: 100px;
+            width: 100%;
+
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
 
         .release-date {
             display: flex;
