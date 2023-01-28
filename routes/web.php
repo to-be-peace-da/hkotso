@@ -56,6 +56,16 @@ Route::get('/news', [NewsController::class, 'index'])
 Route::get('/news/{singleNews:slug}', [NewsController::class, 'show'])
     ->name('news.show');
 
+// News Edit
+Route::get('/news/{singleNews}/edit', [NewsController::class, 'edit'])
+    ->middleware('admin')
+    ->name('news.edit');
+
+// News Update
+Route::put('/news/{singleNews}', [NewsController::class, 'update'])
+    ->middleware('admin')
+    ->name('news.update');
+
 // News Destroy
 Route::delete('/news/{singleNews}', [NewsController::class, 'destroy'])
     ->middleware('admin')

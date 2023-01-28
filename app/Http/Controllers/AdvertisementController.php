@@ -18,7 +18,9 @@ class AdvertisementController extends Controller
 
     public function show(Advertisement $advertisement)
     {
-        return dd($advertisement);
+        return view('advertisements.show', [
+            'advertisement' => $advertisement,
+        ]);
     }
 
     public function destroy(Advertisement $advertisement)
