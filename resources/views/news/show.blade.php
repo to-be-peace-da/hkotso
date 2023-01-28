@@ -9,7 +9,7 @@
             <div class="single-news">
                 <div class="content">
                     <div class="img"
-                         style="background: url('https://images.wallpaperscraft.ru/image/single/gory_ozero_nebo_122237_3840x2160.jpg')">
+                         style="background: url({{ $singleNews->image ? asset('storage/' . $singleNews->image) : asset('storage/news_images/default.jpg') }})">
                     </div>
                     <div class="title">
                         <h2>{{ $singleNews->name }}</h2>

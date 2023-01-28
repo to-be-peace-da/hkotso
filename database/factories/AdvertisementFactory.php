@@ -10,8 +10,8 @@ class AdvertisementFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
-            'text' => $this->faker->text(),
+            'name' => $this->faker->realText('200'),
+            'text' => $this->faker->realText('3000'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

@@ -20,4 +20,10 @@ class AdvertisementController extends Controller
     {
         return dd($advertisement);
     }
+
+    public function destroy(Advertisement $advertisement)
+    {
+        $advertisement->delete();
+        return back();
+    }
 }

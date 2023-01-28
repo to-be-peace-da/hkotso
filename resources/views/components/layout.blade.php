@@ -16,9 +16,20 @@
         <nav>
             <div class="logo">
                 <a href="/">
-                    <img src="{{ asset('storage/images/hkotso-logo-v6.svg') }}" alt="hkotso-logo">
+                    <img src="{{ asset('storage/images/hkotso-logo-v7.svg') }}" alt="hkotso-logo">
                 </a>
             </div>
+            @if(auth()->check() && auth()->user()->is_admin)
+                <ul>
+                    <li><a href="{{ route('admin.index') }}">Админ панель</a></li>
+                    <li>
+                        <form action="{{ route('admin.logout') }}" method="post">
+                            @csrf
+                            <button type="submit">Выйти</button>
+                        </form>
+                    </li>
+                </ul>
+            @endif
             <ul>
                 <li><a href="#">Абитуриенту</a></li>
                 <li><a href="#">Студенту</a></li>
@@ -84,7 +95,7 @@
                                 КГБ ПОУ ХКОТСО 2023</p>
                         </div>
                         <div class="logo">
-                            <img src="{{ asset('storage/images/hkotso-logo-v6.svg') }}" alt="hkotso-logo">
+                            <img src="{{ asset('storage/images/hkotso-logo-v7.svg') }}" alt="hkotso-logo">
                         </div>
                         <div class="links">
                             <ul>

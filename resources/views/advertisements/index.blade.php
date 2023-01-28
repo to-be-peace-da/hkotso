@@ -15,10 +15,19 @@
                             </div>
                             <div class="content">
                                 <div class="title">
-                                    <h2>{{ Str::of($advertisement->name)->limit(70) }}</h2>
+                                    <h2>{{ Str::of($advertisement->name)->limit(200) }}</h2>
                                 </div>
                                 <div class="release-date">
                                     <h3>{{ $advertisement->created_at->format('d.m.Y h:m') }}</h3>
+                                    <div class="admin-tools">
+                                        @if(auth()->check() && auth()->user()->is_admin)
+                                            <form action="{{ route('advertisement.destroy', $advertisement) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                            </form>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>

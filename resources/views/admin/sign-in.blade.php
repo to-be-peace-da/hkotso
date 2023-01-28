@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="odd">
+    <div class="even">
         <div class="container">
             <div class="auth-wrapper">
                 <form class="auth-form" action="{{ route('admin.authenticate') }}" method="post">

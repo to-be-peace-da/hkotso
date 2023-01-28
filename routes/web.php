@@ -21,13 +21,32 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class, 'index'])
     ->name('main.index');
 
-// Show Admin Panel
-Route::get('/admin/sign-in', [AdminController::class, 'index'])
-    ->name('admin.index');
+//! ADMIN
+
+// Admin Authorisation Form
+Route::get('/admin/sign-in', [AdminController::class, 'login'])
+    ->middleware('guest')
+    ->name('admin.login');
 
 // Login Admin
 Route::post('/admin/authenticate', [AdminController::class, 'authenticate'])
     ->name('admin.authenticate');
+
+// Logout Admin
+Route::post('/admin/logout', [AdminController::class, 'logout'])
+    ->name('admin.logout');
+
+// Show Admin Panel
+Route::get('/admin-panel', [AdminController::class, 'index'])
+    ->middleware('admin')
+    ->name('admin.index');
+
+//! NEWS
+
+// News Store
+Route::post('/news', [NewsController::class, 'store'])
+    ->middleware('admin')
+    ->name('news.store');
 
 // Show All News
 Route::get('/news', [NewsController::class, 'index'])
@@ -37,6 +56,13 @@ Route::get('/news', [NewsController::class, 'index'])
 Route::get('/news/{singleNews:slug}', [NewsController::class, 'show'])
     ->name('news.show');
 
+// News Destroy
+Route::delete('/news/{singleNews}', [NewsController::class, 'destroy'])
+    ->middleware('admin')
+    ->name('news.destroy');
+
+//! ADVERTISEMENTS
+
 // Show All Advertisements
 Route::get('/advertisements', [AdvertisementController::class, 'index'])
     ->name('advertisement.index');
@@ -44,3 +70,8 @@ Route::get('/advertisements', [AdvertisementController::class, 'index'])
 // Show Single Advertisement
 Route::get('/advertisements/{advertisement:slug}', [AdvertisementController::class, 'show'])
     ->name('advertisement.show');
+
+// Advertisement Destroy
+Route::delete('/advertisements/{advertisement}', [AdvertisementController::class, 'destroy'])
+    ->middleware('admin')
+    ->name('advertisement.destroy');

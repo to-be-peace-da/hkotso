@@ -515,6 +515,74 @@ header {
     }
 }
 
+
+.release-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-tools {
+    button {
+        cursor: pointer;
+        border: none;
+        background: none;
+
+        & {
+            i {
+                font-size: 1.2rem;
+                transition: all .2s ease;
+                color: darkred;
+
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+.creation-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    gap: 20px;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .block {
+        width: 500px;
+
+        .form-fields {
+            display: flex;
+            gap: 20px;
+
+            flex-direction: column;
+
+            .label-and-input {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    margin-bottom: 10px;
+                }
+
+                input {
+                    padding: 10px;
+                }
+
+                textarea {
+                    height: 200px;
+                    padding: 10px;
+                    resize: none;
+                }
+            }
+        }
+    }
+}
+
 .auth-wrapper {
     .auth-form {
         display: flex;
@@ -539,6 +607,7 @@ header {
             width: 450px;
 
             input {
+                padding: 10px;
                 height: 25px;
                 width: 300px;
             }
@@ -802,7 +871,7 @@ footer {
         gap: 40px;
 
         .img {
-            height: 100px;
+            height: 200px;
             width: 100%;
 
             background-position: center !important;

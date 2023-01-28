@@ -12,7 +12,7 @@
                         <div class="card">
                             <div class="img-wrapper">
                                 <div class="img"
-                                     style="background: url('https://www.harvard.edu/wp-content/uploads/2023/01/042822_Arts_Medalist_396-768x576.jpg')">
+                                     style="background: url({{ $singleNews->image ? asset('storage/' . $singleNews->image) : asset('storage/news_images/default.jpg') }})">
                                 </div>
                             </div>
                             <div class="content">
@@ -24,6 +24,15 @@
                                 </div>
                                 <div class="release-date">
                                     <h3>{{ $singleNews->created_at->format('d.m.Y h:m') }}</h3>
+                                    <div class="admin-tools">
+                                        @if(auth()->check() && auth()->user()->is_admin)
+                                            <form action="{{ route('news.destroy', $singleNews) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                            </form>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
