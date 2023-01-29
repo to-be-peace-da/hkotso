@@ -30,11 +30,9 @@
                     </li>
                 </ul>
             @endif
-            <ul>
-                <li><a href="#">Абитуриенту</a></li>
-                <li><a href="#">Студенту</a></li>
-                <li><a href="#">Выпускнику</a></li>
-                <li><a href="#">Преподавателю</a></li>
+            <ul class="nav">
+                <li><a href="{{ route('news.index') }}">Новости</a></li>
+                <li><a href="{{ route('advertisement.index') }}">Объявления</a></li>
             </ul>
         </nav>
     </div>

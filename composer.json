@@ -14,7 +14,6 @@
         "staudenmeir/laravel-adjacency-list": "^1.12"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.7",
         "fakerphp/faker": "^1.9.1",
         "laravel-lang/attributes": "^2.0",
         "laravel-lang/lang": "^12.12",
