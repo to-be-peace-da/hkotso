@@ -18,7 +18,20 @@
                         <p>{!! nl2br($singleNews->text) !!}</p>
                     </div>
                     <div class="release-date">
-                        <h3>{{ $singleNews->created_at }}</h3>
+                        <h3>{{ $singleNews->created_at->format('d.m.Y h:m') }}</h3>
+                    </div>
+                    <div class="admin-tools">
+                        @if(auth()->check() && auth()->user()->is_admin)
+                            <form action="{{ route('news.destroy', $singleNews) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                            <form action="{{ route('news.edit', $singleNews) }}" method="get">
+                                @csrf
+                                <button type="submit"><i class="fa-solid fa-pen"></i></button>
+                            </form>
+                        @endif
                     </div>
                 </div>
             </div>

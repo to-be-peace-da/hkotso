@@ -43,11 +43,6 @@ Route::get('/admin-panel', [AdminController::class, 'index'])
 
 //! NEWS
 
-// News Store
-Route::post('/news', [NewsController::class, 'store'])
-    ->middleware('admin')
-    ->name('news.store');
-
 // Show All News
 Route::get('/news', [NewsController::class, 'index'])
     ->name('news.index');
@@ -55,6 +50,12 @@ Route::get('/news', [NewsController::class, 'index'])
 // Show Single News
 Route::get('/news/{singleNews:slug}', [NewsController::class, 'show'])
     ->name('news.show');
+
+// News Store
+Route::post('/news', [NewsController::class, 'store'])
+    ->middleware('admin')
+    ->name('news.store');
+
 
 // News Edit
 Route::get('/news/{singleNews}/edit', [NewsController::class, 'edit'])

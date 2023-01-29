@@ -31,6 +31,10 @@
                                                 @method('DELETE')
                                                 <button type="submit"><i class="fa-solid fa-trash"></i></button>
                                             </form>
+                                            <form action="{{ route('news.edit', $singleNews) }}" method="get">
+                                                @csrf
+                                                <button type="submit"><i class="fa-solid fa-pen"></i></button>
+                                            </form>
                                         @endif
                                     </div>
                                 </div>

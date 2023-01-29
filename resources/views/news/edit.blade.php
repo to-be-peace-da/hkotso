@@ -18,6 +18,9 @@
                             <div class="label-and-input">
                                 <label for="news_image">Изображение</label>
                                 <input type="file" name="image" id="news_image" value="{{ $singleNews->image }}">
+                                @error('image')
+                                <p>{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="name">
@@ -29,13 +32,13 @@
                         </div>
                         <div class="text">
                             <label for="news_text">Текст</label>
-                            <textarea name="text" id="news_text">{!! nl2br($singleNews->text) !!}</textarea>
+                            <textarea name="text" id="news_text">{{ $singleNews->text }}</textarea>
                             @error('text')
                             <p>{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="release-date">
-                            <h3>{{ $singleNews->created_at }}</h3>
+                            <h3>{{ $singleNews->created_at->format('d.m.Y h:m') }}</h3>
                         </div>
                         <button type="submit">Изменить</button>
                     </form>

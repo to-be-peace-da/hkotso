@@ -89,12 +89,17 @@ class NewsController extends Controller
 
         $singleNews->update($formFields);
 
-        return back();
+        return redirect()->route('main.index');
     }
 
     public function destroy(News $singleNews)
     {
+        if ($singleNews->image !== ('news_images/' . 'default.jpg')) {
+            File::delete(public_path('storage/' . $singleNews->image));
+        }
+
         $singleNews->delete();
-        return back();
+
+        return redirect()->route('main.index');
     }
 }

@@ -17,7 +17,7 @@
                             </div>
                             <div class="content">
                                 <div class="title">
-                                    <h2>{{ Str::of($singleNews->name)->limit(70) }}</h2>
+                                    <h2>{{ Str::of($singleNews->name)->limit(60) }}</h2>
                                 </div>
                                 <div class="text">
                                     <p>{{ Str::of($singleNews->text)->limit(100) }}</p>
