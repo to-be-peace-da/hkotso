@@ -537,7 +537,7 @@ header nav div.logo img {
   transform: scale(1.1);
 }
 .latest-news .card {
-  width: 100%;
+  width: 400px;
   height: 563px;
   background: rgb(227, 229, 229);
   display: flex;

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreNewsRequest;
+use App\Http\Requests\UpdateNewsRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -19,14 +21,9 @@ class NewsController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(StoreNewsRequest $request)
     {
-        $formFields = $request
-            ->validate([
-                'name' => ['required', Rule::unique('news', 'name')],
-                'text' => ['required'],
-                'image' => ['file', 'image']
-            ]);
+        $formFields = $request->validated();
 
         if ($request->hasFile('image')) {
             $formFields['image'] = $request
@@ -61,13 +58,9 @@ class NewsController extends Controller
         ]);
     }
 
-    public function update(Request $request, News $singleNews)
+    public function update(UpdateNewsRequest $request, News $singleNews)
     {
-        $formFields = $request->validate([
-            'name' => ['required'],
-            'text' => ['required'],
-            'image' => ['file', 'image']
-        ]);
+        $formFields = $request->validated();
 
         if ($request->hasFile('image')) {
             if ($singleNews->image !== ('news_images/' . 'default.jpg')) {
