@@ -41,6 +41,16 @@ Route::get('/admin-panel', [AdminController::class, 'index'])
     ->middleware('admin')
     ->name('admin.index');
 
+// News Creation Page
+Route::get('/admin-panel/news-create', [AdminController::class, 'newsCreate'])
+    ->middleware('admin')
+    ->name('admin.news-create');
+
+// Advertisement Creation Page
+Route::get('/admin-panel/advertisement-create', [AdminController::class, 'advertisementCreate'])
+    ->middleware('admin')
+    ->name('admin.advertisement-create');
+
 //! NEWS
 
 // Show All News
@@ -55,7 +65,6 @@ Route::get('/news/{singleNews:slug}', [NewsController::class, 'show'])
 Route::post('/news', [NewsController::class, 'store'])
     ->middleware('admin')
     ->name('news.store');
-
 
 // News Edit
 Route::get('/news/{singleNews}/edit', [NewsController::class, 'edit'])
@@ -81,6 +90,21 @@ Route::get('/advertisements', [AdvertisementController::class, 'index'])
 // Show Single Advertisement
 Route::get('/advertisements/{advertisement:slug}', [AdvertisementController::class, 'show'])
     ->name('advertisement.show');
+
+// Advertisement Store
+Route::post('/advertisements', [AdvertisementController::class, 'store'])
+    ->middleware('admin')
+    ->name('advertisements.store');
+
+// Advertisement Edit
+Route::get('/advertisements/{advertisement}/edit', [AdvertisementController::class, 'edit'])
+    ->middleware('admin')
+    ->name('advertisement.edit');
+
+// News Update
+Route::put('/advertisements/{advertisement}', [AdvertisementController::class, 'update'])
+    ->middleware('admin')
+    ->name('advertisement.update');
 
 // Advertisement Destroy
 Route::delete('/advertisements/{advertisement}', [AdvertisementController::class, 'destroy'])

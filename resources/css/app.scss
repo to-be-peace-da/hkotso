@@ -518,6 +518,12 @@ header {
     }
 }
 
+.admin-panel {
+    .admin-options {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
 
 .release-date {
     display: flex;
@@ -548,44 +554,45 @@ header {
     }
 }
 
-.creation-wrapper {
+.news-create {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 
+    flex-direction: column;
+
     gap: 20px;
 
-    h2 {
-        margin-bottom: 20px;
-    }
+    .form-fields {
+        width: 100%;
+        display: flex;
+        gap: 20px;
 
-    .block {
-        width: 500px;
+        flex-direction: column;
 
-        .form-fields {
+        .label-and-input {
             display: flex;
-            gap: 20px;
-
             flex-direction: column;
 
-            .label-and-input {
-                display: flex;
-                flex-direction: column;
-
-                label {
-                    margin-bottom: 10px;
-                }
-
-                input {
-                    padding: 10px;
-                }
-
-                textarea {
-                    height: 200px;
-                    padding: 10px;
-                    resize: none;
-                }
+            label {
+                margin-bottom: 10px;
             }
+
+            input {
+                padding: 10px;
+            }
+
+            textarea {
+                height: 300px;
+                padding: 10px;
+                resize: none;
+            }
+        }
+
+        .img {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
     }
 }
@@ -703,6 +710,10 @@ header {
         display: flex;
         align-items: center;
         gap: 20px;
+
+        .content {
+            width: 100%;
+        }
 
         .arrow {
             height: 50px;

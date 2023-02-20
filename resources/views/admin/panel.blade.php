@@ -1,35 +1,14 @@
 <x-layout>
     <div class="even">
         <div class="container">
-            <div class="creation-wrapper">
-                <div class="block create-news">
-                    <h2>Создать новость</h2>
-                    <form class="form-fields"action="{{ route('news.store') }}" method="post"
-                          enctype="multipart/form-data">
-                        @csrf
-                        <div class="label-and-input">
-                            <label for="news_name" class="">Имя</label>
-                            <input name="name" type="text" class="form-control" id="news_name" value="{{ old('name') }}">
-                        </div>
-                        @error('name')
-                        <p>{{ $message }}</p>
-                        @enderror
-                        <div class="label-and-input">
-                            <label for="news_text" class="">Текст</label>
-                            <textarea name="text" id="news_text">{{ old('text') }}</textarea>
-                        </div>
-                        @error('text')
-                        <p>{{ $message }}</p>
-                        @enderror
-                        <div class="">
-                            <label class="" for="news_image"></label>
-                            <input name="image" type="file" class="" id="news_image">
-                        </div>
-                        @error('image')
-                        <p>{{ $message }}</p>
-                        @enderror
-                        <button type="submit" class="">Создать</button>
-                    </form>
+            <div class="admin-panel">
+                <div class="admin-options">
+                    <a href="{{ route('admin.news-create') }}">
+                        <h2>Создать новость</h2>
+                    </a>
+                    <a href="{{ route('admin.advertisement-create') }}">
+                        <h2>Создать объявление</h2>
+                    </a>
                 </div>
             </div>
         </div>

@@ -435,6 +435,11 @@ header nav div.logo img {
   width: 200px;
 }
 
+.admin-panel .admin-options {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .release-date {
   display: flex;
   justify-content: space-between;
@@ -459,37 +464,38 @@ header nav div.logo img {
   color: red;
 }
 
-.creation-wrapper {
+.news-create {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-direction: column;
   gap: 20px;
 }
-.creation-wrapper h2 {
-  margin-bottom: 20px;
-}
-.creation-wrapper .block {
-  width: 500px;
-}
-.creation-wrapper .block .form-fields {
+.news-create .form-fields {
+  width: 100%;
   display: flex;
   gap: 20px;
   flex-direction: column;
 }
-.creation-wrapper .block .form-fields .label-and-input {
+.news-create .form-fields .label-and-input {
   display: flex;
   flex-direction: column;
 }
-.creation-wrapper .block .form-fields .label-and-input label {
+.news-create .form-fields .label-and-input label {
   margin-bottom: 10px;
 }
-.creation-wrapper .block .form-fields .label-and-input input {
+.news-create .form-fields .label-and-input input {
   padding: 10px;
 }
-.creation-wrapper .block .form-fields .label-and-input textarea {
-  height: 200px;
+.news-create .form-fields .label-and-input textarea {
+  height: 300px;
   padding: 10px;
   resize: none;
+}
+.news-create .form-fields .img {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .auth-wrapper .auth-form {
@@ -577,6 +583,9 @@ header nav div.logo img {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+.advertisements .listing .content {
+  width: 100%;
 }
 .advertisements .listing .arrow {
   height: 50px;

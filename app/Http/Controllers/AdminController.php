@@ -18,9 +18,7 @@ class AdminController extends Controller
 
     public function authenticate(AuthenticateAdminRequest $request)
     {
-        $formFields = $request->validated();
-
-        if (auth()->attempt($formFields)) {
+        if (auth()->attempt($request->validated())) {
             $request->session()->regenerate();
 
             return redirect(route('admin.index'));
@@ -36,11 +34,21 @@ class AdminController extends Controller
         session()->invalidate();
         session()->regenerateToken();
 
-        return back();
+        return redirect()->route('main.index');
     }
 
     public function index()
     {
         return view('admin.panel');
+    }
+
+    public function newsCreate()
+    {
+        return view('admin.news-create');
+    }
+
+    public function advertisementCreate()
+    {
+        return view('admin.advertisement-create');
     }
 }
