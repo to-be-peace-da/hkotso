@@ -11,7 +11,7 @@ class AdvertisementController extends Controller
 {
     public function index()
     {
-        $advertisements = Advertisement::all()->reverse();
+        $advertisements = Advertisement::all();
 
         return view('advertisements.index', [
             'advertisements' => $advertisements,
@@ -43,12 +43,12 @@ class AdvertisementController extends Controller
     {
         $advertisement->update($request->validated());
 
-        return back();
+        return redirect()->route('main.index');
     }
 
     public function destroy(Advertisement $advertisement)
     {
         $advertisement->delete();
-        return back();
+        return redirect()->route('main.index');
     }
 }

@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="news">
-                @foreach($news as $singleNews)
+                @foreach($news->reverse() as $singleNews)
                     <a href="{{ route('news.show', $singleNews) }}">
                         <div class="card">
                             <div class="img-wrapper">

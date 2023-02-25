@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -110,3 +111,9 @@ Route::put('/advertisements/{advertisement}', [AdvertisementController::class, '
 Route::delete('/advertisements/{advertisement}', [AdvertisementController::class, 'destroy'])
     ->middleware('admin')
     ->name('advertisement.destroy');
+
+//! SCHEDULE
+
+// Show Schedule
+Route::get('/schedule', [ScheduleController::class, 'index'])
+    ->name('schedule.index');

@@ -33,6 +33,7 @@
             <ul class="nav">
                 <li><a href="{{ route('news.index') }}">Новости</a></li>
                 <li><a href="{{ route('advertisement.index') }}">Объявления</a></li>
+                <li><a href="{{ route('schedule.index') }}">Расписание</a></li>
             </ul>
         </nav>
     </div>
