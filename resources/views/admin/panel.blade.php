@@ -9,6 +9,9 @@
                     <a href="{{ route('admin.advertisement-create') }}">
                         <h2>Создать объявление</h2>
                     </a>
+                    <a href="{{ route('admin.schedule-create') }}">
+                        <h2>Добавить расписание</h2>
+                    </a>
                 </div>
             </div>
         </div>

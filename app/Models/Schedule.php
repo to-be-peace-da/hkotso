@@ -34,4 +34,9 @@ class Schedule extends Model
     {
         return $this->belongsTo(Group::class);
     }
+
+    public function order(): BelongsTo
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

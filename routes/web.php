@@ -52,6 +52,11 @@ Route::get('/admin-panel/advertisement-create', [AdminController::class, 'advert
     ->middleware('admin')
     ->name('admin.advertisement-create');
 
+// Advertisement Creation Page
+Route::get('/admin-panel/schedule-create', [AdminController::class, 'scheduleCreate'])
+    ->middleware('admin')
+    ->name('admin.schedule-create');
+
 //! NEWS
 
 // Show All News
@@ -115,5 +120,14 @@ Route::delete('/advertisements/{advertisement}', [AdvertisementController::class
 //! SCHEDULE
 
 // Show Schedule
-Route::get('/schedule', [ScheduleController::class, 'index'])
+Route::get('/schedules', [ScheduleController::class, 'index'])
     ->name('schedule.index');
+
+// Show Schedule For Group
+Route::get('/schedule', [ScheduleController::class, 'show'])
+    ->name('schedule.show');
+
+// Schedule Store
+Route::post('/schedules', [ScheduleController::class, 'store'])
+    ->middleware('admin')
+    ->name('schedule.store');

@@ -449,7 +449,8 @@ template {
     h1,
     h2,
     h3,
-    p {
+    p,
+    td {
         color: $lighter-gray;
     }
 
@@ -973,6 +974,28 @@ footer {
 //! views.advertisements.index
 
 //! views.advertisements.show
+
+//! views.schedule.index
+
+
+
+//! views.schedule.show
+
+.schedule {
+    .title {
+        margin-bottom: 40px;
+    }
+
+    .day {
+        margin: 20px 0;
+    }
+
+    td {
+        border: 1px $dark-gray solid;
+        padding: 10px;
+        text-align: center;
+    }
+}
 
 @media (max-width: 1400px) {
     .container {

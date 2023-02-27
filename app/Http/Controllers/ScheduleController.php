@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ShowScheduleRequest;
+use App\Http\Requests\StoreScheduleRequest;
+use App\Models\Group;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use function Symfony\Component\String\s;
 
 class ScheduleController extends Controller
 {
@@ -12,31 +16,35 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        return view('schedule.index');
-    }
+        $schedules = Schedule::all();
+        $groups = Group::all();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return view('schedule.index', [
+            'schedules' => $schedules,
+            'groups' => $groups,
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreScheduleRequest $request)
     {
-        //
+        Schedule::create($request->validated());
+
+        return back();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Schedule $schedule)
+    public function show(ShowScheduleRequest $request)
     {
-        //
+        $schedulesByGroupId = Schedule::where('group_id', '=', $request->group_id)
+            ->with('day', 'subject', 'teacher', 'order', 'audience')->get();
+        return view('schedule.show', [
+            'schedulesByGroupId' => $schedulesByGroupId,
+        ]);
     }
 
     /**

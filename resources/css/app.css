@@ -381,7 +381,8 @@ template {
 .odd h1,
 .odd h2,
 .odd h3,
-.odd p {
+.odd p,
+.odd td {
   color: #f3f4f4;
 }
 .odd .more {
@@ -770,6 +771,18 @@ footer .copyright-logo-links .links ul {
 }
 .single-news-edit .content form p {
   line-height: 1.5;
+}
+
+.schedule .title {
+  margin-bottom: 40px;
+}
+.schedule .day {
+  margin: 20px 0;
+}
+.schedule td {
+  border: 1px rgb(30, 30, 30) solid;
+  padding: 10px;
+  text-align: center;
 }
 
 @media (max-width: 1400px) {

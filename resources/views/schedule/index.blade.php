@@ -1,9 +1,15 @@
 <x-layout>
-    <form action="" method="post">
-        <select class="" id="">
-            <option selected>ИС-41</option>
-            <option value="1">КС-23</option>
-        </select>
-        <button type="submit"></button>
-    </form>
+    <div class="even">
+        <div class="container">
+            <form action="{{ route('schedule.show') }}" method="get">
+                <label for="group">Группа</label>
+                <select class="" id="group" name="group_id">
+                    @foreach($groups as $group)
+                        <option value="{{ $group->id }}">{{ $group->name }}</option>
+                    @endforeach
+                </select>
+                <button type="submit">Показать</button>
+            </form>
+        </div>
+    </div>
 </x-layout>

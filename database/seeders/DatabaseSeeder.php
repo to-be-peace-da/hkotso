@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Advertisement;
+use App\Models\Day;
 use App\Models\News;
+use App\Models\Order;
 use App\Models\Schedule;
 use App\Models\Teacher;
 use App\Models\User;
@@ -32,6 +34,72 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true,
             'password' => bcrypt('secret-password')
         ]);
+
+        Day::Create(
+            [
+                'name' => 'Понедельник'
+            ],
+        );
+
+        Day::Create(
+            [
+                'name' => 'Вторник'
+            ],
+        );
+
+        Day::Create(
+            [
+                'name' => 'Среда'
+            ],
+        );
+
+        Day::Create(
+            [
+                'name' => 'Четверг'
+            ],
+        );
+
+        Day::Create(
+            [
+                'name' => 'Пятница'
+            ],
+        );
+
+        Day::Create(
+            [
+                'name' => 'Суббота'
+            ],
+        );
+
+        Day::Create(
+            [
+                'name' => 'Воскресенье'
+            ],
+        );
+
+        Order::Create(
+            [
+                'name' => 'I'
+            ],
+        );
+
+        Order::Create(
+            [
+                'name' => 'II'
+            ],
+        );
+
+        Order::Create(
+            [
+                'name' => 'III'
+            ],
+        );
+
+        Order::Create(
+            [
+                'name' => 'IV'
+            ],
+        );
 
         News::factory(10)->create();
         Advertisement::factory(10)->create();
