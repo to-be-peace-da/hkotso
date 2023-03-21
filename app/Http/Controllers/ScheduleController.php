@@ -42,6 +42,7 @@ class ScheduleController extends Controller
     {
         $schedulesByGroupId = Schedule::where('group_id', '=', $request->group_id)
             ->with('day', 'subject', 'teacher', 'order', 'audience')->get();
+
         return view('schedule.show', [
             'schedulesByGroupId' => $schedulesByGroupId,
         ]);
