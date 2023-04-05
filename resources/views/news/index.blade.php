@@ -43,6 +43,9 @@
                     </a>
                 @endforeach
             </div>
+            <div>
+                {{ $news->links() }}
+            </div>
         </div>
     </div>
 </x-layout>
