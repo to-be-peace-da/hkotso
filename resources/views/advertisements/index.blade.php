@@ -37,6 +37,10 @@
                     </a>
                 @endforeach
             </div>
+        </div>
+    </div>
+    <div class="odd">
+        <div class="container">
             <div>
                 {{ $advertisements->links() }}
             </div>

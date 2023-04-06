@@ -399,6 +399,37 @@ template {
 .odd .more:hover:after {
   transform: scaleX(1);
 }
+.odd .paginator {
+  display: flex;
+  justify-content: flex-end;
+}
+.odd .paginator .pagination {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  list-style: none;
+}
+.odd .paginator .pagination span, .odd .paginator .pagination a {
+  color: #f3f4f4;
+}
+.odd .paginator .pagination li.disabled {
+  cursor: default;
+}
+.odd .paginator .pagination li.disabled a, .odd .paginator .pagination li.disabled span {
+  color: #bac5c6;
+}
+.odd .paginator .pagination li.disabled:hover {
+  text-shadow: none;
+}
+.odd .paginator .pagination li.active {
+  text-shadow: white 0 0 15px;
+}
+.odd .paginator .pagination li:hover {
+  text-shadow: white 0 0 15px;
+}
 
 .container {
   max-width: 1296px;

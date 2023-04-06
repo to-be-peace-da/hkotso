@@ -375,6 +375,11 @@ template {
     display: none;
 }
 
+.odd {
+
+}
+
+
 .even {
     padding: 40px 0;
     background: $even;
@@ -469,6 +474,48 @@ template {
         &:hover {
             &:after {
                 transform: scaleX(1);
+            }
+        }
+    }
+
+    .paginator {
+        display: flex;
+        justify-content: flex-end;
+
+        .pagination {
+            span, a {
+                color: $lighter-gray;
+            }
+
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+
+            list-style: none;
+
+            li {
+                &.disabled {
+                    cursor: default;
+                    a, span {
+                        color: $light-gray;
+                    }
+                }
+
+                &.disabled:hover {
+                    text-shadow: none;
+                }
+
+                &.active {
+                    text-shadow: white 0 0 15px;
+                }
+
+                &:hover {
+                    text-shadow: white 0 0 15px;
+                }
             }
         }
     }
@@ -905,7 +952,6 @@ footer {
     }
 }
 
-
 //! views.news.edit
 
 .single-news-edit {
@@ -976,7 +1022,6 @@ footer {
 //! views.advertisements.show
 
 //! views.schedule.index
-
 
 //! views.schedule.show
 

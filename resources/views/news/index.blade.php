@@ -42,6 +42,10 @@
                     </a>
                 @endforeach
             </div>
+        </div>
+    </div>
+    <div class="odd">
+        <div class="container">
             <div>
                 {{ $news->links() }}
             </div>
