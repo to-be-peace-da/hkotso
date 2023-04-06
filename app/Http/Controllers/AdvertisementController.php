@@ -11,7 +11,7 @@ class AdvertisementController extends Controller
 {
     public function index()
     {
-        $advertisements = Advertisement::all();
+        $advertisements = Advertisement::latest('id')->paginate(5);
 
         return view('advertisements.index', [
             'advertisements' => $advertisements,

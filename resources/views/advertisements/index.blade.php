@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="advertisements">
-                @foreach($advertisements->reverse() as $advertisement)
+                @foreach($advertisements as $advertisement)
                     <a href="{{ route('advertisement.show', $advertisement) }}">
                         <div class="listing">
                             <div class="arrow">
@@ -36,6 +36,9 @@
                         </div>
                     </a>
                 @endforeach
+            </div>
+            <div>
+                {{ $advertisements->links() }}
             </div>
         </div>
     </div>
