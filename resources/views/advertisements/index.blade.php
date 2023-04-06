@@ -27,7 +27,6 @@
                                                 <button type="submit"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                             <form action="{{ route('advertisement.edit', $advertisement) }}" method="get">
-                                                @csrf
                                                 <button type="submit"><i class="fa-solid fa-pen"></i></button>
                                             </form>
                                         @endif
