@@ -21,12 +21,14 @@
                                     <h3>{{ $advertisement->created_at->format('d.m.Y h:m') }}</h3>
                                     <div class="admin-tools">
                                         @if(auth()->check() && auth()->user()->is_admin)
-                                            <form action="{{ route('advertisement.destroy', $advertisement) }}" method="post">
+                                            <form action="{{ route('advertisement.destroy', $advertisement) }}"
+                                                  method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"><i class="fa-solid fa-trash"></i></button>
                                             </form>
-                                            <form action="{{ route('advertisement.edit', $advertisement) }}" method="get">
+                                            <form action="{{ route('advertisement.edit', $advertisement) }}"
+                                                  method="get">
                                                 <button type="submit"><i class="fa-solid fa-pen"></i></button>
                                             </form>
                                         @endif

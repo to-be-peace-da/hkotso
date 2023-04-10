@@ -8,7 +8,7 @@ use App\Models\Day;
 use App\Models\News;
 use App\Models\Order;
 use App\Models\Schedule;
-use App\Models\Teacher;
+use App\Models\Substitution;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         // \App\Models\User::factory(10)->create();
 
@@ -101,8 +101,27 @@ class DatabaseSeeder extends Seeder
             ],
         );
 
-        News::factory(10)->create();
+        Order::Create(
+            [
+                'name' => 'V'
+            ],
+        );
+
+        Order::Create(
+            [
+                'name' => 'VI'
+            ],
+        );
+
+        Order::Create(
+            [
+                'name' => 'VII'
+            ],
+        );
+
+        News::factory(50)->create();
         Advertisement::factory(10)->create();
         Schedule::factory(10)->create();
+        Substitution::factory(10)->create();
     }
 }

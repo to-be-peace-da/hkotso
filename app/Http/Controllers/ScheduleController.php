@@ -6,6 +6,8 @@ use App\Http\Requests\ShowScheduleRequest;
 use App\Http\Requests\StoreScheduleRequest;
 use App\Models\Group;
 use App\Models\Schedule;
+use App\Models\Substitution;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use function Symfony\Component\String\s;
 
@@ -40,11 +42,16 @@ class ScheduleController extends Controller
      */
     public function show(ShowScheduleRequest $request)
     {
-        $schedulesByGroupId = Schedule::where('group_id', '=', $request->group_id)
-            ->with('day', 'subject', 'teacher', 'order', 'audience')->get();
+        $substitutions = Substitution::where('group_id', '=', $request->group_id)
+            ->where('date', '>=', Carbon::now()->toDateString())
+            ->get();
+        $schedulesSortByGroupId = Schedule::where('group_id', '=', $request->group_id)
+            ->with('day', 'subject', 'teacher', 'order', 'audience')
+            ->get();
 
         return view('schedule.show', [
-            'schedulesByGroupId' => $schedulesByGroupId,
+            'schedulesSortByGroupId' => $schedulesSortByGroupId,
+            'substitutions' => $substitutions,
         ]);
     }
 

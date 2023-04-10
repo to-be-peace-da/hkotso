@@ -3,9 +3,12 @@
         <div class="container">
             <div class="schedule">
                 <div class="title">
-                    <h1>{{ $schedulesByGroupId->first()->group->name }}</h1>
+                    <h1>{{ $schedulesSortByGroupId->first()->group->name }}</h1>
                 </div>
                 @foreach(\App\Models\Day::all() as $day)
+                    @php
+                        $substitutionShowed = false;
+                    @endphp
                     <div class="day">
                         <h2>{{ $day->name }}</h2>
                     </div>
@@ -19,13 +22,29 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($schedulesByGroupId->sortBy('order_id') as $group)
-                            @if($group->day->id == $day->id)
+                        @foreach($substitutions as $substitution)
+                            @if($substitution->day->id === $day->id)
+                                @if($substitutionShowed === false)
+                                    <p>Замена на {{ \Carbon\Carbon::create($substitution->date)->format('d.m.Y') }}</p>
+                                @endif
+                                @php
+                                    $substitutionShowed = true;
+                                @endphp
                                 <tr>
-                                    <td>{{ $group->order->name }}</td>
-                                    <td>{{ $group->subject->name }}</td>
-                                    <td>{{ $group->teacher->name }}</td>
-                                    <td>{{ $group->audience->number }}</td>
+                                    <td>{{ $substitution->order->name }}</td>
+                                    <td>{{ $substitution->subject->name }}</td>
+                                    <td>{{ $substitution->teacher->name }}</td>
+                                    <td>{{ $substitution->audience->number }}</td>
+                                </tr>
+                            @endif
+                        @endforeach
+                        @foreach($schedulesSortByGroupId->sortBy('order_id') as $schedule)
+                            @if($schedule->day->id === $day->id)
+                                <tr>
+                                    <td>{{ $schedule->order->name }}</td>
+                                    <td>{{ $schedule->subject->name }}</td>
+                                    <td>{{ $schedule->teacher->name }}</td>
+                                    <td>{{ $schedule->audience->number }}</td>
                                 </tr>
                             @endif
                         @endforeach
@@ -36,3 +55,6 @@
         </div>
     </div>
 </x-layout>
+
+
+
