@@ -9,7 +9,6 @@ use App\Models\Schedule;
 use App\Models\Substitution;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use function Symfony\Component\String\s;
 
 class ScheduleController extends Controller
 {
@@ -43,8 +42,8 @@ class ScheduleController extends Controller
     public function show(ShowScheduleRequest $request)
     {
         $substitutions = Substitution::where('group_id', '=', $request->group_id)
-            ->where('date', '>=', Carbon::now()->toDateString())
-            ->where('date', '<', Carbon::now()->addDay()->toDateString())
+            ->where('date', '>', Carbon::now()->toDateString())
+            ->where('date', '<=', Carbon::now()->addDay()->toDateString())
             ->with('day', 'subject', 'teacher', 'order', 'audience')
             ->get()
             ->sortBy('order_id');
