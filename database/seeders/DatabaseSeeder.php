@@ -121,7 +121,7 @@ class DatabaseSeeder extends Seeder
 
         News::factory(50)->create();
         Advertisement::factory(10)->create();
-        Schedule::factory(10)->create();
+        Schedule::factory(100)->create();
         Substitution::factory(10)->create();
     }
 }

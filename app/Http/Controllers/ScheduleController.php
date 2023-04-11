@@ -44,14 +44,18 @@ class ScheduleController extends Controller
     {
         $substitutions = Substitution::where('group_id', '=', $request->group_id)
             ->where('date', '>=', Carbon::now()->toDateString())
+            ->where('date', '<', Carbon::now()->addDay()->toDateString())
             ->with('day', 'subject', 'teacher', 'order', 'audience')
-            ->get();
-        $schedulesSortByGroupId = Schedule::where('group_id', '=', $request->group_id)
+            ->get()
+            ->sortBy('order_id');
+
+        $schedules = Schedule::where('group_id', '=', $request->group_id)
             ->with('day', 'subject', 'teacher', 'order', 'audience')
-            ->get();
+            ->get()
+            ->sortBy('order_id');
 
         return view('schedule.show', [
-            'schedulesSortByGroupId' => $schedulesSortByGroupId,
+            'schedules' => $schedules,
             'substitutions' => $substitutions,
         ]);
     }
