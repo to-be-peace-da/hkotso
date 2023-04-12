@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ShowScheduleRequest;
 use App\Http\Requests\StoreScheduleRequest;
+use App\Models\Day;
 use App\Models\Group;
 use App\Models\Schedule;
 use App\Models\Substitution;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isEmpty;
 
 class ScheduleController extends Controller
 {
@@ -41,9 +43,11 @@ class ScheduleController extends Controller
      */
     public function show(ShowScheduleRequest $request)
     {
+        $days = Day::all();
+
         $substitutions = Substitution::where('group_id', '=', $request->group_id)
-            ->where('date', '>', Carbon::now()->toDateString())
-            ->where('date', '<=', Carbon::now()->addDay()->toDateString())
+            ->where('date', '>=', Carbon::now()->toDateString())
+//            ->where('date', '<=', Carbon::now()->addDay()->toDateString())
             ->with('day', 'subject', 'teacher', 'order', 'audience')
             ->get()
             ->sortBy('order_id');
@@ -54,6 +58,7 @@ class ScheduleController extends Controller
             ->sortBy('order_id');
 
         return view('schedule.show', [
+            'days' => $days,
             'schedules' => $schedules,
             'substitutions' => $substitutions,
         ]);
