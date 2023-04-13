@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSubstitutionRequest;
 use App\Models\Substitution;
 use Illuminate\Http\Request;
 
@@ -26,9 +27,11 @@ class SubstitutionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreSubstitutionRequest $request)
     {
-        //
+        Substitution::create($request->validated());
+
+        return back();
     }
 
     /**

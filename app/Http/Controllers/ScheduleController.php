@@ -47,7 +47,7 @@ class ScheduleController extends Controller
 
         $substitutions = Substitution::where('group_id', '=', $request->group_id)
             ->where('date', '>=', Carbon::now()->toDateString())
-//            ->where('date', '<=', Carbon::now()->addDay()->toDateString())
+            ->where('date', '<', Carbon::now()->addWeek()->toDateString())
             ->with('day', 'subject', 'teacher', 'order', 'audience')
             ->get()
             ->sortBy('order_id');

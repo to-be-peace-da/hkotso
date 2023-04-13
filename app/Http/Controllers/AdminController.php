@@ -76,4 +76,21 @@ class AdminController extends Controller
             'days' => $days,
         ]);
     }
+
+    public function substitutionCreate()
+    {
+        $orders = Order::all();
+        $groups = Group::all();
+        $subjects = Subject::all();
+        $audiences = Audience::all();
+        $teachers = Teacher::all();
+
+        return view('admin.substitution-create', [
+            'orders' => $orders,
+            'groups' => $groups,
+            'subjects' => $subjects,
+            'audiences' => $audiences,
+            'teachers' => $teachers,
+        ]);
+    }
 }

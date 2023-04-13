@@ -5,6 +5,7 @@ use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\SubstitutionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,10 +53,15 @@ Route::get('/admin-panel/advertisement-create', [AdminController::class, 'advert
     ->middleware('admin')
     ->name('admin.advertisement-create');
 
-// Advertisement Creation Page
+// Schedule Creation Page
 Route::get('/admin-panel/schedule-create', [AdminController::class, 'scheduleCreate'])
     ->middleware('admin')
     ->name('admin.schedule-create');
+
+// Substitution Creation Page
+Route::get('/admin-panel/substitution-create', [AdminController::class, 'substitutionCreate'])
+    ->middleware('admin')
+    ->name('admin.substitution-create');
 
 //! NEWS
 
@@ -131,3 +137,10 @@ Route::get('/schedule', [ScheduleController::class, 'show'])
 Route::post('/schedules', [ScheduleController::class, 'store'])
     ->middleware('admin')
     ->name('schedule.store');
+
+//! SUBSTITUTION
+
+// Schedule Store
+Route::post('/substitutions', [SubstitutionController::class, 'store'])
+    ->middleware('admin')
+    ->name('substitution.store');

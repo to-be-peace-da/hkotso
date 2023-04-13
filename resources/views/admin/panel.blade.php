@@ -12,6 +12,9 @@
                     <a href="{{ route('admin.schedule-create') }}">
                         <h2>Добавить расписание</h2>
                     </a>
+                    <a href="{{ route('admin.substitution-create') }}">
+                        <h2>Добавить замену</h2>
+                    </a>
                 </div>
             </div>
         </div>
