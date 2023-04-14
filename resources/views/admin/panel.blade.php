@@ -15,6 +15,15 @@
                     <a href="{{ route('admin.substitution-create') }}">
                         <h2>Добавить замену</h2>
                     </a>
+                    <a href="{{ route('admin.group-create') }}">
+                        <h2>Добавить группу</h2>
+                    </a>
+                    <a href="{{ route('admin.subject-create') }}">
+                        <h2>Добавить предмет</h2>
+                    </a>
+                    <a href="{{ route('admin.teacher-create') }}">
+                        <h2>Добавить преподавателя</h2>
+                    </a>
                 </div>
             </div>
         </div>

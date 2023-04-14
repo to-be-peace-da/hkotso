@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\SubstitutionController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +65,21 @@ Route::get('/admin-panel/schedule-create', [AdminController::class, 'scheduleCre
 Route::get('/admin-panel/substitution-create', [AdminController::class, 'substitutionCreate'])
     ->middleware('admin')
     ->name('admin.substitution-create');
+
+// Group Creation Page
+Route::get('/admin-panel/group-create', [AdminController::class, 'groupCreate'])
+    ->middleware('admin')
+    ->name('admin.group-create');
+
+// Subject Creation Page
+Route::get('/admin-panel/subject-create', [AdminController::class, 'subjectCreate'])
+    ->middleware('admin')
+    ->name('admin.subject-create');
+
+// Teacher Creation Page
+Route::get('/admin-panel/teacher-create', [AdminController::class, 'teacherCreate'])
+    ->middleware('admin')
+    ->name('admin.teacher-create');
 
 //! NEWS
 
@@ -144,3 +162,24 @@ Route::post('/schedules', [ScheduleController::class, 'store'])
 Route::post('/substitutions', [SubstitutionController::class, 'store'])
     ->middleware('admin')
     ->name('substitution.store');
+
+//! GROUP
+
+// Group Store
+Route::post('/groups', [GroupController::class, 'store'])
+    ->middleware('admin')
+    ->name('group.store');
+
+//! SUBJECT
+
+// Subject Store
+Route::post('/subjects', [SubjectController::class, 'store'])
+    ->middleware('admin')
+    ->name('subject.store');
+
+//! TEACHER
+
+// Teacher Store
+Route::post('/teachers', [TeacherController::class, 'store'])
+    ->middleware('admin')
+    ->name('teacher.store');

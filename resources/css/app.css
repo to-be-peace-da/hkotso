@@ -470,6 +470,8 @@ header nav div.logo img {
 .admin-panel .admin-options {
   display: flex;
   justify-content: space-evenly;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .release-date {
@@ -810,7 +812,7 @@ footer .copyright-logo-links .links ul {
 .schedule .day {
   margin: 20px 0;
 }
-.schedule td {
+.schedule .table td {
   border: 1px rgb(30, 30, 30) solid;
   padding: 10px;
   text-align: center;

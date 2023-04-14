@@ -93,4 +93,19 @@ class AdminController extends Controller
             'teachers' => $teachers,
         ]);
     }
+
+    public function groupCreate()
+    {
+        return view('admin.group-create');
+    }
+
+    public function subjectCreate()
+    {
+        return view('admin.subject-create');
+    }
+
+    public function teacherCreate()
+    {
+        return view('admin.teacher-create');
+    }
 }
