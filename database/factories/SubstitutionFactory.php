@@ -14,16 +14,15 @@ class SubstitutionFactory extends Factory
     public function definition(): array
     {
         return [
-            'date' => Carbon::now(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
 
-            'order_id' => random_int(1, 7),
+            'order_id' => rand(1, 7),
             'subject_id' => Subject::factory(),
             'audience_id' => Audience::factory(),
             'teacher_id' => Teacher::factory(),
-            'day_id' => random_int(1, 7),
             'group_id' => Group::factory(),
+            'date' => Carbon::now()->subDays(rand(0, 365)),
         ];
     }
 }

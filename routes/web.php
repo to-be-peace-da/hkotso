@@ -140,7 +140,7 @@ Route::post('/schedules', [ScheduleController::class, 'store'])
 
 //! SUBSTITUTION
 
-// Schedule Store
+// Substitution Store
 Route::post('/substitutions', [SubstitutionController::class, 'store'])
     ->middleware('admin')
     ->name('substitution.store');
