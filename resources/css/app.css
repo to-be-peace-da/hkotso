@@ -470,8 +470,39 @@ header nav div.logo img {
 .admin-panel .admin-options {
   display: flex;
   justify-content: space-evenly;
-  gap: 30px;
+  gap: 50px;
   flex-wrap: wrap;
+}
+.admin-panel .admin-options .tool-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.admin-panel .admin-options .tool-wrapper:hover .icon {
+  transform: translateX(50px);
+  opacity: 0.1;
+}
+.admin-panel .admin-options .tool-wrapper:hover .title {
+  text-align: center;
+}
+.admin-panel .admin-options .tool-wrapper:hover .title h2 {
+  font-size: 1.75rem;
+}
+.admin-panel .admin-options .tool-wrapper .tool {
+  display: flex;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  padding: 20px;
+}
+.admin-panel .admin-options .tool-wrapper .icon {
+  transition: 0.3s ease;
+  position: absolute;
+  left: -25px;
+  opacity: 0.3;
+  width: 200px;
+}
+.admin-panel .admin-options .tool-wrapper .title {
+  font-size: 1rem;
 }
 
 .release-date {

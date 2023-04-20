@@ -566,8 +566,53 @@ header {
     .admin-options {
         display: flex;
         justify-content: space-evenly;
-        gap: 30px;
+
+        gap: 50px;
         flex-wrap: wrap;
+
+        .tool-wrapper {
+            overflow: hidden;
+            position: relative;
+
+            &:hover {
+                .icon {
+                    transform: translateX(50px);
+                    opacity: .1;
+                }
+
+                .title {
+                    text-align: center;
+
+                    h2 {
+                        font-size: 1.75rem;
+                    }
+                }
+            }
+
+            .tool {
+                display: flex;
+                align-items: center;
+
+                height: 250px;
+                width: 250px;
+                padding: 20px;
+            }
+
+            .icon {
+                transition: 0.3s ease;
+
+                position: absolute;
+                left: -25px;
+
+                opacity: .3;
+
+                width: 200px;
+            }
+
+            .title {
+                font-size: 1rem;
+            }
+        }
     }
 }
 
