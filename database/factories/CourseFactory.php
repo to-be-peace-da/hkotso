@@ -2,17 +2,16 @@
 
 namespace Database\Factories;
 
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
-class TeacherFactory extends Factory
+class CourseFactory extends Factory
 {
     public function definition(): array
     {
         return [
-            'name' => $this->faker->firstName(),
-            'surname' => $this->faker->lastName(),
-            'patronymic' => $this->faker->userName(),
+            'name' => $this->faker->name(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

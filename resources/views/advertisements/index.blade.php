@@ -25,7 +25,7 @@
                                                   method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                                <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить это?')"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                             <form action="{{ route('advertisement.edit', $advertisement) }}"
                                                   method="get">

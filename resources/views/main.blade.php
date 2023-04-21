@@ -29,7 +29,7 @@
                                             <form action="{{ route('news.destroy', $singleNews) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                                <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить это?')"><i class="fa-solid fa-trash"></i></button>
                                             </form>
                                             <form action="{{ route('news.edit', $singleNews) }}" method="get">
                                                 <button type="submit"><i class="fa-solid fa-pen"></i></button>
@@ -76,7 +76,7 @@
                                     <form action="{{ route('advertisement.destroy', $advertisement) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                        <button type="submit" onclick="return confirm('Вы уверены, что хотите удалить это?')"><i class="fa-solid fa-trash"></i></button>
                                     </form>
                                     <form action="{{ route('advertisement.edit', $advertisement) }}" method="get">
                                         <button type="submit"><i class="fa-solid fa-pen"></i></button>

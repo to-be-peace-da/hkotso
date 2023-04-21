@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Advertisement;
+use App\Models\Course;
 use App\Models\Day;
+use App\Models\Department;
 use App\Models\News;
 use App\Models\Order;
 use App\Models\Schedule;
@@ -117,6 +119,48 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'VII'
             ],
+        );
+
+        Course::Create(
+            [
+                'name' => 'Первый'
+            ],
+        );
+
+        Course::Create(
+            [
+                'name' => 'Второй'
+            ],
+        );
+
+        Course::Create(
+            [
+                'name' => 'Третий'
+            ],
+        );
+
+        Course::Create(
+            [
+                'name' => 'Четвертый'
+            ],
+        );
+
+        Department::create(
+            [
+                'street' => 'Волочаевская, 1'
+            ]
+        );
+
+        Department::create(
+            [
+                'street' => 'Краснореченская, 58'
+            ]
+        );
+
+        Department::create(
+            [
+                'street' => 'Советская, 24'
+            ]
         );
 
         News::factory(50)->create();
