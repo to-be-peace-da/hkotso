@@ -58,7 +58,7 @@
                                         <tr>
                                             <td>{{ $schedule->order->name }}</td>
                                             <td>{{ $schedule->subject->name }}</td>
-                                            <td>{{ $schedule->teacher->name }}</td>
+                                            <td>{{ $schedule->teacher->surname .  " " . mb_substr($schedule->teacher->name, 0, 1) . ". " . mb_substr($schedule->teacher->patronymic, 0, 1) . "." }}</td>
                                             <td>{{ $schedule->audience->number }}</td>
                                         </tr>
                                     @endif
