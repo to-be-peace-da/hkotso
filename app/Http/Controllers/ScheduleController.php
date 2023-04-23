@@ -58,29 +58,12 @@ class ScheduleController extends Controller
             ->get()
             ->sortBy('order_id');
 
-//        dd($request);
-
-//        $schedules = Schedule::join('groups', 'groups.id', '=', 'schedules.group_id')
-//            ->join('courses', 'courses.id', '=', 'groups.course_id')
-
-//        $schedules = Schedule::where('group_id', '=', $request->group_id)
-//            ->where('course_id', '=', $request->course_id)
-//            ->where('department_id', '=', $request->department_id)
-//            ->with('day', 'subject', 'teacher', 'order', 'audience')
-
         $schedules = Schedule::where('group_id', '=', $request->group_id)
             ->where('course_id', '=', $request->course_id)
             ->where('department_id', '=', $request->department_id)
             ->with('day', 'subject', 'teacher', 'order', 'audience', 'department', 'course')
-
-//            ->where('group_id', '=', $request->group_id)
-//            ->with('day', 'subject', 'teacher', 'order', 'audience')
             ->get()
             ->sortBy('order_id');
-
-//        $department = Department::find($request->department_id)->street;
-//        $course = Course::find($request->course_id)->name;
-
 
         return view('schedule.show', [
             'days' => $days,
