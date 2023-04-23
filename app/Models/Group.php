@@ -15,14 +15,4 @@ class Group extends Model
     {
         return $this->hasMany(Schedule::class);
     }
-
-    public function course(): HasOne
-    {
-        return $this->hasOne(Course::class);
-    }
-
-    public function department(): HasOne
-    {
-        return $this->hasOne(Department::class);
-    }
 }

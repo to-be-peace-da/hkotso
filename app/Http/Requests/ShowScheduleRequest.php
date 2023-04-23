@@ -4,6 +4,11 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property mixed $group_id
+ * @property mixed $course_id
+ * @property mixed $department_id
+ */
 class ShowScheduleRequest extends FormRequest
 {
     /**

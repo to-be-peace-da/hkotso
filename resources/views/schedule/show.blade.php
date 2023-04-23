@@ -3,7 +3,7 @@
         <div class="container">
             <div class="schedule">
                 <div class="title">
-                    <h1>{{ $schedules->first()->group->name }}</h1>
+                    <h1>{{ $schedules->first()->group->name . " - " . $schedules->first()->department->name . " - " . $schedules->first()->course->name . " курс" }}</h1>
                 </div>
                 @foreach($days as $day)
                     <div class="day">
@@ -33,7 +33,7 @@
                                     <tr>
                                         <td>{{ $substitution->order->name }}</td>
                                         <td>{{ $substitution->subject->name }}</td>
-                                        <td>{{ $substitution->teacher->surname }} {{ mb_substr($substitution->teacher->name, 0, 1) . "." }} {{ mb_substr($substitution->teacher->patronymic, 0, 1) . "." }}</td>
+                                        <td>{{ $substitution->teacher->surname .  " " . mb_substr($substitution->teacher->name, 0, 1) . ". " . mb_substr($substitution->teacher->patronymic, 0, 1) . "." }}</td>
                                         <td>{{ $substitution->audience->number }}</td>
                                     </tr>
                                 @endif

@@ -10,7 +10,7 @@ class Advertisement extends Model
 {
     use HasFactory;
 
-    public static function boot()
+    public static function boot(): void
     {
         parent::boot();
 

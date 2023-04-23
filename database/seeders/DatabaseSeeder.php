@@ -147,19 +147,19 @@ class DatabaseSeeder extends Seeder
 
         Department::create(
             [
-                'street' => 'Волочаевская, 1'
+                'name' => 'Волочаевская, 1'
             ]
         );
 
         Department::create(
             [
-                'street' => 'Краснореченская, 58'
+                'name' => 'Краснореченская, 58'
             ]
         );
 
         Department::create(
             [
-                'street' => 'Советская, 24'
+                'name' => 'Советская, 24'
             ]
         );
 

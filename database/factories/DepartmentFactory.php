@@ -11,7 +11,7 @@ class DepartmentFactory extends Factory
     public function definition(): array
     {
         return [
-            'street' => $this->faker->streetName(),
+            'name' => $this->faker->streetName(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

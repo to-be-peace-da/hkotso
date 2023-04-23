@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->string('street');
+            $table->string('name');
             $table->timestamps();
         });
     }
