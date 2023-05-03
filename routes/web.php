@@ -156,30 +156,34 @@ Route::post('/schedules', [ScheduleController::class, 'store'])
     ->middleware('admin')
     ->name('schedule.store');
 
-//! SUBSTITUTION
+//! SUBSTITUTIONS
 
 // Substitution Store
 Route::post('/substitutions', [SubstitutionController::class, 'store'])
     ->middleware('admin')
     ->name('substitution.store');
 
-//! GROUP
+//! GROUPS
 
 // Group Store
 Route::post('/groups', [GroupController::class, 'store'])
     ->middleware('admin')
     ->name('group.store');
 
-//! SUBJECT
+//! SUBJECTS
 
 // Subject Store
 Route::post('/subjects', [SubjectController::class, 'store'])
     ->middleware('admin')
     ->name('subject.store');
 
-//! TEACHER
+//! TEACHERS
 
 // Teacher Store
 Route::post('/teachers', [TeacherController::class, 'store'])
     ->middleware('admin')
     ->name('teacher.store');
+
+// Show Single Teacher
+Route::get('/teachers/{teacher:slug}', [TeacherController::class, 'show'])
+    ->name('teacher.show');

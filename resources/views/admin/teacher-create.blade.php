@@ -6,17 +6,17 @@
                 <form class="form-fields" action="{{ route('teacher.store') }}" method="post">
                     @csrf
                     <div class="label-and-input">
-                        <label for="name" class="">Имя</label>
-                        <input type="text" name="name" id="name">
-                    </div>
-                    @error('name')
-                    <p>{{ $message }}</p>
-                    @enderror
-                    <div class="label-and-input">
                         <label for="surname" class="">Фамилия</label>
                         <input type="text" name="surname" id="surname">
                     </div>
                     @error('surname')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="label-and-input">
+                        <label for="name" class="">Имя</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    @error('name')
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">

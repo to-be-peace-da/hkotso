@@ -33,7 +33,9 @@
                                     <tr>
                                         <td>{{ $substitution->order->name }}</td>
                                         <td>{{ $substitution->subject->name }}</td>
-                                        <td>{{ $substitution->teacher->surname .  " " . mb_substr($substitution->teacher->name, 0, 1) . ". " . mb_substr($substitution->teacher->patronymic, 0, 1) . "." }}</td>
+                                        <td>
+                                            <a href="{{ route('teacher.show', $substitution->teacher) }}">{{ $substitution->teacher->surname .  " " . $substitution->teacher->name . ". " . $substitution->teacher->patronymic . "." }}</a>
+                                        </td>
                                         <td>{{ $substitution->audience->number }}</td>
                                     </tr>
                                 @endif
@@ -58,7 +60,9 @@
                                         <tr>
                                             <td>{{ $schedule->order->name }}</td>
                                             <td>{{ $schedule->subject->name }}</td>
-                                            <td>{{ $schedule->teacher->surname .  " " . mb_substr($schedule->teacher->name, 0, 1) . ". " . mb_substr($schedule->teacher->patronymic, 0, 1) . "." }}</td>
+                                            <td>
+                                                <a href="{{ route('teacher.show', $schedule->teacher) }}">{{ $schedule->teacher->surname .  " " . $schedule->teacher->name . " " . $schedule->teacher->patronymic . " " }}</a>
+                                            </td>
                                             <td>{{ $schedule->audience->number }}</td>
                                         </tr>
                                     @endif

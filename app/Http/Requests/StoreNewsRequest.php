@@ -25,7 +25,7 @@ class StoreNewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', Rule::unique('news', 'name')],
+            'name' => ['required'],
             'text' => ['required'],
             'image' => ['file', 'image'],
         ];

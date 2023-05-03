@@ -19,7 +19,7 @@
                     <div class="label-and-input">
                         <label for="group_id" class="">Группа</label>
                         <select name="group_id" id="group_id">
-                            @foreach($groups as $group)
+                            @foreach($groups->sortBy('name') as $group)
                                 <option value="{{ $group->id }}">{{ $group->name }}</option>
                             @endforeach
                         </select>
@@ -28,9 +28,31 @@
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
+                        <label for="course_id" class="">Курс</label>
+                        <select name="course_id" id="course_id">
+                            @foreach($courses as $course)
+                                <option value="{{ $course->id }}">{{ $course->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('course_id')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="label-and-input">
+                        <label for="department_id" class="">Отделение</label>
+                        <select name="department_id" id="department_id">
+                            @foreach($departments->sortBy('name') as $department)
+                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('department_id')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="label-and-input">
                         <label for="subject_id" class="">Пара</label>
                         <select name="subject_id" id="subject_id">
-                            @foreach($subjects as $subject)
+                            @foreach($subjects->sortBy('name') as $subject)
                                 <option value="{{ $subject->id }}">{{ $subject->name }}</option>
                             @endforeach
                         </select>
@@ -41,7 +63,7 @@
                     <div class="label-and-input">
                         <label for="audience_id" class="">Кабинет</label>
                         <select name="audience_id" id="audience_id">
-                            @foreach($audiences as $audience)
+                            @foreach($audiences->sortBy('number') as $audience)
                                 <option value="{{ $audience->id }}">{{ $audience->number }}</option>
                             @endforeach
                         </select>
@@ -52,8 +74,8 @@
                     <div class="label-and-input">
                         <label for="teacher_id" class="">Преподаватель</label>
                         <select name="teacher_id" id="teacher_id">
-                            @foreach($teachers as $teacher)
-                                <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                            @foreach($teachers->sortBy('surname') as $teacher)
+                                <option value="{{ $teacher->id }}">{{ $teacher->surname . " " . $teacher->name . " " . $teacher->patronymic }}</option>
                             @endforeach
                         </select>
                     </div>

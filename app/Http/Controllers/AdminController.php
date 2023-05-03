@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AuthenticateAdminRequest;
 use App\Models\Advertisement;
 use App\Models\Audience;
+use App\Models\Course;
 use App\Models\Day;
+use App\Models\Department;
 use App\Models\Group;
 use App\Models\News;
 use App\Models\Order;
@@ -66,10 +68,14 @@ class AdminController extends Controller
         $audiences = Audience::all();
         $teachers = Teacher::all();
         $days = Day::all();
+        $courses = Course::all();
+        $departments = Department::all();
 
         return view('admin.schedule-create', [
             'orders' => $orders,
             'groups' => $groups,
+            'courses' => $courses,
+            'departments' => $departments,
             'subjects' => $subjects,
             'audiences' => $audiences,
             'teachers' => $teachers,
@@ -84,10 +90,14 @@ class AdminController extends Controller
         $subjects = Subject::all();
         $audiences = Audience::all();
         $teachers = Teacher::all();
+        $courses = Course::all();
+        $departments = Department::all();
 
         return view('admin.substitution-create', [
             'orders' => $orders,
             'groups' => $groups,
+            'courses' => $courses,
+            'departments' => $departments,
             'subjects' => $subjects,
             'audiences' => $audiences,
             'teachers' => $teachers,

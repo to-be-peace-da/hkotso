@@ -8,7 +8,8 @@
             </div>
             <div class="single-news-edit">
                 <div class="content">
-                    <form action="{{ route('advertisement.update', $advertisement) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('advertisement.update', $advertisement) }}" method="post"
+                          enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="name">

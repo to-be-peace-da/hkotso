@@ -28,6 +28,8 @@ class StoreSubstitutionRequest extends FormRequest
             'audience_id' => ['required'],
             'teacher_id' => ['required'],
             'date' => ['required', 'date'],
+            'course_id' => ['required'],
+            'department_id' => ['required'],
         ];
     }
 }

@@ -28,6 +28,8 @@ class StoreScheduleRequest extends FormRequest
             'audience_id' => ['required'],
             'teacher_id' => ['required'],
             'day_id' => ['required'],
+            'course_id' => ['required'],
+            'department_id' => ['required'],
         ];
     }
 }

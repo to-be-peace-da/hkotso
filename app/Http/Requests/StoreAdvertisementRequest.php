@@ -25,7 +25,7 @@ class StoreAdvertisementRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', Rule::unique('advertisements', 'name')],
+            'name' => ['required'],
             'text' => ['required'],
         ];
     }
