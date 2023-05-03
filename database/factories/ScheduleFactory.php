@@ -3,11 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Audience;
-use App\Models\Course;
-use App\Models\Day;
-use App\Models\Department;
 use App\Models\Group;
-use App\Models\Order;
 use App\Models\Schedule;
 use App\Models\Subject;
 use App\Models\Teacher;

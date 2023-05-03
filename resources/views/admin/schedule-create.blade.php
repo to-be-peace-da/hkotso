@@ -75,7 +75,8 @@
                         <label for="teacher_id" class="">Преподаватель</label>
                         <select name="teacher_id" id="teacher_id">
                             @foreach($teachers->sortBy('surname') as $teacher)
-                                <option value="{{ $teacher->id }}">{{ $teacher->surname . " " . $teacher->name . " " . $teacher->patronymic }}</option>
+                                <option
+                                    value="{{ $teacher->id }}">{{ $teacher->surname . " " . $teacher->name . " " . $teacher->patronymic }}</option>
                             @endforeach
                         </select>
                     </div>

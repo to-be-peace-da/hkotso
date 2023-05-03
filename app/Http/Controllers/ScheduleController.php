@@ -12,7 +12,6 @@ use App\Models\Schedule;
 use App\Models\Substitution;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use function PHPUnit\Framework\isEmpty;
 
 class ScheduleController extends Controller
 {
@@ -66,7 +65,7 @@ class ScheduleController extends Controller
             ->sortBy('order_id');
 
         if ($schedules->count() === 0) {
-            return abort( 403, 'РАСПИСАНИЕ ОТСУТСТВУЕТ');
+            return abort(403, 'РАСПИСАНИЕ ОТСУТСТВУЕТ');
         }
 
         return view('schedule.show', [

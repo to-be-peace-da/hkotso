@@ -12,6 +12,41 @@ class Substitution extends Model
 {
     use HasFactory;
 
+    public static function boot(): void
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            $dayOfWeek = Carbon::create($model->date)->dayOfWeek;
+
+            switch ($dayOfWeek) {
+                case CarbonInterface::MONDAY:
+                    $model->day_id = 1;
+                    break;
+                case CarbonInterface::TUESDAY:
+                    $model->day_id = 2;
+                    break;
+                case CarbonInterface::WEDNESDAY:
+                    $model->day_id = 3;
+                    break;
+                case CarbonInterface::THURSDAY:
+                    $model->day_id = 4;
+                    break;
+                case CarbonInterface::FRIDAY:
+                    $model->day_id = 5;
+                    break;
+                case CarbonInterface::SATURDAY:
+                    $model->day_id = 6;
+                    break;
+                case CarbonInterface::SUNDAY:
+                    $model->day_id = 7;
+                    break;
+                default:
+                    break;
+            }
+        });
+    }
+
     public function teacher(): BelongsTo
     {
         return $this->belongsTo(Teacher::class);
@@ -50,40 +85,5 @@ class Substitution extends Model
     public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
-    }
-
-    public static function boot(): void
-    {
-        parent::boot();
-
-        static::saving(function ($model) {
-            $dayOfWeek = Carbon::create($model->date)->dayOfWeek;
-
-            switch ($dayOfWeek) {
-                case CarbonInterface::MONDAY:
-                    $model->day_id = 1;
-                    break;
-                case CarbonInterface::TUESDAY:
-                    $model->day_id = 2;
-                    break;
-                case CarbonInterface::WEDNESDAY:
-                    $model->day_id = 3;
-                    break;
-                case CarbonInterface::THURSDAY:
-                    $model->day_id = 4;
-                    break;
-                case CarbonInterface::FRIDAY:
-                    $model->day_id = 5;
-                    break;
-                case CarbonInterface::SATURDAY:
-                    $model->day_id = 6;
-                    break;
-                case CarbonInterface::SUNDAY:
-                    $model->day_id = 7;
-                    break;
-                default:
-                    break;
-            }
-        });
     }
 }

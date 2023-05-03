@@ -13,7 +13,7 @@ class Admin
      * Handle an incoming request.
      *
      * @param Request $request
-     * @param \Closure(Request): (\Illuminate\Http\Response|RedirectResponse) $next
+     * @param Closure(Request): (\Illuminate\Http\Response|RedirectResponse) $next
      * @return Response
      */
     public function handle(Request $request, Closure $next): Response

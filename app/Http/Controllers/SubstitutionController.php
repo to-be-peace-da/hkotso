@@ -17,14 +17,6 @@ class SubstitutionController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreSubstitutionRequest $request)
@@ -32,6 +24,14 @@ class SubstitutionController extends Controller
         Substitution::create($request->validated());
 
         return back();
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
     /**

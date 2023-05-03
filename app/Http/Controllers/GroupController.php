@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreGroupRequest;
 use App\Models\Group;
 use Illuminate\Http\Request;
-use Illuminate\Session\Store;
 
 class GroupController extends Controller
 {
@@ -18,14 +17,6 @@ class GroupController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreGroupRequest $request)
@@ -33,6 +24,14 @@ class GroupController extends Controller
         Group::create($request->validated());
 
         return back();
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
     /**

@@ -10,5 +10,4 @@ class Section extends Model
 {
     use HasFactory;
     use HasRecursiveRelationships;
-
 }

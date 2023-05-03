@@ -17,14 +17,6 @@ class SubjectController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreSubjectRequest $request)
@@ -32,6 +24,14 @@ class SubjectController extends Controller
         Subject::create($request->validated());
 
         return back();
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
     /**

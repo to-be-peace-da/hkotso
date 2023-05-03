@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Advertisement;
 use App\Models\News;
-use App\Models\Section;
-use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
