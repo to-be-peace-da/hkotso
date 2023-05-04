@@ -948,7 +948,7 @@ footer .copyright-logo-links .links ul {
 }
 .schedule-and-substitution .schedule-items .items, .schedule-and-substitution .substitution-items .items, .schedule-and-substitution .schedule-head .items, .schedule-and-substitution .substitution-head .items {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
 }
 
 @media (max-width: 1400px) {
