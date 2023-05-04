@@ -1169,13 +1169,6 @@ footer {
         }
     }
 
-    .even {
-        .schedule-head, .substitution-head {
-            box-shadow: $dark-gray 0 0 1.5px;
-            padding: 5px;
-        }
-    }
-
     .extra-padding-for-odd {
         padding: 20px 0 !important;
     }
@@ -1185,7 +1178,6 @@ footer {
     }
 
     .even, .odd {
-        padding: 20px 0;
 
         .container {
             display: flex;
@@ -1194,12 +1186,24 @@ footer {
         }
     }
 
+    .schedule .even {
+        padding-bottom: 50px;
+    }
+
     .even {
+        padding: 10px;
+
+        .schedule-head, .substitution-head {
+            box-shadow: $dark-gray 0 0 1.5px;
+            padding: 5px;
+        }
+
         .container {
             background: white;
             padding: 10px;
             border-radius: 5px;
         }
+
     }
 
     .items {

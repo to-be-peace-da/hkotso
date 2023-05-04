@@ -914,23 +914,26 @@ footer .copyright-logo-links .links ul {
   box-shadow: white 0 0 1.5px;
   padding: 5px;
 }
-.schedule-and-substitution .even .schedule-head, .schedule-and-substitution .even .substitution-head {
-  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
-  padding: 5px;
-}
 .schedule-and-substitution .extra-padding-for-odd {
   padding: 20px 0 !important;
 }
 .schedule-and-substitution .title {
   margin-bottom: 20px;
 }
-.schedule-and-substitution .even, .schedule-and-substitution .odd {
-  padding: 20px 0;
-}
 .schedule-and-substitution .even .container, .schedule-and-substitution .odd .container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.schedule-and-substitution .schedule .even {
+  padding-bottom: 50px;
+}
+.schedule-and-substitution .even {
+  padding: 10px;
+}
+.schedule-and-substitution .even .schedule-head, .schedule-and-substitution .even .substitution-head {
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  padding: 5px;
 }
 .schedule-and-substitution .even .container {
   background: white;
