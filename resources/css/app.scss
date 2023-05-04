@@ -446,6 +446,10 @@ template {
         }
     }
 
+    a:visited {
+        color: $lighter-gray;
+    }
+
     h1,
     h2,
     h3,
@@ -1141,20 +1145,73 @@ footer {
 
 //! views.schedule.show
 
-.schedule {
+.schedule-and-substitution {
+    .odd {
+        padding: 0 !important;
+
+        .container {
+            padding: 0 10px;
+
+            p, a {
+                color: white;
+            }
+
+            a {
+                &:hover {
+                    color: $darker-gray;
+                }
+            }
+
+            .schedule-head, .substitution-head {
+                box-shadow: white 0 0 1.5px;
+                padding: 5px;
+            }
+        }
+    }
+
+    .even {
+        .schedule-head, .substitution-head {
+            box-shadow: $dark-gray 0 0 1.5px;
+            padding: 5px;
+        }
+    }
+
+    .extra-padding-for-odd {
+        padding: 20px 0 !important;
+    }
+
     .title {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
-    .day {
-        margin: 20px 0;
+    .even, .odd {
+        padding: 20px 0;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 
-    .table {
-        td {
-            border: 1px $dark-gray solid;
+    .even {
+        .container {
+            background: white;
             padding: 10px;
-            text-align: center;
+            border-radius: 5px;
+        }
+    }
+
+    .items {
+        display: flex;
+    }
+
+    .schedule-items, .substitution-items, .schedule-head, .substitution-head {
+        padding: 5px;
+
+        .items {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
         }
     }
 }

@@ -378,6 +378,9 @@ template {
 .odd .block-title:hover:after {
   transform: scaleX(1);
 }
+.odd a:visited {
+  color: #f3f4f4;
+}
 .odd h1,
 .odd h2,
 .odd h3,
@@ -895,16 +898,54 @@ footer .copyright-logo-links .links ul {
   line-height: 1.5;
 }
 
-.schedule .title {
-  margin-bottom: 40px;
+.schedule-and-substitution .odd {
+  padding: 0 !important;
 }
-.schedule .day {
-  margin: 20px 0;
+.schedule-and-substitution .odd .container {
+  padding: 0 10px;
 }
-.schedule .table td {
-  border: 1px rgb(30, 30, 30) solid;
+.schedule-and-substitution .odd .container p, .schedule-and-substitution .odd .container a {
+  color: white;
+}
+.schedule-and-substitution .odd .container a:hover {
+  color: rgb(227, 229, 229);
+}
+.schedule-and-substitution .odd .container .schedule-head, .schedule-and-substitution .odd .container .substitution-head {
+  box-shadow: white 0 0 1.5px;
+  padding: 5px;
+}
+.schedule-and-substitution .even .schedule-head, .schedule-and-substitution .even .substitution-head {
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  padding: 5px;
+}
+.schedule-and-substitution .extra-padding-for-odd {
+  padding: 20px 0 !important;
+}
+.schedule-and-substitution .title {
+  margin-bottom: 20px;
+}
+.schedule-and-substitution .even, .schedule-and-substitution .odd {
+  padding: 20px 0;
+}
+.schedule-and-substitution .even .container, .schedule-and-substitution .odd .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.schedule-and-substitution .even .container {
+  background: white;
   padding: 10px;
-  text-align: center;
+  border-radius: 5px;
+}
+.schedule-and-substitution .items {
+  display: flex;
+}
+.schedule-and-substitution .schedule-items, .schedule-and-substitution .substitution-items, .schedule-and-substitution .schedule-head, .schedule-and-substitution .substitution-head {
+  padding: 5px;
+}
+.schedule-and-substitution .schedule-items .items, .schedule-and-substitution .substitution-items .items, .schedule-and-substitution .schedule-head .items, .schedule-and-substitution .substitution-head .items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 @media (max-width: 1400px) {
