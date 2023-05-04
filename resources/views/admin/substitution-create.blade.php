@@ -1,7 +1,7 @@
 <x-layout>
     <div class="even">
         <div class="container">
-            <div class="schedule-create">
+            <div class="form-wrapper">
                 <h2>Добавление замены</h2>
                 <form class="form-fields" action="{{ route('substitution.store') }}" method="post">
                     @csrf

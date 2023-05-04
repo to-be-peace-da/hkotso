@@ -537,6 +537,15 @@ header {
         align-items: center;
         justify-content: space-between;
 
+        button {
+            border: none;
+            box-shadow: $dark-gray 0 0 1.5px;
+
+            width: 100px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
         ul {
             display: flex;
             gap: 20px;
@@ -575,6 +584,10 @@ header {
             position: relative;
 
             &:hover {
+                transition: 0.3s ease;
+                background: white;
+                border-radius: 10px;
+
                 .icon {
                     transform: translateX(50px);
                     opacity: .1;
@@ -645,9 +658,10 @@ header {
     }
 }
 
+//! views.admin.news-create & views.admin.advertisement-create
+
 .news-create {
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
 
     flex-direction: column;
@@ -655,6 +669,10 @@ header {
     gap: 20px;
 
     .form-fields {
+        background: white;
+        padding: 30px;
+        border-radius: 5px;
+
         width: 100%;
         display: flex;
         gap: 20px;
@@ -664,20 +682,31 @@ header {
         .label-and-input {
             display: flex;
             flex-direction: column;
+            gap: 10px;
 
-            label {
-                margin-bottom: 10px;
+            input, textarea {
+                border: none;
+                box-shadow: $dark-gray 0 0 1.5px;
             }
 
             input {
-                padding: 10px;
+                padding: 5px;
             }
 
             textarea {
                 height: 300px;
-                padding: 10px;
+                padding: 5px;
                 resize: none;
             }
+        }
+
+        button {
+            border: none;
+            box-shadow: $dark-gray 0 0 1.5px;
+
+            width: 200px;
+            padding: 5px;
+            margin-top: 20px;
         }
 
         .img {
@@ -900,6 +929,50 @@ footer {
                 list-style: none;
                 font-weight: 500;
             }
+        }
+    }
+}
+
+//! views.admin.*-create
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .form-fields {
+        background: white;
+        padding: 30px;
+        border-radius: 5px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .label-and-input {
+            display: flex;
+            align-items: center;
+
+            label {
+                display: flex;
+                width: 150px;
+            }
+
+            select, input {
+                border: none;
+                padding: 5px;
+                box-shadow: $dark-gray 0 0 1.5px;
+                width: 500px;
+            }
+        }
+
+        button {
+            border: none;
+            box-shadow: $dark-gray 0 0 1.5px;
+
+            width: 200px;
+            padding: 5px;
+            margin-top: 20px;
         }
     }
 }

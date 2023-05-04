@@ -450,6 +450,13 @@ header nav {
   align-items: center;
   justify-content: space-between;
 }
+header nav button {
+  border: none;
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  width: 100px;
+  padding: 5px;
+  cursor: pointer;
+}
 header nav ul {
   display: flex;
   gap: 20px;
@@ -476,6 +483,11 @@ header nav div.logo img {
 .admin-panel .admin-options .tool-wrapper {
   overflow: hidden;
   position: relative;
+}
+.admin-panel .admin-options .tool-wrapper:hover {
+  transition: 0.3s ease;
+  background: white;
+  border-radius: 10px;
 }
 .admin-panel .admin-options .tool-wrapper:hover .icon {
   transform: translateX(50px);
@@ -531,12 +543,14 @@ header nav div.logo img {
 
 .news-create {
   display: flex;
-  align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   gap: 20px;
 }
 .news-create .form-fields {
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
   width: 100%;
   display: flex;
   gap: 20px;
@@ -545,17 +559,26 @@ header nav div.logo img {
 .news-create .form-fields .label-and-input {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
-.news-create .form-fields .label-and-input label {
-  margin-bottom: 10px;
+.news-create .form-fields .label-and-input input, .news-create .form-fields .label-and-input textarea {
+  border: none;
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
 }
 .news-create .form-fields .label-and-input input {
-  padding: 10px;
+  padding: 5px;
 }
 .news-create .form-fields .label-and-input textarea {
   height: 300px;
-  padding: 10px;
+  padding: 5px;
   resize: none;
+}
+.news-create .form-fields button {
+  border: none;
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  width: 200px;
+  padding: 5px;
+  margin-top: 20px;
 }
 .news-create .form-fields .img {
   display: flex;
@@ -721,6 +744,41 @@ footer .copyright-logo-links .links i {
 footer .copyright-logo-links .links ul {
   list-style: none;
   font-weight: 500;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-wrapper .form-fields {
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-wrapper .form-fields .label-and-input {
+  display: flex;
+  align-items: center;
+}
+.form-wrapper .form-fields .label-and-input label {
+  display: flex;
+  width: 150px;
+}
+.form-wrapper .form-fields .label-and-input select, .form-wrapper .form-fields .label-and-input input {
+  border: none;
+  padding: 5px;
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  width: 500px;
+}
+.form-wrapper .form-fields button {
+  border: none;
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  width: 200px;
+  padding: 5px;
+  margin-top: 20px;
 }
 
 .news {

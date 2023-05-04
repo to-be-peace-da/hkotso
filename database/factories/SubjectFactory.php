@@ -10,7 +10,7 @@ class SubjectFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->company(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

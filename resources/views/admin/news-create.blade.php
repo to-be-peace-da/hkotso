@@ -7,7 +7,7 @@
                       enctype="multipart/form-data">
                     @csrf
                     <div class="label-and-input">
-                        <label for="news_name" class="">Имя</label>
+                        <label for="news_name" class="">Заголовок</label>
                         <input name="name" type="text" class="form-control" id="news_name" value="{{ old('name') }}">
                     </div>
                     @error('name')

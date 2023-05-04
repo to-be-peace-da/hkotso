@@ -65,7 +65,7 @@ class ScheduleController extends Controller
             ->sortBy('order_id');
 
         if ($schedules->count() === 0) {
-            return abort(403, 'РАСПИСАНИЕ ОТСУТСТВУЕТ');
+            return abort(403, 'РАСПИСАНИЕ ДЛЯ ДАННОЙ ГРУППЫ ОТСУТСТВУЕТ');
         }
 
         return view('schedule.show', [

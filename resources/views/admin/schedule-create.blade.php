@@ -1,7 +1,7 @@
 <x-layout>
     <div class="even">
         <div class="container">
-            <div class="schedule-create">
+            <div class="form-wrapper">
                 <h2>Добавление расписания</h2>
                 <form class="form-fields" action="{{ route('schedule.store') }}" method="post">
                     @csrf
