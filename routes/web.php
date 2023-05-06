@@ -178,6 +178,21 @@ Route::post('/substitutions', [SubstitutionController::class, 'store'])
     ->middleware('admin')
     ->name('substitution.store');
 
+// Substitution Edit
+Route::get('/substitutions/{substitution}/edit', [SubstitutionController::class, 'edit'])
+    ->middleware('admin')
+    ->name('substitution.edit');
+
+// Substitution Update
+Route::put('/substitutions/{substitution}', [SubstitutionController::class, 'update'])
+    ->middleware('admin')
+    ->name('substitution.update');
+
+// Substitution Destroy
+Route::delete('/substitution/{substitution}', [SubstitutionController::class, 'destroy'])
+    ->middleware('admin')
+    ->name('substitution.destroy');
+
 //! GROUPS
 
 // Group Store

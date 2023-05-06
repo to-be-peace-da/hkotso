@@ -62,6 +62,25 @@
                                             <div class="item">
                                                 <p>{{ $substitution->audience->number }}</p>
                                             </div>
+                                            <div class="item">
+                                                <div class="admin-tools">
+                                                    @if(auth()->check() && auth()->user()->is_admin)
+                                                        <form action="{{ route('substitution.destroy', $substitution) }}"
+                                                              method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit"
+                                                                    onclick="return confirm('Вы уверены, что хотите удалить это?')">
+                                                                <i class="fa-solid fa-trash"></i></button>
+                                                        </form>
+                                                        <form action="{{ route('substitution.edit', $substitution) }}"
+                                                              method="get">
+                                                            <button type="submit"><i class="fa-solid fa-pen"></i>
+                                                            </button>
+                                                        </form>
+                                                    @endif
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 @endif

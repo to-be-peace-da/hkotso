@@ -3,8 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSubstitutionRequest;
+use App\Http\Requests\UpdateSubstitutionRequest;
+use App\Models\Audience;
+use App\Models\Course;
+use App\Models\Day;
+use App\Models\Department;
+use App\Models\Group;
+use App\Models\Order;
+use App\Models\Part;
+use App\Models\Subject;
 use App\Models\Substitution;
-use Illuminate\Http\Request;
+use App\Models\Teacher;
 
 class SubstitutionController extends Controller
 {
@@ -47,15 +56,36 @@ class SubstitutionController extends Controller
      */
     public function edit(Substitution $substitution)
     {
-        //
+        $orders = Order::all();
+        $groups = Group::all();
+        $subjects = Subject::all();
+        $audiences = Audience::all();
+        $teachers = Teacher::all();
+        $courses = Course::all();
+        $departments = Department::all();
+
+        return view('substitution.edit', [
+            'substitution' => $substitution,
+            'orders' => $orders,
+            'groups' => $groups,
+            'courses' => $courses,
+            'departments' => $departments,
+            'subjects' => $subjects,
+            'audiences' => $audiences,
+            'teachers' => $teachers,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Substitution $substitution)
+    public function update(UpdateSubstitutionRequest $request, Substitution $substitution)
     {
-        //
+        $formFields = $request->validated();
+
+        $substitution->update($formFields);
+
+        return back();
     }
 
     /**
@@ -63,6 +93,8 @@ class SubstitutionController extends Controller
      */
     public function destroy(Substitution $substitution)
     {
-        //
+        $substitution->delete();
+
+        return back();
     }
 }
