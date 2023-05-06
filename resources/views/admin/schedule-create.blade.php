@@ -6,17 +6,6 @@
                 <form class="form-fields" action="{{ route('schedule.store') }}" method="post">
                     @csrf
                     <div class="label-and-input">
-                        <label for="order_id" class="">Порядок пары</label>
-                        <select name="order_id" id="order_id">
-                            @foreach($orders as $order)
-                                <option value="{{ $order->id }}">{{ $order->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    @error('order_id')
-                    <p>{{ $message }}</p>
-                    @enderror
-                    <div class="label-and-input">
                         <label for="group_id" class="">Группа</label>
                         <select name="group_id" id="group_id">
                             @foreach($groups->sortBy('name') as $group)
@@ -58,6 +47,28 @@
                         </select>
                     </div>
                     @error('subject_id')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="label-and-input">
+                        <label for="order_id" class="">Порядок пары</label>
+                        <select name="order_id" id="order_id">
+                            @foreach($orders as $order)
+                                <option value="{{ $order->id }}">{{ $order->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('order_id')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="label-and-input">
+                        <label for="part_id" class="">Половина</label>
+                        <select name="part_id" id="part_id">
+                            @foreach($parts as $part)
+                                <option value="{{ $part->id }}">{{ $part->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('part_id')
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">

@@ -49,4 +49,9 @@ class Schedule extends Model
     {
         return $this->belongsTo(Department::class);
     }
+
+    public function part(): BelongsTo
+    {
+        return $this->belongsTo(Part::class);
+    }
 }

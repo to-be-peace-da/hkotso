@@ -28,6 +28,7 @@ class ScheduleFactory extends Factory
             'group_id' => Group::factory(),
             'course_id' => rand(1, 4),
             'department_id' => rand(1, 3),
+            'part_id' => rand(1, 2),
         ];
     }
 }

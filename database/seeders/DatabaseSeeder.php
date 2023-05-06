@@ -9,6 +9,7 @@ use App\Models\Day;
 use App\Models\Department;
 use App\Models\News;
 use App\Models\Order;
+use App\Models\Part;
 use App\Models\Schedule;
 use App\Models\Substitution;
 use App\Models\User;
@@ -163,9 +164,21 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        News::factory(50)->create();
+        Part::create(
+            [
+                'name' => 'Числитель'
+            ]
+        );
+
+        Part::create(
+            [
+                'name' => 'Знаменатель'
+            ]
+        );
+
+        News::factory(10)->create();
         Advertisement::factory(10)->create();
-        Schedule::factory(100)->create();
+        Schedule::factory(10)->create();
         Substitution::factory(10)->create();
     }
 }

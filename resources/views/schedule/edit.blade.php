@@ -2,14 +2,19 @@
     <div class="even">
         <div class="container">
             <div class="form-wrapper">
-                <h2>Добавление замены</h2>
-                <form class="form-fields" action="{{ route('substitution.store') }}" method="post">
+                <h2>Изменение расписания</h2>
+                <form class="form-fields" action="{{ route('schedule.update', $schedule) }}" method="post">
+                    @method('PUT')
                     @csrf
                     <div class="label-and-input">
                         <label for="group_id" class="">Группа</label>
                         <select name="group_id" id="group_id">
                             @foreach($groups->sortBy('name') as $group)
-                                <option value="{{ $group->id }}">{{ $group->name }}</option>
+                                <option
+                                    @if($schedule->group->id === $group->id)
+                                        selected
+                                    @endif
+                                    value="{{ $group->id }}">{{ $group->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -20,7 +25,11 @@
                         <label for="course_id" class="">Курс</label>
                         <select name="course_id" id="course_id">
                             @foreach($courses as $course)
-                                <option value="{{ $course->id }}">{{ $course->name }}</option>
+                                <option
+                                    @if($schedule->course->id === $course->id)
+                                        selected
+                                    @endif
+                                    value="{{ $course->id }}">{{ $course->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -31,7 +40,11 @@
                         <label for="department_id" class="">Отделение</label>
                         <select name="department_id" id="department_id">
                             @foreach($departments->sortBy('name') as $department)
-                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                <option
+                                    @if($schedule->department->id === $department->id)
+                                        selected
+                                    @endif
+                                    value="{{ $department->id }}">{{ $department->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -42,7 +55,11 @@
                         <label for="subject_id" class="">Пара</label>
                         <select name="subject_id" id="subject_id">
                             @foreach($subjects->sortBy('name') as $subject)
-                                <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+                                <option
+                                    @if($schedule->subject->id === $subject->id)
+                                        selected
+                                    @endif
+                                    value="{{ $subject->id }}">{{ $subject->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -53,7 +70,11 @@
                         <label for="order_id" class="">Порядок пары</label>
                         <select name="order_id" id="order_id">
                             @foreach($orders as $order)
-                                <option value="{{ $order->id }}">{{ $order->name }}</option>
+                                <option
+                                    @if($schedule->order->id === $order->id)
+                                        selected
+                                    @endif
+                                    value="{{ $order->id }}">{{ $order->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -61,10 +82,29 @@
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
+                        <label for="part_id" class="">Половина</label>
+                        <select name="part_id" id="part_id">
+                            @foreach($parts as $part)
+                                <option
+                                    @if($schedule->part->id === $part->id)
+                                        selected
+                                    @endif
+                                    value="{{ $part->id }}">{{ $part->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('part_id')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="label-and-input">
                         <label for="audience_id" class="">Кабинет</label>
                         <select name="audience_id" id="audience_id">
                             @foreach($audiences->sortBy('number') as $audience)
-                                <option value="{{ $audience->id }}">{{ $audience->number }}</option>
+                                <option
+                                    @if($schedule->audience->id === $audience->id)
+                                        selected
+                                    @endif
+                                    value="{{ $audience->id }}">{{ $audience->number }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -76,6 +116,9 @@
                         <select name="teacher_id" id="teacher_id">
                             @foreach($teachers->sortBy('surname') as $teacher)
                                 <option
+                                    @if($schedule->teacher->id === $teacher->id)
+                                        selected
+                                    @endif
                                     value="{{ $teacher->id }}">{{ $teacher->surname . " " . $teacher->name . " " . $teacher->patronymic }}</option>
                             @endforeach
                         </select>
@@ -84,13 +127,21 @@
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
-                        <label for="date" class="">День</label>
-                        <input type="date" name="date" id="date">
+                        <label for="day_id" class="">День</label>
+                        <select name="day_id" id="day_id">
+                            @foreach($days as $day)
+                                <option
+                                    @if($schedule->day->id === $day->id)
+                                        selected
+                                    @endif
+                                    value="{{ $day->id }}">{{ $day->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
-                    @error('date')
+                    @error('day_id')
                     <p>{{ $message }}</p>
                     @enderror
-                    <button type="submit" class="">Создать</button>
+                    <button type="submit" class="">Изменить</button>
                 </form>
             </div>
         </div>

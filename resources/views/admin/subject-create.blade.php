@@ -7,7 +7,7 @@
                     @csrf
                     <div class="label-and-input">
                         <label for="name" class="">Наименование</label>
-                        <input type="text" name="name" id="name" placeholder="Разработка дизайна веб-приложений">
+                        <input autofocus autocomplete="off" type="text" name="name" id="name" placeholder="Разработка дизайна веб-приложений">
                     </div>
                     @error('name')
                     <p>{{ $message }}</p>

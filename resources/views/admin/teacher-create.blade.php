@@ -7,21 +7,21 @@
                     @csrf
                     <div class="label-and-input">
                         <label for="surname" class="">Фамилия</label>
-                        <input type="text" name="surname" id="surname" placeholder="Музыко" value="{{ old('surname') }}">
+                        <input autofocus autocomplete="off" type="text" name="surname" id="surname" placeholder="Музыко" value="{{ old('surname') }}">
                     </div>
                     @error('surname')
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
                         <label for="name" class="">Имя</label>
-                        <input type="text" name="name" id="name" placeholder="Никита" value="{{ old('name') }}">
+                        <input autocomplete="off" type="text" name="name" id="name" placeholder="Никита" value="{{ old('name') }}">
                     </div>
                     @error('name')
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
                         <label for="patronymic" class="">Отчество</label>
-                        <input type="text" name="patronymic" id="patronymic" placeholder="Александрович" value="{{ old('patronymic') }}">
+                        <input autocomplete="off" type="text" name="patronymic" id="patronymic" placeholder="Александрович" value="{{ old('patronymic') }}">
                     </div>
                     @error('patronymic')
                     <p>{{ $message }}</p>

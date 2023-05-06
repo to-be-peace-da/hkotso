@@ -532,7 +532,7 @@ header {
     top: 0;
     width: 100%;
 
-    border-bottom: 1px solid $light-gray;
+    //border-bottom: 1px solid $light-gray;
     background: white;
 
     nav {
@@ -1215,7 +1215,7 @@ footer {
 
         .items {
             display: grid;
-            grid-template-columns: 1fr 5fr 5fr 1fr;
+            grid-template-columns: 3fr 7fr 7fr 1fr 1.5fr;
         }
     }
 }

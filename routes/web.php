@@ -156,6 +156,21 @@ Route::post('/schedules', [ScheduleController::class, 'store'])
     ->middleware('admin')
     ->name('schedule.store');
 
+// Schedule Edit
+Route::get('/schedule/{schedule}/edit', [ScheduleController::class, 'edit'])
+    ->middleware('admin')
+    ->name('schedule.edit');
+
+// Schedule Update
+Route::put('/schedule/{schedule}', [ScheduleController::class, 'update'])
+    ->middleware('admin')
+    ->name('schedule.update');
+
+// Schedule Destroy
+Route::delete('/schedule/{schedule}', [ScheduleController::class, 'destroy'])
+    ->middleware('admin')
+    ->name('schedule.destroy');
+
 //! SUBSTITUTIONS
 
 // Substitution Store

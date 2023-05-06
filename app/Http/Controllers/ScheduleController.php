@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ShowScheduleRequest;
 use App\Http\Requests\StoreScheduleRequest;
+use App\Http\Requests\UpdateScheduleRequest;
+use App\Models\Audience;
 use App\Models\Course;
 use App\Models\Day;
 use App\Models\Department;
 use App\Models\Group;
+use App\Models\Order;
+use App\Models\Part;
 use App\Models\Schedule;
+use App\Models\Subject;
 use App\Models\Substitution;
+use App\Models\Teacher;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
@@ -80,15 +85,40 @@ class ScheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
-        //
+        $orders = Order::all();
+        $groups = Group::all();
+        $subjects = Subject::all();
+        $audiences = Audience::all();
+        $teachers = Teacher::all();
+        $days = Day::all();
+        $courses = Course::all();
+        $departments = Department::all();
+        $parts = Part::all();
+
+        return view('schedule.edit', [
+            'schedule' => $schedule,
+            'orders' => $orders,
+            'groups' => $groups,
+            'courses' => $courses,
+            'departments' => $departments,
+            'subjects' => $subjects,
+            'audiences' => $audiences,
+            'teachers' => $teachers,
+            'days' => $days,
+            'parts' => $parts,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Schedule $schedule)
+    public function update(UpdateScheduleRequest $request, Schedule $schedule)
     {
-        //
+        $formFields = $request->validated();
+
+        $schedule->update($formFields);
+
+        return back();
     }
 
     /**
@@ -96,6 +126,8 @@ class ScheduleController extends Controller
      */
     public function destroy(Schedule $schedule)
     {
-        //
+        $schedule->delete();
+
+        return back();
     }
 }

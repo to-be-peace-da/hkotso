@@ -65,7 +65,6 @@
                                         </div>
                                     </div>
                                 @endif
-
                             @endforeach
                         </div>
                     </div>
@@ -94,7 +93,7 @@
                                     <div class="schedule-items">
                                         <div class="items">
                                             <div class="item">
-                                                <p>{{ $schedule->order->name }}</p>
+                                                <p>{{ $schedule->order->name . ' - ' . $schedule->part->name}}</p>
                                             </div>
                                             <div class="item">
                                                 <p>{{ $schedule->subject->name }}</p>
@@ -105,6 +104,25 @@
                                             </div>
                                             <div class="item">
                                                 <p>{{ $schedule->audience->number }}</p>
+                                            </div>
+                                            <div class="item">
+                                                <div class="admin-tools">
+                                                    @if(auth()->check() && auth()->user()->is_admin)
+                                                        <form action="{{ route('schedule.destroy', $schedule) }}"
+                                                              method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit"
+                                                                    onclick="return confirm('Вы уверены, что хотите удалить это?')">
+                                                                <i class="fa-solid fa-trash"></i></button>
+                                                        </form>
+                                                        <form action="{{ route('schedule.edit', $schedule) }}"
+                                                              method="get">
+                                                            <button type="submit"><i class="fa-solid fa-pen"></i>
+                                                            </button>
+                                                        </form>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -117,80 +135,3 @@
         </div>
     </div>
 </x-layout>
-
-{{--<x-layout>--}}
-{{--    <div class="even">--}}
-{{--        <div class="container">--}}
-{{--            <div class="schedule">--}}
-{{--                <div class="title">--}}
-{{--                    <h1>{{ $schedules->first()->group->name . " - " . $schedules->first()->department->name . " - " . $schedules->first()->course->name . " курс" }}</h1>--}}
-{{--                </div>--}}
-{{--                @foreach($days as $day)--}}
-{{--                    <div class="day">--}}
-{{--                        <h2>{{ $day->name }}</h2>--}}
-{{--                    </div>--}}
-{{--                    @php--}}
-{{--                        $substitutionShowed = false;--}}
-{{--                    @endphp--}}
-{{--                    @foreach($substitutions->where('day_id', '=', $day->id) as $substitution)--}}
-{{--                        @if($substitutionShowed === false)--}}
-{{--                            <p>Замена на {{ \Carbon\Carbon::create($substitution->date)->format('d.m.Y') }}</p>--}}
-{{--                            <table class="table">--}}
-{{--                                <thead>--}}
-{{--                                <tr>--}}
-{{--                                    <td>№</td>--}}
-{{--                                    <td>Пара</td>--}}
-{{--                                    <td>Преподаватель</td>--}}
-{{--                                    <td>Кабинет</td>--}}
-{{--                                </tr>--}}
-{{--                                </thead>--}}
-{{--                                @endif--}}
-{{--                                @php--}}
-{{--                                    $substitutionShowed = true;--}}
-{{--                                @endphp--}}
-{{--                                <tbody>--}}
-{{--                                @if($substitution->day->id === $day->id)--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $substitution->order->name }}</td>--}}
-{{--                                        <td>{{ $substitution->subject->name }}</td>--}}
-{{--                                        <td>--}}
-{{--                                            <a href="{{ route('teacher.show', $substitution->teacher) }}">{{ $substitution->teacher->surname .  " " . $substitution->teacher->name . ". " . $substitution->teacher->patronymic . "." }}</a>--}}
-{{--                                        </td>--}}
-{{--                                        <td>{{ $substitution->audience->number }}</td>--}}
-{{--                                    </tr>--}}
-{{--                                @endif--}}
-{{--                                </tbody>--}}
-{{--                                @endforeach--}}
-{{--                            </table>--}}
-
-{{--                            <p>=============================================================================</p>--}}
-
-{{--                            <table class="table">--}}
-{{--                                <thead>--}}
-{{--                                <tr>--}}
-{{--                                    <td>№</td>--}}
-{{--                                    <td>Пара</td>--}}
-{{--                                    <td>Преподаватель</td>--}}
-{{--                                    <td>Кабинет</td>--}}
-{{--                                </tr>--}}
-{{--                                </thead>--}}
-{{--                                <tbody>--}}
-{{--                                @foreach($schedules->sortBy('order_id') as $schedule)--}}
-{{--                                    @if($schedule->day->id === $day->id)--}}
-{{--                                        <tr>--}}
-{{--                                            <td>{{ $schedule->order->name }}</td>--}}
-{{--                                            <td>{{ $schedule->subject->name }}</td>--}}
-{{--                                            <td>--}}
-{{--                                                <a href="{{ route('teacher.show', $schedule->teacher) }}">{{ $schedule->teacher->surname .  " " . $schedule->teacher->name . " " . $schedule->teacher->patronymic . " " }}</a>--}}
-{{--                                            </td>--}}
-{{--                                            <td>{{ $schedule->audience->number }}</td>--}}
-{{--                                        </tr>--}}
-{{--                                    @endif--}}
-{{--                                @endforeach--}}
-{{--                                </tbody>--}}
-{{--                            </table>--}}
-{{--                            @endforeach--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</x-layout>--}}
