@@ -323,6 +323,41 @@ template {
   display: none;
 }
 
+.uniq-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.uniq-wrapper .uniq-fields {
+  background: white;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.uniq-wrapper .uniq-fields .label-and-input {
+  display: flex;
+  align-items: center;
+}
+.uniq-wrapper .uniq-fields .label-and-input label {
+  display: flex;
+  width: 150px;
+}
+.uniq-wrapper .uniq-fields .label-and-input select, .uniq-wrapper .uniq-fields .label-and-input input {
+  border: none;
+  padding: 5px;
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  width: 500px;
+}
+.uniq-wrapper .uniq-fields button {
+  border: none;
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  width: 200px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
 .even {
   padding: 40px 0;
   background: rgb(243, 244, 244);
@@ -917,6 +952,8 @@ footer .copyright-logo-links .links ul {
   padding: 20px 0 !important;
 }
 .schedule-and-substitution .title {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 .schedule-and-substitution .even .container, .schedule-and-substitution .odd .container {

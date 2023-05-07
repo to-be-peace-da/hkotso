@@ -8,9 +8,17 @@
                     @csrf
                     <div class="label-and-input">
                         <label for="news_name" class="">Заголовок</label>
-                        <input autofocus autocomplete="off" name="name" type="text" class="form-control" id="news_name" value="{{ old('name') }}">
+                        <input autofocus autocomplete="off" name="name" type="text" class="form-control" id="news_name"
+                               value="{{ old('name') }}">
                     </div>
                     @error('name')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="img">
+                        <label class="" for="news_image">Обложка</label>
+                        <input name="image" type="file" class="" id="news_image">
+                    </div>
+                    @error('image')
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
@@ -20,16 +28,24 @@
                     @error('text')
                     <p>{{ $message }}</p>
                     @enderror
-                    <div class="img">
-                        <label class="" for="news_image">Изображение</label>
-                        <input name="image" type="file" class="" id="news_image">
-                    </div>
-                    @error('image')
-                    <p>{{ $message }}</p>
-                    @enderror
                     <button type="submit" class="">Создать</button>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        // $('#news_text').summernote({
+        //     tabsize: 2,
+        //     height: 540,
+        //     toolbar: [
+        //         ['style', ['style']],
+        //         ['font', ['bold', 'underline', 'clear']],
+        //         ['color', ['color']],
+        //         ['para', ['ul', 'ol', 'paragraph']],
+        //         ['table', ['table']],
+        //         ['insert', ['link', 'video']],
+        //         ['view', ['fullscreen', 'codeview', 'help']]
+        //     ]
+        // });
+    </script>
 </x-layout>

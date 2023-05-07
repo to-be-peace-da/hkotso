@@ -5,6 +5,11 @@
             <div class="container">
                 <div class="title">
                     <h1>{{ $schedules->first()->group->name . " - " . $schedules->first()->department->name . " - " . $schedules->first()->course->name . " курс" }}</h1>
+                    @if(Carbon::now()->weekOfYear % 2 === 0)
+                        <h1>{{ Carbon::now()->format('d.m.Y') }} - Знаменатель</h1>
+                    @else
+                        <h1>{{ Carbon::now()->format('d.m.Y') }} - Числитель</h1>
+                    @endif
                 </div>
             </div>
             @foreach($days as $day)
@@ -65,8 +70,9 @@
                                             <div class="item">
                                                 <div class="admin-tools">
                                                     @if(auth()->check() && auth()->user()->is_admin)
-                                                        <form action="{{ route('substitution.destroy', $substitution) }}"
-                                                              method="post">
+                                                        <form
+                                                            action="{{ route('substitution.destroy', $substitution) }}"
+                                                            method="post">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"

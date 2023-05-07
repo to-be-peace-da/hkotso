@@ -20,7 +20,7 @@
                                     <h2>{{ Str::of($singleNews->name)->limit(60) }}</h2>
                                 </div>
                                 <div class="text">
-                                    <p>{{ Str::of($singleNews->text)->limit(100) }}</p>
+                                    <p>{{ strip_tags(Str::of($singleNews->text)->limit(100)) }}</p>
                                 </div>
                                 <div class="release-date">
                                     <h3>{{ $singleNews->created_at->format('d.m.Y h:m') }}</h3>

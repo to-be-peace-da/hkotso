@@ -375,6 +375,48 @@ template {
     display: none;
 }
 
+.uniq-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .uniq-fields {
+        background: white;
+        padding: 30px;
+        border-radius: 5px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .label-and-input {
+            display: flex;
+            align-items: center;
+
+            label {
+                display: flex;
+                width: 150px;
+            }
+
+            select, input {
+                border: none;
+                padding: 5px;
+                box-shadow: $dark-gray 0 0 1.5px;
+                width: 500px;
+            }
+        }
+
+        button {
+            border: none;
+            box-shadow: $dark-gray 0 0 1.5px;
+
+            width: 200px;
+            padding: 5px;
+            margin-top: 20px;
+        }
+    }
+}
+
 .even {
     padding: 40px 0;
     background: $even;
@@ -1174,11 +1216,12 @@ footer {
     }
 
     .title {
+        display: flex;
+        justify-content: space-between;
         margin-bottom: 20px;
     }
 
     .even, .odd {
-
         .container {
             display: flex;
             flex-direction: column;

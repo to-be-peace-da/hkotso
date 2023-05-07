@@ -7,3 +7,11 @@ oddElements.forEach(function (e) {
         oddParent.classList.add('extra-padding-for-odd');
     }
 });
+
+const adminTools = document.querySelectorAll('.admin-tools');
+
+adminTools.forEach((tool) => {
+    if (!tool.querySelector('form')) {
+        tool.style.display = 'none';
+    }
+});

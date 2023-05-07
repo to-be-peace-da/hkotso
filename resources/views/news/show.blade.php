@@ -6,8 +6,8 @@
                     <h1>Все новости</h1>
                 </a>
             </div>
-            <div class="single-news">
-                <div class="content">
+            <div class="single-news uniq-wrapper">
+                <div class="content uniq-fields">
                     <div class="img"
                          style="background: url({{ $singleNews->image ? asset('storage/' . $singleNews->image) : asset('storage/news_images/default.jpg') }})">
                     </div>

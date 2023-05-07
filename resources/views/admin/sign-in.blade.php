@@ -1,8 +1,8 @@
 <x-layout>
     <div class="even">
         <div class="container">
-            <div class="auth-wrapper">
-                <form class="auth-form" action="{{ route('admin.authenticate') }}" method="post">
+            <div class="auth-wrapper uniq-wrapper">
+                <form class="auth-form uniq-fields" action="{{ route('admin.authenticate') }}" method="post">
                     @csrf
                     <h1>Вход</h1>
                     <div class="input">

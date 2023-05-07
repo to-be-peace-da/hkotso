@@ -7,8 +7,8 @@
                 </a>
             </div>
             <div class="single-news-edit">
-                <div class="content">
-                    <form action="{{ route('news.update', $singleNews) }}" method="post" enctype="multipart/form-data">
+                <div class="content form-wrapper">
+                    <form class="form-fields" action="{{ route('news.update', $singleNews) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="img-wrapper">
@@ -16,7 +16,7 @@
                                  style="background: url({{ $singleNews->image ? asset('storage/' . $singleNews->image) : asset('storage/news_images/default.jpg') }})">
                             </div>
                             <div class="label-and-input">
-                                <label for="news_image">Изображение</label>
+                                <label for="news_image">Обложка</label>
                                 <input type="file" name="image" id="news_image" value="{{ $singleNews->image }}">
                                 @error('image')
                                 <p>{{ $message }}</p>
@@ -46,4 +46,19 @@
             </div>
         </div>
     </div>
+{{--    <script>--}}
+{{--        $('#news_text').summernote({--}}
+{{--            tabsize: 2,--}}
+{{--            height: 540,--}}
+{{--            toolbar: [--}}
+{{--                ['style', ['style']],--}}
+{{--                ['font', ['bold', 'underline', 'clear']],--}}
+{{--                ['color', ['color']],--}}
+{{--                ['para', ['ul', 'ol', 'paragraph']],--}}
+{{--                ['table', ['table']],--}}
+{{--                ['insert', ['link', 'video']],--}}
+{{--                ['view', ['fullscreen', 'codeview', 'help']]--}}
+{{--            ]--}}
+{{--        });--}}
+{{--    </script>--}}
 </x-layout>
