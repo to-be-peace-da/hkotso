@@ -7,8 +7,9 @@
                 </a>
             </div>
             <div class="single-news-edit">
-                <div class="content form-wrapper">
-                    <form class="form-fields" action="{{ route('news.update', $singleNews) }}" method="post" enctype="multipart/form-data">
+                <div class="content uniq-wrapper">
+                    <form class="uniq-fields" action="{{ route('news.update', $singleNews) }}" method="post"
+                          enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="img-wrapper">
@@ -40,7 +41,9 @@
                         <div class="release-date">
                             <h3>{{ $singleNews->created_at->format('d.m.Y h:m') }}</h3>
                         </div>
-                        <button type="submit">Изменить</button>
+                        <button type="submit" class="edit">Изменить</button>
+                        {{--                        <button id="add_link" type="button" class="">Добавить ссылку</button>--}}
+                        {{--                        <button id="bold_selected_text" type="button" class="">B</button>--}}
                     </form>
                 </div>
             </div>
@@ -49,13 +52,13 @@
 {{--    <script>--}}
 {{--        $('#news_text').summernote({--}}
 {{--            tabsize: 2,--}}
-{{--            height: 540,--}}
+{{--            height: 500,--}}
 {{--            toolbar: [--}}
 {{--                ['style', ['style']],--}}
 {{--                ['font', ['bold', 'underline', 'clear']],--}}
 {{--                ['color', ['color']],--}}
 {{--                ['para', ['ul', 'ol', 'paragraph']],--}}
-{{--                ['table', ['table']],--}}
+{{--                // ['table', ['table']],--}}
 {{--                ['insert', ['link', 'video']],--}}
 {{--                ['view', ['fullscreen', 'codeview', 'help']]--}}
 {{--            ]--}}

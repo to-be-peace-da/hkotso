@@ -54,4 +54,9 @@ class Schedule extends Model
     {
         return $this->belongsTo(Part::class);
     }
+
+    public function semester(): BelongsTo
+    {
+        return $this->belongsTo(Semester::class);
+    }
 }

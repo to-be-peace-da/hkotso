@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Audience;
 use App\Models\Group;
 use App\Models\Schedule;
 use App\Models\Subject;
@@ -22,13 +21,14 @@ class ScheduleFactory extends Factory
 
             'order_id' => rand(1, 7),
             'subject_id' => Subject::factory(),
-            'audience_id' => Audience::factory(),
+            'audience_id' => rand(1, 500),
             'teacher_id' => Teacher::factory(),
             'day_id' => rand(1, 7),
             'group_id' => Group::factory(),
             'course_id' => rand(1, 4),
             'department_id' => rand(1, 3),
             'part_id' => rand(1, 2),
+            'semester_id' => rand(1, 2),
         ];
     }
 }

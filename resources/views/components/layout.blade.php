@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -106,7 +106,8 @@
                         <div class="links">
                             <ul>
                                 <li><a target="_blank" href="https://vk.com/stimulcollege"><i
-                                            class="fa-brands fa-vk"></i>ВКонтакте</a></li>
+                                            class="fa-brands fa-vk"></i>ВКонтакте</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

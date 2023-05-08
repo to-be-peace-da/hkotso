@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('audiences', function (Blueprint $table) {
             $table->id();
-            $table->string('number');
+            $table->string('number')->unique();
             $table->timestamps();
         });
     }

@@ -25,7 +25,7 @@ class SubstitutionFactory extends Factory
 
             'order_id' => rand(1, 7),
             'subject_id' => Subject::factory(),
-            'audience_id' => Audience::factory(),
+            'audience_id' => rand(1, 500),
             'teacher_id' => Teacher::factory(),
             'day_id' => rand(1, 7),
             'group_id' => Group::factory(),

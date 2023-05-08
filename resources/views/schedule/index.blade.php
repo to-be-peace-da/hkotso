@@ -27,6 +27,14 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="label-and-input">
+                        <label for="semester">Полугодие</label>
+                        <select class="" id="semester" name="semester_id">
+                            @foreach($semesters as $semester)
+                                <option value="{{ $semester->id }}">{{ $semester->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <button type="submit">Показать</button>
                 </form>
             </div>

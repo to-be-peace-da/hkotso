@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Advertisement;
+use App\Models\Audience;
 use App\Models\Course;
 use App\Models\Day;
 use App\Models\Department;
@@ -11,6 +12,7 @@ use App\Models\News;
 use App\Models\Order;
 use App\Models\Part;
 use App\Models\Schedule;
+use App\Models\Semester;
 use App\Models\Substitution;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -175,6 +177,26 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Знаменатель'
             ]
         );
+
+        Semester::create(
+            [
+                'name' => 'Первое'
+            ]
+        );
+
+        Semester::create(
+            [
+                'name' => 'Второе'
+            ]
+        );
+
+        $audiences = range(1, 500);
+
+        foreach ($audiences as $audience) {
+            Audience::create([
+                'number' => $audience
+            ]);
+        }
 
         News::factory(10)->create();
         Advertisement::factory(10)->create();

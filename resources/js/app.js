@@ -15,3 +15,33 @@ adminTools.forEach((tool) => {
         tool.style.display = 'none';
     }
 });
+
+//! CUSTOM EDITOR
+
+// let noteEditable = document.querySelector('.note-editable');
+// let noteToolbar = document.querySelector('.note-toolbar');
+// let noteEditor = document.querySelector('.note-editor.note-frame');
+//
+// noteEditable.style.background = "white";
+// noteToolbar.style.background = "white";
+// noteEditor.style.border = "none";
+// noteEditor.style.boxShadow = "rgb(30, 30, 30) 0 0 2px";
+
+// function addLink() {
+//     let link = prompt("Введите адрес ссылки:");
+//     let linkText = prompt("Текст отображения");
+//     let linkHtml = ` <a href="${link}" target="_blank">${linkText}</a> `;
+//     let textarea = document.querySelector('#news_text');
+//     textarea.value += linkHtml;
+// }
+//
+// function boldSelectedText() {
+//     let textarea = document.querySelector('#news_text');
+//     let selectedText = textarea.value.substring(textarea.selectionStart, textarea.selectionEnd);
+//     let modifiedText = ` <span style="font-weight:bold">${selectedText}</span> `;
+//     textarea.value = textarea.value.substring(0, textarea.selectionStart) + modifiedText + textarea.value.substring(textarea.selectionEnd);
+// }
+//
+//
+// document.querySelector('#add_link').addEventListener('click', addLink);
+// document.querySelector('#bold_selected_text').addEventListener('click', boldSelectedText);

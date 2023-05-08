@@ -350,7 +350,7 @@ template {
   box-shadow: rgb(30, 30, 30) 0 0 1.5px;
   width: 500px;
 }
-.uniq-wrapper .uniq-fields button {
+.uniq-wrapper .uniq-fields button.edit {
   border: none;
   box-shadow: rgb(30, 30, 30) 0 0 1.5px;
   width: 200px;
@@ -496,6 +496,7 @@ header nav button {
 }
 header nav ul {
   display: flex;
+  align-items: center;
   gap: 20px;
   list-style: none;
 }
@@ -610,7 +611,7 @@ header nav div.logo img {
   padding: 5px;
   resize: none;
 }
-.news-create .form-fields button {
+.news-create .form-fields button.create {
   border: none;
   box-shadow: rgb(30, 30, 30) 0 0 1.5px;
   width: 200px;
@@ -862,13 +863,22 @@ footer .copyright-logo-links .links ul {
   line-height: 1.5;
 }
 
+.single-news iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: 695px;
+}
 .single-news .content {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
+.single-news .content a {
+  font-weight: bold;
+  text-decoration: underline;
+}
 .single-news .content .img {
-  height: 200px;
+  height: 322px;
   width: 100%;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -891,6 +901,13 @@ footer .copyright-logo-links .links ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.single-news-edit .content form button.edit {
+  border: none;
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  width: 200px;
+  padding: 5px;
+  margin-top: 20px;
 }
 .single-news-edit .content form .name input,
 .single-news-edit .content form .text textarea {

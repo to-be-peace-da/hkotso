@@ -28,24 +28,24 @@
                     @error('text')
                     <p>{{ $message }}</p>
                     @enderror
-                    <button type="submit" class="">Создать</button>
+                    <button type="submit" class="create">Создать</button>
                 </form>
             </div>
         </div>
     </div>
-    <script>
-        // $('#news_text').summernote({
-        //     tabsize: 2,
-        //     height: 540,
-        //     toolbar: [
-        //         ['style', ['style']],
-        //         ['font', ['bold', 'underline', 'clear']],
-        //         ['color', ['color']],
-        //         ['para', ['ul', 'ol', 'paragraph']],
-        //         ['table', ['table']],
-        //         ['insert', ['link', 'video']],
-        //         ['view', ['fullscreen', 'codeview', 'help']]
-        //     ]
-        // });
-    </script>
+{{--    <script>--}}
+{{--        $('#news_text').summernote({--}}
+{{--            tabsize: 2,--}}
+{{--            height: 500,--}}
+{{--            toolbar: [--}}
+{{--                ['style', ['style']],--}}
+{{--                ['font', ['bold', 'underline', 'clear']],--}}
+{{--                ['color', ['color']],--}}
+{{--                ['para', ['ul', 'ol', 'paragraph']],--}}
+{{--                // ['table', ['table']],--}}
+{{--                ['insert', ['link', 'video']],--}}
+{{--                ['view', ['fullscreen', 'codeview', 'help']]--}}
+{{--            ]--}}
+{{--        });--}}
+{{--    </script>--}}
 </x-layout>

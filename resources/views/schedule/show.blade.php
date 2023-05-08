@@ -4,11 +4,11 @@
         <div class="schedule-and-substitution">
             <div class="container">
                 <div class="title">
-                    <h1>{{ $schedules->first()->group->name . " - " . $schedules->first()->department->name . " - " . $schedules->first()->course->name . " курс" }}</h1>
+                    <h2>{{ $schedules->first()->group->name . " - " . $schedules->first()->department->name . " - " . $schedules->first()->course->name . " курс - " . $schedules->first()->semester->name . " полугодие"}}</h2>
                     @if(Carbon::now()->weekOfYear % 2 === 0)
-                        <h1>{{ Carbon::now()->format('d.m.Y') }} - Знаменатель</h1>
+                        <h2>{{ Carbon::now()->format('d.m.Y') }} - Знаменатель</h2>
                     @else
-                        <h1>{{ Carbon::now()->format('d.m.Y') }} - Числитель</h1>
+                        <h2>{{ Carbon::now()->format('d.m.Y') }} - Числитель</h2>
                     @endif
                 </div>
             </div>

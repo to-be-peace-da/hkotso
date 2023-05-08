@@ -13,6 +13,7 @@ use App\Models\Group;
 use App\Models\Order;
 use App\Models\Part;
 use App\Models\Schedule;
+use App\Models\Semester;
 use App\Models\Subject;
 use App\Models\Substitution;
 use App\Models\Teacher;
@@ -28,11 +29,13 @@ class ScheduleController extends Controller
         $groups = Group::all();
         $courses = Course::all();
         $departments = Department::all();
+        $semesters = Semester::all();
 
         return view('schedule.index', [
             'groups' => $groups,
             'courses' => $courses,
             'departments' => $departments,
+            'semesters' => $semesters,
         ]);
     }
 
@@ -65,7 +68,8 @@ class ScheduleController extends Controller
         $schedules = Schedule::where('group_id', '=', $request->group_id)
             ->where('course_id', '=', $request->course_id)
             ->where('department_id', '=', $request->department_id)
-            ->with('day', 'subject', 'teacher', 'order', 'audience', 'department', 'course')
+            ->where('semester_id', '=', $request->semester_id)
+            ->with('day', 'subject', 'teacher', 'order', 'audience', 'department', 'course', 'semester')
             ->get()
             ->sortBy('order_id');
 
@@ -94,6 +98,7 @@ class ScheduleController extends Controller
         $courses = Course::all();
         $departments = Department::all();
         $parts = Part::all();
+        $semesters = Semester::all();
 
         return view('schedule.edit', [
             'schedule' => $schedule,
@@ -106,6 +111,7 @@ class ScheduleController extends Controller
             'teachers' => $teachers,
             'days' => $days,
             'parts' => $parts,
+            'semesters' => $semesters,
         ]);
     }
 

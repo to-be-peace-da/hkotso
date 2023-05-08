@@ -52,6 +52,21 @@
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
+                        <label for="semester_id" class="">Полугодие</label>
+                        <select name="semester_id" id="semester_id">
+                            @foreach($semesters as $semester)
+                                <option
+                                    @if($schedule->semester->id === $semester->id)
+                                        selected
+                                    @endif
+                                    value="{{ $semester->id }}">{{ $semester->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('semester_id')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="label-and-input">
                         <label for="subject_id" class="">Пара</label>
                         <select name="subject_id" id="subject_id">
                             @foreach($subjects->sortBy('name') as $subject)
@@ -98,15 +113,16 @@
                     @enderror
                     <div class="label-and-input">
                         <label for="audience_id" class="">Кабинет</label>
-                        <select name="audience_id" id="audience_id">
-                            @foreach($audiences->sortBy('number') as $audience)
-                                <option
-                                    @if($schedule->audience->id === $audience->id)
-                                        selected
-                                    @endif
-                                    value="{{ $audience->id }}">{{ $audience->number }}</option>
-                            @endforeach
-                        </select>
+                        <input type="number" id="audience_id" name="audience_id" value="{{ $schedule->audience->id }}">
+                        {{--                        <select name="audience_id" id="audience_id">--}}
+                        {{--                            @foreach($audiences->sortBy('number') as $audience)--}}
+                        {{--                                <option--}}
+                        {{--                                    @if($schedule->audience->id === $audience->id)--}}
+                        {{--                                        selected--}}
+                        {{--                                    @endif--}}
+                        {{--                                    value="{{ $audience->id }}">{{ $audience->number }}</option>--}}
+                        {{--                            @endforeach--}}
+                        {{--                        </select>--}}
                     </div>
                     @error('audience_id')
                     <p>{{ $message }}</p>

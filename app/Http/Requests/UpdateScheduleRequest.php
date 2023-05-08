@@ -32,6 +32,7 @@ class UpdateScheduleRequest extends FormRequest
             'course_id' => ['required'],
             'department_id' => ['required'],
             'part_id' => ['required'],
+            'semester_id' => ['required'],
         ];
     }
 }

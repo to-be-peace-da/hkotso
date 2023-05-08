@@ -10,6 +10,7 @@ use App\Models\Department;
 use App\Models\Group;
 use App\Models\Order;
 use App\Models\Part;
+use App\Models\Semester;
 use App\Models\Subject;
 use App\Models\Teacher;
 
@@ -67,6 +68,7 @@ class AdminController extends Controller
         $courses = Course::all();
         $departments = Department::all();
         $parts = Part::all();
+        $semesters = Semester::all();
 
         return view('admin.schedule-create', [
             'orders' => $orders,
@@ -78,6 +80,7 @@ class AdminController extends Controller
             'teachers' => $teachers,
             'days' => $days,
             'parts' => $parts,
+            'semesters' => $semesters,
         ]);
     }
 

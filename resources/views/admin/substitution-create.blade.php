@@ -62,11 +62,12 @@
                     @enderror
                     <div class="label-and-input">
                         <label for="audience_id" class="">Кабинет</label>
-                        <select name="audience_id" id="audience_id">
-                            @foreach($audiences->sortBy('number') as $audience)
-                                <option value="{{ $audience->id }}">{{ $audience->number }}</option>
-                            @endforeach
-                        </select>
+                        <input value="{{ old('audience_id') }}" type="number" name="audience_id" id="audience_id" min="1" max="500">
+{{--                        <select name="audience_id" id="audience_id">--}}
+{{--                            @foreach($audiences->sortBy('number') as $audience)--}}
+{{--                                <option value="{{ $audience->id }}">{{ $audience->number }}</option>--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
                     </div>
                     @error('audience_id')
                     <p>{{ $message }}</p>

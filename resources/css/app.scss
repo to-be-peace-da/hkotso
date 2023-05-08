@@ -406,7 +406,7 @@ template {
             }
         }
 
-        button {
+        button.edit {
             border: none;
             box-shadow: $dark-gray 0 0 1.5px;
 
@@ -594,6 +594,7 @@ header {
 
         ul {
             display: flex;
+            align-items: center;
             gap: 20px;
 
             list-style: none;
@@ -746,7 +747,7 @@ header {
             }
         }
 
-        button {
+        button.create {
             border: none;
             box-shadow: $dark-gray 0 0 1.5px;
 
@@ -1089,13 +1090,24 @@ footer {
 //! views.news.show
 
 .single-news {
+    iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        height: 695px;
+    }
+
     .content {
         display: flex;
         flex-direction: column;
         gap: 40px;
 
+        a {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
         .img {
-            height: 200px;
+            height: 322px;
             width: 100%;
 
             background-position: center !important;
@@ -1123,6 +1135,15 @@ footer {
         gap: 40px;
 
         form {
+            button.edit {
+                border: none;
+                box-shadow: $dark-gray 0 0 1.5px;
+
+                width: 200px;
+                padding: 5px;
+                margin-top: 20px;
+            }
+
             display: flex;
             flex-direction: column;
             gap: 20px;

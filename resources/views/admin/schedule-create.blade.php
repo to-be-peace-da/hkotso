@@ -39,6 +39,17 @@
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
+                        <label for="semester_id" class="">Полугодие</label>
+                        <select name="semester_id" id="semester_id">
+                            @foreach($semesters as $semester)
+                                <option value="{{ $semester->id }}">{{ $semester->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('semester_id')
+                    <p>{{ $message }}</p>
+                    @enderror
+                    <div class="label-and-input">
                         <label for="subject_id" class="">Пара</label>
                         <select name="subject_id" id="subject_id">
                             @foreach($subjects->sortBy('name') as $subject)
@@ -73,11 +84,13 @@
                     @enderror
                     <div class="label-and-input">
                         <label for="audience_id" class="">Кабинет</label>
-                        <select name="audience_id" id="audience_id">
-                            @foreach($audiences->sortBy('number') as $audience)
-                                <option value="{{ $audience->id }}">{{ $audience->number }}</option>
-                            @endforeach
-                        </select>
+                        <input value="{{ old('audience_id') }}" type="number" name="audience_id" id="audience_id"
+                               min="1" max="500">
+                        {{--                        <select name="audience_id" id="audience_id">--}}
+                        {{--                            @foreach($audiences->sortBy('number') as $audience)--}}
+                        {{--                                <option value="{{ $audience->id }}">{{ $audience->number }}</option>--}}
+                        {{--                            @endforeach--}}
+                        {{--                        </select>--}}
                     </div>
                     @error('audience_id')
                     <p>{{ $message }}</p>
