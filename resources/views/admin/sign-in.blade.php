@@ -1,18 +1,18 @@
 <x-layout>
     <div class="even">
         <div class="container">
-            <div class="auth-wrapper uniq-wrapper">
-                <form class="auth-form uniq-fields" action="{{ route('admin.authenticate') }}" method="post">
+            <div class="form-wrapper">
+                <h1>Вход</h1>
+                <form class="form-fields" action="{{ route('admin.authenticate') }}" method="post">
                     @csrf
-                    <h1>Вход</h1>
-                    <div class="input">
+                    <div class="label-and-input">
                         <label for="input-login" class="">Имя</label>
                         <input name="name" type="text" class="" id="input-login">
                     </div>
                     @error('name')
                     <p>{{ $message }}</p>
                     @enderror
-                    <div class="input">
+                    <div class="label-and-input">
                         <label for="input-password" class="">Пароль</label>
                         <input name="password" type="password" class="" id="input-password">
                     </div>

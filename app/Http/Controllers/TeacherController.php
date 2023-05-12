@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTeacherRequest;
+use App\Models\Day;
+use App\Models\Schedule;
+use App\Models\Substitution;
 use App\Models\Teacher;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -39,8 +43,23 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
+        $schedules = Schedule::where('teacher_id', '=', $teacher->id)
+            ->with('department', 'course', 'group', 'day', 'subject', 'audience', 'order', 'part', 'semester')
+            ->get();
+
+        $substitutions = Substitution::where('teacher_id', '=', $teacher->id)
+            ->where('date', '>=', Carbon::now()->toDateString())
+            ->where('date', '<', Carbon::now()->addWeek()->toDateString())
+            ->with('department', 'course', 'group', 'day', 'subject', 'audience', 'order')
+            ->get();
+
+        $days = Day::all();
+
         return view('teachers.show', [
             'teacher' => $teacher,
+            'schedules' => $schedules,
+            'substitutions' => $substitutions,
+            'days' => $days,
         ]);
     }
 

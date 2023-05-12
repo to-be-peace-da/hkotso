@@ -2,6 +2,7 @@
     <div class="even">
         <div class="container">
             <div class="form-wrapper">
+                <h1>Расписание</h1>
                 <form class="form-fields" action="{{ route('schedule.show') }}" method="get">
                     <div class="label-and-input">
                         <label for="group">Группа</label>

@@ -51,10 +51,10 @@ Route::get('/admin-panel/news-create', [AdminController::class, 'newsCreate'])
     ->middleware('admin')
     ->name('admin.news-create');
 
-// Advertisement Creation Page
-Route::get('/admin-panel/advertisement-create', [AdminController::class, 'advertisementCreate'])
-    ->middleware('admin')
-    ->name('admin.advertisement-create');
+//// Advertisement Creation Page
+//Route::get('/admin-panel/advertisement-create', [AdminController::class, 'advertisementCreate'])
+//    ->middleware('admin')
+//    ->name('admin.advertisement-create');
 
 // Schedule Creation Page
 Route::get('/admin-panel/schedule-create', [AdminController::class, 'scheduleCreate'])
@@ -113,33 +113,33 @@ Route::delete('/news/{singleNews}', [NewsController::class, 'destroy'])
 
 //! ADVERTISEMENTS
 
-// Show All Advertisements
-Route::get('/advertisements', [AdvertisementController::class, 'index'])
-    ->name('advertisement.index');
-
-// Show Single Advertisement
-Route::get('/advertisements/{advertisement:slug}', [AdvertisementController::class, 'show'])
-    ->name('advertisement.show');
-
-// Advertisement Store
-Route::post('/advertisements', [AdvertisementController::class, 'store'])
-    ->middleware('admin')
-    ->name('advertisements.store');
-
-// Advertisement Edit
-Route::get('/advertisements/{advertisement}/edit', [AdvertisementController::class, 'edit'])
-    ->middleware('admin')
-    ->name('advertisement.edit');
-
-// News Update
-Route::put('/advertisements/{advertisement}', [AdvertisementController::class, 'update'])
-    ->middleware('admin')
-    ->name('advertisement.update');
-
-// Advertisement Destroy
-Route::delete('/advertisements/{advertisement}', [AdvertisementController::class, 'destroy'])
-    ->middleware('admin')
-    ->name('advertisement.destroy');
+//// Show All Advertisements
+//Route::get('/advertisements', [AdvertisementController::class, 'index'])
+//    ->name('advertisement.index');
+//
+//// Show Single Advertisement
+//Route::get('/advertisements/{advertisement:slug}', [AdvertisementController::class, 'show'])
+//    ->name('advertisement.show');
+//
+//// Advertisement Store
+//Route::post('/advertisements', [AdvertisementController::class, 'store'])
+//    ->middleware('admin')
+//    ->name('advertisements.store');
+//
+//// Advertisement Edit
+//Route::get('/advertisements/{advertisement}/edit', [AdvertisementController::class, 'edit'])
+//    ->middleware('admin')
+//    ->name('advertisement.edit');
+//
+//// News Update
+//Route::put('/advertisements/{advertisement}', [AdvertisementController::class, 'update'])
+//    ->middleware('admin')
+//    ->name('advertisement.update');
+//
+//// Advertisement Destroy
+//Route::delete('/advertisements/{advertisement}', [AdvertisementController::class, 'destroy'])
+//    ->middleware('admin')
+//    ->name('advertisement.destroy');
 
 //! SCHEDULE
 

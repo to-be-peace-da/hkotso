@@ -323,6 +323,86 @@ template {
   display: none;
 }
 
+.hamburger {
+  position: relative;
+  display: none;
+  width: 50px;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.hamburger .bar, .hamburger::after, .hamburger::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: rgb(30, 30, 30);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.hamburger.is-active::before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.hamburger.is-active::after {
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.mobile-nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 30;
+  background-color: white;
+  margin-top: 80px;
+  padding-top: 40px;
+  transition: 0.4s;
+}
+.mobile-nav .admin {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav .admin button {
+  box-shadow: none;
+  background: none;
+  font-weight: bold;
+}
+.mobile-nav .items {
+  margin-top: 30px;
+}
+.mobile-nav.is-active {
+  left: 0;
+}
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 16px;
+  font-size: 1.3rem;
+  padding: 10px;
+  background-color: rgb(227, 229, 229);
+  border-radius: 10px;
+  color: rgb(30, 30, 30);
+  font-weight: bold;
+  text-decoration: none;
+}
+.mobile-nav a:hover {
+  background-color: white;
+}
+
 .uniq-wrapper {
   display: flex;
   flex-direction: column;
@@ -377,6 +457,9 @@ template {
 .even .block-title:hover:after {
   transform: scaleX(1);
 }
+.even a {
+  color: rgb(30, 30, 30);
+}
 .even a:visited {
   color: rgb(30, 30, 30);
 }
@@ -413,8 +496,11 @@ template {
 .odd .block-title:hover:after {
   transform: scaleX(1);
 }
+.odd a {
+  color: white;
+}
 .odd a:visited {
-  color: #f3f4f4;
+  color: white;
 }
 .odd h1,
 .odd h2,
@@ -622,36 +708,6 @@ header nav div.logo img {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.auth-wrapper .auth-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-}
-.auth-wrapper .auth-form h1 {
-  margin-bottom: 20px;
-}
-.auth-wrapper .auth-form .input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background: rgb(30, 30, 30);
-  width: 450px;
-}
-.auth-wrapper .auth-form .input input {
-  padding: 10px;
-  height: 25px;
-  width: 300px;
-}
-.auth-wrapper .auth-form .input label {
-  color: #f3f4f4;
-}
-.auth-wrapper .auth-form button {
-  padding: 10px;
 }
 
 .latest-news {
@@ -958,6 +1014,9 @@ footer .copyright-logo-links .links ul {
 .schedule-and-substitution .odd .container p, .schedule-and-substitution .odd .container a {
   color: white;
 }
+.schedule-and-substitution .odd .container a {
+  text-decoration: underline;
+}
 .schedule-and-substitution .odd .container a:hover {
   color: rgb(227, 229, 229);
 }
@@ -970,19 +1029,26 @@ footer .copyright-logo-links .links ul {
 }
 .schedule-and-substitution .title {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  gap: 20px;
 }
 .schedule-and-substitution .even .container, .schedule-and-substitution .odd .container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow-x: auto;
 }
 .schedule-and-substitution .schedule .even {
   padding-bottom: 50px;
 }
 .schedule-and-substitution .even {
   padding: 10px;
+}
+.schedule-and-substitution .even a {
+  color: rgb(30, 30, 30);
+  text-decoration: underline;
 }
 .schedule-and-substitution .even .schedule-head, .schedule-and-substitution .even .substitution-head {
   box-shadow: rgb(30, 30, 30) 0 0 1.5px;
@@ -1004,6 +1070,73 @@ footer .copyright-logo-links .links ul {
   grid-template-columns: 3fr 7fr 7fr 1fr 1.5fr;
 }
 
+.teacher-schedule-and-substitution .odd {
+  padding: 0 !important;
+}
+.teacher-schedule-and-substitution .odd .container {
+  padding: 0 10px;
+  overflow: auto;
+}
+.teacher-schedule-and-substitution .odd .container p, .teacher-schedule-and-substitution .odd .container a {
+  color: white;
+}
+.teacher-schedule-and-substitution .odd .container a:hover {
+  color: rgb(227, 229, 229);
+}
+.teacher-schedule-and-substitution .odd .container .schedule-head, .teacher-schedule-and-substitution .odd .container .substitution-head {
+  box-shadow: white 0 0 1.5px;
+  padding: 5px;
+}
+.teacher-schedule-and-substitution .extra-padding-for-odd {
+  padding: 20px 0 !important;
+}
+.teacher-schedule-and-substitution .title {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+.teacher-schedule-and-substitution .title h2 {
+  text-align: center;
+}
+.teacher-schedule-and-substitution .even .container, .teacher-schedule-and-substitution .odd .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.teacher-schedule-and-substitution .schedule .even {
+  padding-bottom: 50px;
+}
+.teacher-schedule-and-substitution .even {
+  padding: 10px;
+}
+.teacher-schedule-and-substitution .even .schedule-head, .teacher-schedule-and-substitution .even .substitution-head {
+  box-shadow: rgb(30, 30, 30) 0 0 1.5px;
+  padding: 5px;
+}
+.teacher-schedule-and-substitution .even .container {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: auto;
+}
+.teacher-schedule-and-substitution .substitution-items, .teacher-schedule-and-substitution .substitution-head {
+  padding: 5px;
+}
+.teacher-schedule-and-substitution .substitution-items .items, .teacher-schedule-and-substitution .substitution-head .items {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr 2fr 2fr 3fr;
+}
+.teacher-schedule-and-substitution .schedule-items, .teacher-schedule-and-substitution .schedule-head {
+  padding: 5px;
+}
+.teacher-schedule-and-substitution .schedule-items .items, .teacher-schedule-and-substitution .schedule-head .items {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr 2fr 3fr 1fr 1fr;
+}
+
 @media (max-width: 1400px) {
   .container {
     max-width: 95%;
@@ -1017,8 +1150,113 @@ footer .copyright-logo-links .links ul {
   }
 }
 @media (max-width: 768px) {
-  header nav ul {
-    display: none;
+  .teacher-schedule-and-substitution .odd .container {
+    padding: 0 20px;
+  }
+  .teacher-schedule-and-substitution .schedule .container, .teacher-schedule-and-substitution .substitution .container {
+    display: grid;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items, .teacher-schedule-and-substitution .schedule .container .substitution-head .items, .teacher-schedule-and-substitution .substitution .container .schedule-head .items, .teacher-schedule-and-substitution .substitution .container .substitution-head .items {
+    display: flex;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item, .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item, .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item, .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item {
+    width: 250px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(1), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(1) {
+    width: 150px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(2), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(2) {
+    width: 200px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(3), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(3) {
+    width: 150px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(4), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(4) {
+    width: 300px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(5) {
+    width: 150px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(5) {
+    width: 300px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items, .teacher-schedule-and-substitution .schedule .container .substitution-items .items, .teacher-schedule-and-substitution .substitution .container .schedule-items .items, .teacher-schedule-and-substitution .substitution .container .substitution-items .items {
+    display: flex;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item, .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item, .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item, .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item {
+    width: 250px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(1), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(1) {
+    width: 150px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(2), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(2) {
+    width: 200px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(3), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(3) {
+    width: 150px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(4), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(4) {
+    width: 300px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(5) {
+    width: 150px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(5) {
+    width: 300px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:last-child, .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:last-child, .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:last-child, .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:last-child {
+    width: 0;
+  }
+  .schedule-and-substitution .odd .container {
+    padding: 0 20px;
+  }
+  .schedule-and-substitution .schedule .container, .schedule-and-substitution .substitution .container {
+    display: grid;
+  }
+  .schedule-and-substitution .schedule .container .schedule-head .items, .schedule-and-substitution .schedule .container .substitution-head .items, .schedule-and-substitution .substitution .container .schedule-head .items, .schedule-and-substitution .substitution .container .substitution-head .items {
+    display: flex;
+  }
+  .schedule-and-substitution .schedule .container .schedule-head .items .item, .schedule-and-substitution .schedule .container .substitution-head .items .item, .schedule-and-substitution .substitution .container .schedule-head .items .item, .schedule-and-substitution .substitution .container .substitution-head .items .item {
+    width: 250px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(1), .schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(1), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(1), .schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(1) {
+    width: 150px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(2), .schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(2), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(2), .schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(2) {
+    width: 200px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(3), .schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(3), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(3), .schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(3) {
+    width: 400px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(4), .schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(4), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(4), .schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(4) {
+    width: 100px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-items .items, .schedule-and-substitution .schedule .container .substitution-items .items, .schedule-and-substitution .substitution .container .schedule-items .items, .schedule-and-substitution .substitution .container .substitution-items .items {
+    display: flex;
+  }
+  .schedule-and-substitution .schedule .container .schedule-items .items .item, .schedule-and-substitution .schedule .container .substitution-items .items .item, .schedule-and-substitution .substitution .container .schedule-items .items .item, .schedule-and-substitution .substitution .container .substitution-items .items .item {
+    width: 250px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(1), .schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(1), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(1), .schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(1) {
+    width: 150px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(2), .schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(2), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(2), .schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(2) {
+    width: 200px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(3), .schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(3), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(3), .schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(3) {
+    width: 400px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(4), .schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(4), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(4), .schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(4) {
+    width: 100px;
+  }
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:last-child, .schedule-and-substitution .schedule .container .substitution-items .items .item:last-child, .schedule-and-substitution .substitution .container .schedule-items .items .item:last-child, .schedule-and-substitution .substitution .container .substitution-items .items .item:last-child {
+    width: 0;
+  }
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none !important;
   }
   .footer .content {
     flex-direction: column;
@@ -1036,8 +1274,36 @@ footer .copyright-logo-links .links ul {
   .footer .copyright-logo-links .links {
     width: 200px;
   }
+  .form-wrapper .form-fields {
+    gap: 20px;
+  }
+  .form-wrapper .form-fields .label-and-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-wrapper .form-fields .label-and-input label, .form-wrapper .form-fields .label-and-input select, .form-wrapper .form-fields .label-and-input input {
+    width: 100%;
+  }
+  .tool-wrapper .icon {
+    transition: 0.3s ease;
+    left: 25px !important;
+    transform: none !important;
+    opacity: 0.2;
+    width: 200px;
+  }
+  .tool-wrapper .title h2 {
+    text-align: center;
+  }
+  .tool-wrapper:hover {
+    transition: 0.3s ease;
+    background: white;
+    border-radius: 10px;
+  }
 }
 @media (max-width: 576px) {
+  .latest-news .card {
+    width: 100%;
+  }
   .news .card {
     flex-direction: column;
   }

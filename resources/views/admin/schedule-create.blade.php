@@ -72,7 +72,7 @@
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
-                        <label for="part_id" class="">Половина</label>
+                        <label for="part_id" class="">Неделя</label>
                         <select name="part_id" id="part_id">
                             @foreach($parts as $part)
                                 <option value="{{ $part->id }}">{{ $part->name }}</option>

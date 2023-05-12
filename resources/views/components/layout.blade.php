@@ -39,9 +39,28 @@
             @endif
             <ul class="nav">
                 <li><a href="{{ route('news.index') }}">Новости</a></li>
-                <li><a href="{{ route('advertisement.index') }}">Объявления</a></li>
                 <li><a href="{{ route('schedule.index') }}">Расписание</a></li>
             </ul>
+            <button class="hamburger">
+                <div class="bar"></div>
+            </button>
+        </nav>
+        <nav class="mobile-nav">
+            <div class="admin">
+                @if(auth()->check() && auth()->user()->is_admin)
+                    <a href="{{ route('admin.index') }}">Админ панель</a>
+                    <a>
+                        <form action="{{ route('admin.logout') }}" method="post">
+                            @csrf
+                            <button type="submit">Выйти</button>
+                        </form>
+                    </a>
+                @endif
+            </div>
+            <div class="items">
+                <a href="{{ route('news.index') }}">Новости</a>
+                <a href="{{ route('schedule.index') }}">Расписание</a>
+            </div>
         </nav>
     </div>
 </header>

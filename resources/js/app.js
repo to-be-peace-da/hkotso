@@ -16,6 +16,23 @@ adminTools.forEach((tool) => {
     }
 });
 
+//! MENU TOGGLE
+
+const menuBtn = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-nav');
+
+menuBtn.addEventListener('click', function () {
+    menuBtn.classList.toggle('is-active');
+    mobileMenu.classList.toggle('is-active');
+
+})
+
+mobileMenu.addEventListener('click', function () {
+    menuBtn.classList.toggle('is-active');
+    mobileMenu.classList.toggle('is-active');
+
+})
+
 //! CUSTOM EDITOR
 
 // let noteEditable = document.querySelector('.note-editable');

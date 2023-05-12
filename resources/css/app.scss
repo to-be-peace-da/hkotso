@@ -375,6 +375,103 @@ template {
     display: none;
 }
 
+//! MOBILE MENU
+
+.hamburger {
+    position: relative;
+    display: none;
+    width: 50px;
+    cursor: pointer;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
+
+    & .bar, &::after, &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: $dark-gray;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+}
+
+.hamburger.is-active::before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+
+.hamburger.is-active::after {
+    transform: rotate(45deg) translate(-9px, -8px);;
+}
+
+.mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 30;
+    background-color: white;
+    margin-top: 80px;
+    padding-top: 40px;
+    transition: .4s;
+
+    .admin {
+        display: flex;
+        flex-direction: column;
+
+        button {
+            box-shadow: none;
+            background: none;
+            font-weight: bold;
+        }
+    }
+
+    .items {
+        margin-top: 30px;
+    }
+
+    &.is-active {
+        left: 0;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 16px;
+
+        font-size: 1.3rem;
+
+        padding: 10px;
+        background-color: $darker-gray;
+        border-radius: 10px;
+
+        color: $dark-gray;
+        font-weight: bold;
+        text-decoration: none;
+
+
+        &:hover {
+            background-color: white;
+        }
+    }
+}
+
+//! UNIQUE WRAPPER
+
 .uniq-wrapper {
     display: flex;
     flex-direction: column;
@@ -441,6 +538,10 @@ template {
         }
     }
 
+    a {
+        color: $dark-gray;
+    }
+
     a:visited {
         color: $dark-gray;
     }
@@ -488,8 +589,12 @@ template {
         }
     }
 
+    a {
+        color: white;
+    }
+
     a:visited {
-        color: $lighter-gray;
+        color: white;
     }
 
     h1,
@@ -764,45 +869,45 @@ header {
     }
 }
 
-.auth-wrapper {
-    .auth-form {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        flex-direction: column;
-
-        gap: 20px;
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        .input {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 20px;
-            background: $dark-gray;
-            width: 450px;
-
-            input {
-                padding: 10px;
-                height: 25px;
-                width: 300px;
-            }
-
-            label {
-                color: $lighter-gray;
-            }
-        }
-
-        button {
-            padding: 10px;
-        }
-    }
-}
+//.auth-wrapper {
+//    .auth-form {
+//        display: flex;
+//        align-items: center;
+//        justify-content: center;
+//
+//        flex-direction: column;
+//
+//        gap: 20px;
+//
+//        h1 {
+//            margin-bottom: 20px;
+//        }
+//
+//        .input {
+//            display: flex;
+//            align-items: center;
+//            justify-content: space-between;
+//
+//            padding: 20px;
+//            background: $dark-gray;
+//            width: 450px;
+//
+//            input {
+//                padding: 10px;
+//                height: 25px;
+//                width: 300px;
+//            }
+//
+//            label {
+//                color: $lighter-gray;
+//            }
+//        }
+//
+//        button {
+//            padding: 10px;
+//        }
+//    }
+//}
 
 .latest-news {
     justify-content: space-between;
@@ -1220,6 +1325,8 @@ footer {
             }
 
             a {
+                text-decoration: underline;
+
                 &:hover {
                     color: $darker-gray;
                 }
@@ -1238,8 +1345,10 @@ footer {
 
     .title {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
         margin-bottom: 20px;
+        gap: 20px;
     }
 
     .even, .odd {
@@ -1247,6 +1356,8 @@ footer {
             display: flex;
             flex-direction: column;
             gap: 10px;
+
+            overflow-x: auto;
         }
     }
 
@@ -1255,6 +1366,11 @@ footer {
     }
 
     .even {
+        a {
+            color: $dark-gray;
+            text-decoration: underline;
+        }
+
         padding: 10px;
 
         .schedule-head, .substitution-head {
@@ -1284,6 +1400,99 @@ footer {
     }
 }
 
+//! views.teachers.show
+
+.teacher-schedule-and-substitution {
+    .odd {
+        padding: 0 !important;
+
+        .container {
+            padding: 0 10px;
+
+            p, a {
+                color: white;
+            }
+
+            a {
+                &:hover {
+                    color: $darker-gray;
+                }
+            }
+
+            .schedule-head, .substitution-head {
+                box-shadow: white 0 0 1.5px;
+                padding: 5px;
+            }
+
+            overflow: auto;
+        }
+    }
+
+    .extra-padding-for-odd {
+        padding: 20px 0 !important;
+    }
+
+    .title {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .even, .odd {
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    .schedule .even {
+        padding-bottom: 50px;
+    }
+
+    .even {
+        padding: 10px;
+
+        .schedule-head, .substitution-head {
+            box-shadow: $dark-gray 0 0 1.5px;
+            padding: 5px;
+        }
+
+        .container {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+
+            overflow: auto;
+        }
+    }
+
+    .substitution-items, .substitution-head {
+        padding: 5px;
+
+        .items {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr 2fr 2fr 2fr 3fr;
+        }
+    }
+
+    .schedule-items, .schedule-head {
+        padding: 5px;
+
+        .items {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr 2fr 2fr 3fr 1fr 1fr;
+        }
+    }
+}
+
 @media (max-width: 1400px) {
     .container {
         max-width: 95%;
@@ -1303,11 +1512,165 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header {
-        nav {
-            ul {
-                display: none;
+    .teacher-schedule-and-substitution {
+        .odd {
+            .container {
+                padding: 0 20px;
             }
+        }
+
+        .schedule .container, .substitution .container {
+            display: grid;
+
+            .schedule-head, .substitution-head {
+                .items {
+                    display: flex;
+
+                    .item {
+                        width: 250px;
+
+                        &:nth-child(1) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 200px;
+                        }
+
+                        &:nth-child(3) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(4) {
+                            width: 300px;
+                        }
+
+                        &:nth-child(5) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(5) {
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+
+            .schedule-items, .substitution-items {
+                .items {
+                    display: flex;
+
+                    .item {
+                        width: 250px;
+
+                        &:nth-child(1) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 200px;
+                        }
+
+                        &:nth-child(3) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(4) {
+                            width: 300px;
+                        }
+
+                        &:nth-child(5) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(5) {
+                            width: 300px;
+                        }
+
+                        &:last-child {
+                            width: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .schedule-and-substitution {
+        .odd {
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        .schedule .container, .substitution .container {
+            display: grid;
+
+            .schedule-head, .substitution-head {
+                .items {
+                    display: flex;
+
+                    .item {
+                        width: 250px;
+
+                        &:nth-child(1) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 200px;
+                        }
+
+                        &:nth-child(3) {
+                            width: 400px;
+                        }
+
+                        &:nth-child(4) {
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+
+            .schedule-items, .substitution-items {
+                .items {
+                    display: flex;
+
+                    .item {
+                        width: 250px;
+
+                        &:nth-child(1) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 200px;
+                        }
+
+                        &:nth-child(3) {
+                            width: 400px;
+                        }
+
+                        &:nth-child(4) {
+                            width: 100px;
+                        }
+
+                        &:last-child {
+                            width: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        ul {
+            display: none !important;
         }
     }
 
@@ -1332,9 +1695,55 @@ footer {
             }
         }
     }
+
+    .form-wrapper {
+        .form-fields {
+            gap: 20px;
+
+            .label-and-input {
+                flex-direction: column;
+                gap: 10px;
+
+                label, select, input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .tool-wrapper {
+        .icon, {
+            transition: 0.3s ease;
+
+            left: 25px !important;
+            transform: none !important;
+
+            opacity: .2;
+
+            width: 200px;
+        }
+
+        .title {
+            h2 {
+                text-align: center;
+            }
+        }
+
+        &:hover {
+            transition: 0.3s ease;
+            background: white;
+            border-radius: 10px;
+        }
+    }
 }
 
 @media (max-width: 576px) {
+    .latest-news {
+        .card {
+            width: 100%;
+        }
+    }
+
     .news {
         .card {
             flex-direction: column;

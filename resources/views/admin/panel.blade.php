@@ -15,18 +15,18 @@
                             </div>
                         </a>
                     </div>
-                    <div class="tool-wrapper">
-                        <a href="{{ route('admin.advertisement-create') }}">
-                            <div class="tool">
-                                <div class="icon">
-                                    <img src="{{ asset('storage/images/advertisement.svg') }}" alt="advertisement">
-                                </div>
-                                <div class="title">
-                                    <h2>Создать объявление</h2>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+{{--                    <div class="tool-wrapper">--}}
+{{--                        <a href="{{ route('admin.advertisement-create') }}">--}}
+{{--                            <div class="tool">--}}
+{{--                                <div class="icon">--}}
+{{--                                    <img src="{{ asset('storage/images/advertisement.svg') }}" alt="advertisement">--}}
+{{--                                </div>--}}
+{{--                                <div class="title">--}}
+{{--                                    <h2>Создать объявление</h2>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
                     <div class="tool-wrapper">
                         <a href="{{ route('admin.schedule-create') }}">
                             <div class="tool">
