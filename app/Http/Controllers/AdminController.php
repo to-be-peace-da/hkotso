@@ -52,10 +52,10 @@ class AdminController extends Controller
         return view('admin.news-create');
     }
 
-    public function advertisementCreate()
-    {
-        return view('admin.advertisement-create');
-    }
+//    public function advertisementCreate()
+//    {
+//        return view('admin.advertisement-create');
+//    }
 
     public function scheduleCreate()
     {

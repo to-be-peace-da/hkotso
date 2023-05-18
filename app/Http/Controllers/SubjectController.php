@@ -23,7 +23,7 @@ class SubjectController extends Controller
     {
         Subject::create($request->validated());
 
-        return back();
+        return back()->with('message', 'Предмет добавлен');
     }
 
     /**

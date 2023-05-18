@@ -673,6 +673,25 @@ template {
     margin: 0 auto;
 }
 
+//! FLASH MESSAGE
+
+.flash-message {
+    width: 100%;
+    position: fixed;
+    top: 80px;
+    padding: 20px;
+    background: $dark-gray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: white;
+        font-size: 1.5rem;
+    }
+}
+
 header {
     position: sticky;
     z-index: 30;
@@ -1277,7 +1296,7 @@ footer {
                 gap: 20px;
 
                 .img {
-                    height: 200px;
+                    height: 322px;
                     width: 100%;
 
                     background-position: center !important;
@@ -1497,11 +1516,19 @@ footer {
     .container {
         max-width: 95%;
     }
+
+    .latest-news {
+        .card {
+            width: 100%;
+        }
+    }
 }
 
 @media (max-width: 1200px) {
     .latest-news {
-        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
         gap: 20px;
         align-items: center;
     }

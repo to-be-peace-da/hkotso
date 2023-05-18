@@ -5,6 +5,11 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property mixed $surname
+ * @property mixed $patronymic
+ * @property mixed $name
+ */
 class StoreTeacherRequest extends FormRequest
 {
     /**
@@ -23,9 +28,9 @@ class StoreTeacherRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required'],
-            'surname' => ['required'],
-            'patronymic' => ['required'],
+            'name' => ['required', 'unique:teachers,name,NULL,id,surname,' . $this->surname . ',patronymic,' . $this->patronymic],
+            'surname' => ['required', 'unique:teachers,surname,NULL,id,name,' . $this->name . ',patronymic,' . $this->patronymic],
+            'patronymic' => ['required', 'unique:teachers,patronymic,NULL,id,name,' . $this->name . ',surname,' . $this->surname],
         ];
     }
 }

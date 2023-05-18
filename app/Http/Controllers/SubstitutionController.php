@@ -6,11 +6,9 @@ use App\Http\Requests\StoreSubstitutionRequest;
 use App\Http\Requests\UpdateSubstitutionRequest;
 use App\Models\Audience;
 use App\Models\Course;
-use App\Models\Day;
 use App\Models\Department;
 use App\Models\Group;
 use App\Models\Order;
-use App\Models\Part;
 use App\Models\Subject;
 use App\Models\Substitution;
 use App\Models\Teacher;
@@ -32,7 +30,7 @@ class SubstitutionController extends Controller
     {
         Substitution::create($request->validated());
 
-        return back();
+        return back()->with('message', 'Замена добавлена');
     }
 
     /**
@@ -81,11 +79,9 @@ class SubstitutionController extends Controller
      */
     public function update(UpdateSubstitutionRequest $request, Substitution $substitution)
     {
-        $formFields = $request->validated();
+        $substitution->update($request->validated());
 
-        $substitution->update($formFields);
-
-        return back();
+        return back()->with('message', 'Замена изменена');
     }
 
     /**
@@ -95,6 +91,6 @@ class SubstitutionController extends Controller
     {
         $substitution->delete();
 
-        return back();
+        return back()->with('message', 'Замена удалена');
     }
 }

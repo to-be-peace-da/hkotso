@@ -23,7 +23,7 @@ class GroupController extends Controller
     {
         Group::create($request->validated());
 
-        return back();
+        return back()->with('message', 'Группа создана');
     }
 
     /**

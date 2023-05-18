@@ -19,6 +19,29 @@ class NewsController extends Controller
         ]);
     }
 
+    public function store(StoreNewsRequest $request)
+    {
+        $formFields = $request->validated();
+
+        if ($request->hasFile('image')) {
+            $formFields['image'] = $request
+                ->file('image')
+                ->store('news_images', 'public');
+
+            Image::make(public_path('storage/' . $formFields['image']))
+                ->encode('webp', 0)
+                ->resize(1280, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })
+                ->save();
+        }
+
+        News::create($formFields);
+
+        return back()->with('message', 'Новость создана');
+    }
+
     public function show(News $singleNews)
     {
         return view('news.show', [
@@ -57,30 +80,7 @@ class NewsController extends Controller
 
         $singleNews->update($formFields);
 
-        return redirect()->route('main.index');
-    }
-
-    public function store(StoreNewsRequest $request)
-    {
-        $formFields = $request->validated();
-
-        if ($request->hasFile('image')) {
-            $formFields['image'] = $request
-                ->file('image')
-                ->store('news_images', 'public');
-
-            Image::make(public_path('storage/' . $formFields['image']))
-                ->encode('webp', 0)
-                ->resize(1280, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                })
-                ->save();
-        }
-
-        News::create($formFields);
-
-        return back();
+        return back()->with('message', 'Новость изменена');
     }
 
     public function destroy(News $singleNews)
@@ -91,6 +91,6 @@ class NewsController extends Controller
 
         $singleNews->delete();
 
-        return redirect()->route('main.index');
+        return redirect()->route('main.index')->with('message', 'Новость удалена');
     }
 }

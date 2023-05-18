@@ -46,7 +46,7 @@ class ScheduleController extends Controller
     {
         Schedule::create($request->validated());
 
-        return back();
+        return back()->with('message', 'Расписание создано');
     }
 
     /**
@@ -69,7 +69,7 @@ class ScheduleController extends Controller
             ->where('course_id', '=', $request->course_id)
             ->where('department_id', '=', $request->department_id)
             ->where('semester_id', '=', $request->semester_id)
-            ->with('day', 'subject', 'teacher', 'order', 'audience', 'department', 'course', 'semester')
+            ->with('day', 'subject', 'teacher', 'order', 'audience', 'semester', 'part')
             ->get()
             ->sortBy('order_id');
 
@@ -120,11 +120,9 @@ class ScheduleController extends Controller
      */
     public function update(UpdateScheduleRequest $request, Schedule $schedule)
     {
-        $formFields = $request->validated();
+        $schedule->update($request->validated());
 
-        $schedule->update($formFields);
-
-        return back();
+        return back()->with('message', 'Расписание изменено');
     }
 
     /**
@@ -134,6 +132,6 @@ class ScheduleController extends Controller
     {
         $schedule->delete();
 
-        return back();
+        return back()->with('message', 'Расписание удалено');
     }
 }

@@ -25,9 +25,11 @@ class TeacherController extends Controller
      */
     public function store(StoreTeacherRequest $request)
     {
-        Teacher::create($request->validated());
+        $formFields = $request->validated();
 
-        return back();
+        Teacher::create($formFields);
+
+        return back()->with('message', 'Преподаватель добавлен');
     }
 
     /**
