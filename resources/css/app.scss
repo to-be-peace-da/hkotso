@@ -48,6 +48,10 @@ html {
  */
 
 body {
+    background: $lighter-gray;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: 0;
 }
 
@@ -1031,6 +1035,7 @@ header {
 }
 
 footer {
+    margin-top: auto;
     border-top: 1px solid $light-gray;
 
     .footer {
@@ -1498,7 +1503,7 @@ footer {
 
         .items {
             display: grid;
-            grid-template-columns: 2fr 2fr 1fr 2fr 2fr 2fr 3fr;
+            grid-template-columns: 1.8fr 1.3fr 1.5fr 2.5fr 7fr 1fr 1fr;
         }
     }
 
@@ -1507,7 +1512,7 @@ footer {
 
         .items {
             display: grid;
-            grid-template-columns: 2fr 2fr 1fr 2fr 2fr 3fr 1fr 1fr;
+            grid-template-columns: 1.8fr 1.3fr 1.5fr 2.5fr 2fr 5fr 1fr 1fr;
         }
     }
 }
@@ -1532,13 +1537,7 @@ footer {
         gap: 20px;
         align-items: center;
     }
-}
 
-@media (max-width: 992px) {
-
-}
-
-@media (max-width: 768px) {
     .teacher-schedule-and-substitution {
         .odd {
             .container {
@@ -1549,7 +1548,7 @@ footer {
         .schedule .container, .substitution .container {
             display: grid;
 
-            .schedule-head, .substitution-head {
+            .substitution-head {
                 .items {
                     display: flex;
 
@@ -1557,33 +1556,72 @@ footer {
                         width: 250px;
 
                         &:nth-child(1) {
-                            width: 150px;
+                            width: 50px;
                         }
 
                         &:nth-child(2) {
-                            width: 200px;
+                            width: 120px;
                         }
 
                         &:nth-child(3) {
-                            width: 150px;
+                            width: 120px;
                         }
 
                         &:nth-child(4) {
-                            width: 300px;
+                            width: 200px;
                         }
 
                         &:nth-child(5) {
-                            width: 150px;
+                            width: 350px;
+                        }
+
+                        &:nth-child(6) {
+                            width: 100px;
+                        }
+
+                    }
+                }
+            }
+
+            .substitution-items {
+                .items {
+                    display: flex;
+
+                    .item {
+                        width: 250px;
+
+                        &:nth-child(1) {
+                            width: 50px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 120px;
+                        }
+
+                        &:nth-child(3) {
+                            width: 120px;
+                        }
+
+                        &:nth-child(4) {
+                            width: 200px;
                         }
 
                         &:nth-child(5) {
-                            width: 300px;
+                            width: 350px;
+                        }
+
+                        &:nth-child(6) {
+                            width: 100px;
+                        }
+
+                        &:last-child {
+                            width: 0;
                         }
                     }
                 }
             }
 
-            .schedule-items, .substitution-items {
+            .schedule-head {
                 .items {
                     display: flex;
 
@@ -1595,23 +1633,65 @@ footer {
                         }
 
                         &:nth-child(2) {
-                            width: 200px;
+                            width: 120px;
                         }
 
                         &:nth-child(3) {
-                            width: 150px;
+                            width: 120px;
                         }
 
                         &:nth-child(4) {
-                            width: 300px;
+                            width: 200px;
                         }
 
                         &:nth-child(5) {
                             width: 150px;
                         }
 
+                        &:nth-child(6) {
+                            width: 350px;
+                        }
+
+                        &:nth-child(7) {
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+
+            .schedule-items {
+                .items {
+                    display: flex;
+
+                    .item {
+                        width: 250px;
+
+                        &:nth-child(1) {
+                            width: 150px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 120px;
+                        }
+
+                        &:nth-child(3) {
+                            width: 120px;
+                        }
+
+                        &:nth-child(4) {
+                            width: 200px;
+                        }
+
                         &:nth-child(5) {
-                            width: 300px;
+                            width: 150px;
+                        }
+
+                        &:nth-child(6) {
+                            width: 350px;
+                        }
+
+                        &:nth-child(7) {
+                            width: 100px;
                         }
 
                         &:last-child {
@@ -1630,10 +1710,66 @@ footer {
             }
         }
 
+        .substitution-head {
+            .items {
+                display: flex;
+
+                .item {
+                    width: 250px;
+
+                    &:nth-child(1) {
+                        width: 50px;
+                    }
+
+                    &:nth-child(2) {
+                        width: 350px;
+                    }
+
+                    &:nth-child(3) {
+                        width: 350px;
+                    }
+
+                    &:nth-child(4) {
+                        width: 100px;
+                    }
+                }
+            }
+        }
+
+        .substitution-items {
+            .items {
+                display: flex;
+
+                .item {
+                    width: 250px;
+
+                    &:nth-child(1) {
+                        width: 50px;
+                    }
+
+                    &:nth-child(2) {
+                        width: 350px;
+                    }
+
+                    &:nth-child(3) {
+                        width: 350px;
+                    }
+
+                    &:nth-child(4) {
+                        width: 100px;
+                    }
+
+                    &:last-child {
+                        width: 0;
+                    }
+                }
+            }
+        }
+
         .schedule .container, .substitution .container {
             display: grid;
 
-            .schedule-head, .substitution-head {
+            .schedule-head {
                 .items {
                     display: flex;
 
@@ -1645,11 +1781,11 @@ footer {
                         }
 
                         &:nth-child(2) {
-                            width: 200px;
+                            width: 350px;
                         }
 
                         &:nth-child(3) {
-                            width: 400px;
+                            width: 350px;
                         }
 
                         &:nth-child(4) {
@@ -1659,7 +1795,7 @@ footer {
                 }
             }
 
-            .schedule-items, .substitution-items {
+            .schedule-items {
                 .items {
                     display: flex;
 
@@ -1671,11 +1807,11 @@ footer {
                         }
 
                         &:nth-child(2) {
-                            width: 200px;
+                            width: 350px;
                         }
 
                         &:nth-child(3) {
-                            width: 400px;
+                            width: 350px;
                         }
 
                         &:nth-child(4) {
@@ -1690,7 +1826,13 @@ footer {
             }
         }
     }
+}
 
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
     .hamburger {
         display: block;
     }

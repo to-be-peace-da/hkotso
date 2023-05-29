@@ -32,6 +32,10 @@ html {
  * Remove the margin in all browsers.
  */
 body {
+  background: #f3f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
 }
 
@@ -799,6 +803,7 @@ header nav div.logo img {
 }
 
 footer {
+  margin-top: auto;
   border-top: 1px solid #bac5c6;
 }
 footer .footer p {
@@ -1142,14 +1147,14 @@ footer .copyright-logo-links .links ul {
 }
 .teacher-schedule-and-substitution .substitution-items .items, .teacher-schedule-and-substitution .substitution-head .items {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr 2fr 2fr 2fr 3fr;
+  grid-template-columns: 1.8fr 1.3fr 1.5fr 2.5fr 7fr 1fr 1fr;
 }
 .teacher-schedule-and-substitution .schedule-items, .teacher-schedule-and-substitution .schedule-head {
   padding: 5px;
 }
 .teacher-schedule-and-substitution .schedule-items .items, .teacher-schedule-and-substitution .schedule-head .items {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr 2fr 2fr 3fr 1fr 1fr;
+  grid-template-columns: 1.8fr 1.3fr 1.5fr 2.5fr 2fr 5fr 1fr 1fr;
 }
 
 @media (max-width: 1400px) {
@@ -1168,110 +1173,206 @@ footer .copyright-logo-links .links ul {
     gap: 20px;
     align-items: center;
   }
-}
-@media (max-width: 768px) {
   .teacher-schedule-and-substitution .odd .container {
     padding: 0 20px;
   }
   .teacher-schedule-and-substitution .schedule .container, .teacher-schedule-and-substitution .substitution .container {
     display: grid;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-head .items, .teacher-schedule-and-substitution .schedule .container .substitution-head .items, .teacher-schedule-and-substitution .substitution .container .schedule-head .items, .teacher-schedule-and-substitution .substitution .container .substitution-head .items {
+  .teacher-schedule-and-substitution .schedule .container .substitution-head .items, .teacher-schedule-and-substitution .substitution .container .substitution-head .items {
     display: flex;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item, .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item, .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item, .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item {
+  .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item, .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item {
     width: 250px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(1), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(1) {
-    width: 150px;
+  .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(1) {
+    width: 50px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(2), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(2) {
+  .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(2) {
+    width: 120px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(3) {
+    width: 120px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(4) {
     width: 200px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(3), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(3) {
-    width: 150px;
+  .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(5) {
+    width: 350px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(4), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(4) {
-    width: 300px;
+  .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(6), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(6) {
+    width: 100px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(5) {
-    width: 150px;
-  }
-  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(5) {
-    width: 300px;
-  }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items, .teacher-schedule-and-substitution .schedule .container .substitution-items .items, .teacher-schedule-and-substitution .substitution .container .schedule-items .items, .teacher-schedule-and-substitution .substitution .container .substitution-items .items {
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items, .teacher-schedule-and-substitution .substitution .container .substitution-items .items {
     display: flex;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item, .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item, .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item, .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item {
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item, .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item {
     width: 250px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(1), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(1) {
-    width: 150px;
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(1) {
+    width: 50px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(2), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(2) {
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(2) {
+    width: 120px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(3) {
+    width: 120px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(4) {
     width: 200px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(3), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(3) {
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(5) {
+    width: 350px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(6), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(6) {
+    width: 100px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:last-child, .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:last-child {
+    width: 0;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items, .teacher-schedule-and-substitution .substitution .container .schedule-head .items {
+    display: flex;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item, .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item {
+    width: 250px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(1) {
     width: 150px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(4), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(4) {
-    width: 300px;
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(2) {
+    width: 120px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(5) {
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(3) {
+    width: 120px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(4) {
+    width: 200px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(5) {
     width: 150px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(5) {
-    width: 300px;
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(6), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(6) {
+    width: 350px;
   }
-  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:last-child, .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:last-child, .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:last-child, .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:last-child {
+  .teacher-schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(7), .teacher-schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(7) {
+    width: 100px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items, .teacher-schedule-and-substitution .substitution .container .schedule-items .items {
+    display: flex;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item, .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item {
+    width: 250px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(1), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(1) {
+    width: 150px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(2) {
+    width: 120px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(3) {
+    width: 120px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(4) {
+    width: 200px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(5), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(5) {
+    width: 150px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(6), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(6) {
+    width: 350px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(7), .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(7) {
+    width: 100px;
+  }
+  .teacher-schedule-and-substitution .schedule .container .schedule-items .items .item:last-child, .teacher-schedule-and-substitution .substitution .container .schedule-items .items .item:last-child {
     width: 0;
   }
   .schedule-and-substitution .odd .container {
     padding: 0 20px;
   }
+  .schedule-and-substitution .substitution-head .items {
+    display: flex;
+  }
+  .schedule-and-substitution .substitution-head .items .item {
+    width: 250px;
+  }
+  .schedule-and-substitution .substitution-head .items .item:nth-child(1) {
+    width: 50px;
+  }
+  .schedule-and-substitution .substitution-head .items .item:nth-child(2) {
+    width: 350px;
+  }
+  .schedule-and-substitution .substitution-head .items .item:nth-child(3) {
+    width: 350px;
+  }
+  .schedule-and-substitution .substitution-head .items .item:nth-child(4) {
+    width: 100px;
+  }
+  .schedule-and-substitution .substitution-items .items {
+    display: flex;
+  }
+  .schedule-and-substitution .substitution-items .items .item {
+    width: 250px;
+  }
+  .schedule-and-substitution .substitution-items .items .item:nth-child(1) {
+    width: 50px;
+  }
+  .schedule-and-substitution .substitution-items .items .item:nth-child(2) {
+    width: 350px;
+  }
+  .schedule-and-substitution .substitution-items .items .item:nth-child(3) {
+    width: 350px;
+  }
+  .schedule-and-substitution .substitution-items .items .item:nth-child(4) {
+    width: 100px;
+  }
+  .schedule-and-substitution .substitution-items .items .item:last-child {
+    width: 0;
+  }
   .schedule-and-substitution .schedule .container, .schedule-and-substitution .substitution .container {
     display: grid;
   }
-  .schedule-and-substitution .schedule .container .schedule-head .items, .schedule-and-substitution .schedule .container .substitution-head .items, .schedule-and-substitution .substitution .container .schedule-head .items, .schedule-and-substitution .substitution .container .substitution-head .items {
+  .schedule-and-substitution .schedule .container .schedule-head .items, .schedule-and-substitution .substitution .container .schedule-head .items {
     display: flex;
   }
-  .schedule-and-substitution .schedule .container .schedule-head .items .item, .schedule-and-substitution .schedule .container .substitution-head .items .item, .schedule-and-substitution .substitution .container .schedule-head .items .item, .schedule-and-substitution .substitution .container .substitution-head .items .item {
+  .schedule-and-substitution .schedule .container .schedule-head .items .item, .schedule-and-substitution .substitution .container .schedule-head .items .item {
     width: 250px;
   }
-  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(1), .schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(1), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(1), .schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(1) {
+  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(1), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(1) {
     width: 150px;
   }
-  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(2), .schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(2), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(2), .schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(2) {
-    width: 200px;
+  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(2), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(2) {
+    width: 350px;
   }
-  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(3), .schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(3), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(3), .schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(3) {
-    width: 400px;
+  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(3), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(3) {
+    width: 350px;
   }
-  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(4), .schedule-and-substitution .schedule .container .substitution-head .items .item:nth-child(4), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(4), .schedule-and-substitution .substitution .container .substitution-head .items .item:nth-child(4) {
+  .schedule-and-substitution .schedule .container .schedule-head .items .item:nth-child(4), .schedule-and-substitution .substitution .container .schedule-head .items .item:nth-child(4) {
     width: 100px;
   }
-  .schedule-and-substitution .schedule .container .schedule-items .items, .schedule-and-substitution .schedule .container .substitution-items .items, .schedule-and-substitution .substitution .container .schedule-items .items, .schedule-and-substitution .substitution .container .substitution-items .items {
+  .schedule-and-substitution .schedule .container .schedule-items .items, .schedule-and-substitution .substitution .container .schedule-items .items {
     display: flex;
   }
-  .schedule-and-substitution .schedule .container .schedule-items .items .item, .schedule-and-substitution .schedule .container .substitution-items .items .item, .schedule-and-substitution .substitution .container .schedule-items .items .item, .schedule-and-substitution .substitution .container .substitution-items .items .item {
+  .schedule-and-substitution .schedule .container .schedule-items .items .item, .schedule-and-substitution .substitution .container .schedule-items .items .item {
     width: 250px;
   }
-  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(1), .schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(1), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(1), .schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(1) {
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(1), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(1) {
     width: 150px;
   }
-  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(2), .schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(2), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(2), .schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(2) {
-    width: 200px;
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(2), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(2) {
+    width: 350px;
   }
-  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(3), .schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(3), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(3), .schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(3) {
-    width: 400px;
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(3), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(3) {
+    width: 350px;
   }
-  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(4), .schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(4), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(4), .schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(4) {
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:nth-child(4), .schedule-and-substitution .substitution .container .schedule-items .items .item:nth-child(4) {
     width: 100px;
   }
-  .schedule-and-substitution .schedule .container .schedule-items .items .item:last-child, .schedule-and-substitution .schedule .container .substitution-items .items .item:last-child, .schedule-and-substitution .substitution .container .schedule-items .items .item:last-child, .schedule-and-substitution .substitution .container .substitution-items .items .item:last-child {
+  .schedule-and-substitution .schedule .container .schedule-items .items .item:last-child, .schedule-and-substitution .substitution .container .schedule-items .items .item:last-child {
     width: 0;
   }
+}
+@media (max-width: 768px) {
   .hamburger {
     display: block;
   }

@@ -65,7 +65,7 @@
                                             </div>
                                             <div class="item">
                                                 <a href="{{ route('teacher.show', $substitution->teacher) }}"
-                                                   target="_blank">{{ $substitution->teacher->surname .  " " . $substitution->teacher->name . ". " . $substitution->teacher->patronymic . "." }}</a>
+                                                   target="_blank">{{ $substitution->teacher->surname .  " " . $substitution->teacher->name . " " . $substitution->teacher->patronymic }}</a>
                                             </div>
                                             <div class="item">
                                                 <p>{{ $substitution->audience->number }}</p>

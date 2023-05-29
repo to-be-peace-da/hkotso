@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\NewsController;

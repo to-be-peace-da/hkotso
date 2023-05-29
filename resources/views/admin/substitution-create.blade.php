@@ -62,12 +62,13 @@
                     @enderror
                     <div class="label-and-input">
                         <label for="audience_id" class="">Кабинет</label>
-                        <input value="{{ old('audience_id') }}" type="number" name="audience_id" id="audience_id" min="1" max="500">
-{{--                        <select name="audience_id" id="audience_id">--}}
-{{--                            @foreach($audiences->sortBy('number') as $audience)--}}
-{{--                                <option value="{{ $audience->id }}">{{ $audience->number }}</option>--}}
-{{--                            @endforeach--}}
-{{--                        </select>--}}
+                        <input value="{{ old('audience_id') }}" type="number" name="audience_id" id="audience_id"
+                               min="1" max="500">
+                        {{--                        <select name="audience_id" id="audience_id">--}}
+                        {{--                            @foreach($audiences->sortBy('number') as $audience)--}}
+                        {{--                                <option value="{{ $audience->id }}">{{ $audience->number }}</option>--}}
+                        {{--                            @endforeach--}}
+                        {{--                        </select>--}}
                     </div>
                     @error('audience_id')
                     <p>{{ $message }}</p>
@@ -85,7 +86,7 @@
                     <p>{{ $message }}</p>
                     @enderror
                     <div class="label-and-input">
-                        <label for="date" class="">День</label>
+                        <label for="date" class="">Дата</label>
                         <input type="date" name="date" id="date">
                     </div>
                     @error('date')
