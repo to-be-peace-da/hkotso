@@ -14,7 +14,9 @@
                         @method('PUT')
                         <div class="img-wrapper">
                             <div class="img"
-                                 style="background: url({{ $singleNews->image ? asset('storage/' . $singleNews->image) : asset('storage/news_images/default.jpg') }})">
+                                 style="background: url({{ $singleNews->image ? asset('storage/' . $singleNews->image) : asset('storage/news_images/default.jpg') }})"
+                                 onclick="openModal('{{ $singleNews->image ? asset('storage/' . $singleNews->image) : asset('storage/news_images/default.jpg') }}')"
+                            >
                             </div>
                             <div class="label-and-input">
                                 <label for="news_image">Обложка</label>
@@ -49,6 +51,34 @@
             </div>
         </div>
     </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="modal">
+        </div>
+    </div>
+
+    <script>
+        let modal = document.querySelector('#modal');
+        let modalImage = document.querySelector('#modal-image');
+
+        function openModal(imageUrl) {
+            modal.style.display = "flex";
+            modalImage.src = imageUrl;
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        window.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+
     {{--    <script>--}}
     {{--        $('#news_text').summernote({--}}
     {{--            tabsize: 2,--}}
