@@ -33,6 +33,16 @@ $arrow-color: #656f77;
 
     .modal-content {
         margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 90%;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            text-align: center;
+        }
     }
 }
 
@@ -72,6 +82,10 @@ html {
 /**
  * Remove the margin in all browsers.
  */
+
+button {
+    cursor: pointer;
+}
 
 body {
     background: $lighter-gray;
@@ -405,6 +419,25 @@ template {
     display: none;
 }
 
+html {
+    &::-webkit-scrollbar {
+        width: .6vw;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $dark-gray;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: $odd;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: white;
+    }
+}
+
 //! MOBILE MENU
 
 .hamburger {
@@ -626,6 +659,7 @@ template {
     a:visited {
         color: white;
     }
+
 
     h1,
     h2,
@@ -1251,11 +1285,12 @@ footer {
             width: 60%;
 
             .title {
-
+                text-align: justify;
             }
 
             .text {
                 line-height: 1.5;
+                text-align: justify;
             }
         }
     }
@@ -1298,6 +1333,10 @@ footer {
         p {
             line-height: 1.5;
         }
+
+        h2, p {
+            text-align: justify;
+        }
     }
 }
 
@@ -1325,6 +1364,7 @@ footer {
 
             .name input,
             .text textarea {
+                text-align: justify;
                 margin-top: 20px;
             }
 

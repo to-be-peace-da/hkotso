@@ -22,6 +22,15 @@
 }
 .modal .modal-content {
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+}
+.modal .modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
 }
 
 * {
@@ -55,6 +64,10 @@ html {
 /**
  * Remove the margin in all browsers.
  */
+button {
+  cursor: pointer;
+}
+
 body {
   background: #f3f4f4;
   min-height: 100vh;
@@ -349,6 +362,20 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+html::-webkit-scrollbar {
+  width: 0.6vw;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: rgb(30, 30, 30);
+  border-radius: 5px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(14, 14, 14);
+}
+html::-webkit-scrollbar-track {
+  background-color: white;
 }
 
 .hamburger {
@@ -973,8 +1000,12 @@ footer .copyright-logo-links .links ul a:hover {
   padding: 20px;
   width: 60%;
 }
+.news .card .content .title {
+  text-align: justify;
+}
 .news .card .content .text {
   line-height: 1.5;
+  text-align: justify;
 }
 
 .single-news iframe {
@@ -1006,6 +1037,9 @@ footer .copyright-logo-links .links ul a:hover {
 .single-news .content p {
   line-height: 1.5;
 }
+.single-news .content h2, .single-news .content p {
+  text-align: justify;
+}
 
 .single-news-edit .content {
   display: flex;
@@ -1026,6 +1060,7 @@ footer .copyright-logo-links .links ul a:hover {
 }
 .single-news-edit .content form .name input,
 .single-news-edit .content form .text textarea {
+  text-align: justify;
   margin-top: 20px;
 }
 .single-news-edit .content form input#news_name {
