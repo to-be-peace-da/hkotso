@@ -2,7 +2,7 @@
     <div class="even">
         <div class="container">
             <div class="great-purge uniq-wrapper">
-                <h1>Большая чистка</h1>
+                <h2>Большая чистка</h2>
                 <div class="uniq-fields">
                     <form class="" action="{{ route('admin.destroy-all-news') }}" method="post">
                         @method('DELETE')
