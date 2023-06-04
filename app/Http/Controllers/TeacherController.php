@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTeacherRequest;
+use App\Http\Requests\UpdateTeacherRequest;
 use App\Models\Day;
 use App\Models\Schedule;
 use App\Models\Substitution;
 use App\Models\Teacher;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
@@ -57,7 +57,7 @@ class TeacherController extends Controller
 
         $days = Day::all();
 
-        return view('teachers.show', [
+        return view('teacher.show', [
             'teacher' => $teacher,
             'schedules' => $schedules,
             'substitutions' => $substitutions,
@@ -70,15 +70,19 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        //
+        return view('teacher.edit', [
+            'teacher' => $teacher,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(UpdateTeacherRequest $request, Teacher $teacher)
     {
-        //
+        $teacher->update($request->validated());
+
+        return redirect()->route('admin.group-create')->with('message', 'Преподаватель изменен');
     }
 
     /**
@@ -86,6 +90,8 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        //
+        $teacher->delete();
+
+        return back()->with('message', 'Преподаватель удален');
     }
 }

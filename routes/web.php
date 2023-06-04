@@ -80,6 +80,11 @@ Route::get('/admin-panel/teacher-create', [AdminController::class, 'teacherCreat
     ->middleware('admin')
     ->name('admin.teacher-create');
 
+// Cleaning Page
+Route::get('/admin-panel/cleaning', [AdminController::class, 'cleaning'])
+    ->middleware('admin')
+    ->name('admin.cleaning');
+
 //! NEWS
 
 // Show All News
@@ -188,7 +193,7 @@ Route::put('/substitutions/{substitution}', [SubstitutionController::class, 'upd
     ->name('substitution.update');
 
 // Substitution Destroy
-Route::delete('/substitution/{substitution}', [SubstitutionController::class, 'destroy'])
+Route::delete('/substitutions/{substitution}', [SubstitutionController::class, 'destroy'])
     ->middleware('admin')
     ->name('substitution.destroy');
 
@@ -199,12 +204,42 @@ Route::post('/groups', [GroupController::class, 'store'])
     ->middleware('admin')
     ->name('group.store');
 
+// Group Edit
+Route::get('/groups/{group}/edit', [GroupController::class, 'edit'])
+    ->middleware('admin')
+    ->name('group.edit');
+
+// Substitution Update
+Route::put('/groups/{group}', [GroupController::class, 'update'])
+    ->middleware('admin')
+    ->name('group.update');
+
+// Group Destroy
+Route::delete('/groups/{group}', [GroupController::class, 'destroy'])
+    ->middleware('admin')
+    ->name('group.destroy');
+
 //! SUBJECTS
 
 // Subject Store
 Route::post('/subjects', [SubjectController::class, 'store'])
     ->middleware('admin')
     ->name('subject.store');
+
+// Subject Edit
+Route::get('/subjects/{subject}/edit', [SubjectController::class, 'edit'])
+    ->middleware('admin')
+    ->name('subject.edit');
+
+// Subject Update
+Route::put('/subjects/{subject}', [SubjectController::class, 'update'])
+    ->middleware('admin')
+    ->name('subject.update');
+
+// Subject Destroy
+Route::delete('/subjects/{subject}', [SubjectController::class, 'destroy'])
+    ->middleware('admin')
+    ->name('subject.destroy');
 
 //! TEACHERS
 
@@ -216,3 +251,50 @@ Route::post('/teachers', [TeacherController::class, 'store'])
 // Show Single Teacher
 Route::get('/teachers/{teacher:slug}', [TeacherController::class, 'show'])
     ->name('teacher.show');
+
+// Teacher Edit
+Route::get('/teachers/{teacher}/edit', [TeacherController::class, 'edit'])
+    ->middleware('admin')
+    ->name('teacher.edit');
+
+// Teacher Update
+Route::put('/teachers/{teacher}', [TeacherController::class, 'update'])
+    ->middleware('admin')
+    ->name('teacher.update');
+
+// Teacher Destroy
+Route::delete('/teachers/{teacher}', [TeacherController::class, 'destroy'])
+    ->middleware('admin')
+    ->name('teacher.destroy');
+
+//! CLEANING
+
+// All News Destroy
+Route::delete('/news', [AdminController::class, 'destroyAllNews'])
+    ->middleware('admin')
+    ->name('admin.destroy-all-news');
+
+// All Schedules Destroy
+Route::delete('/schedules', [AdminController::class, 'destroyAllSchedules'])
+    ->middleware('admin')
+    ->name('admin.destroy-all-schedules');
+
+// All Substitutions Destroy
+Route::delete('/substitutions', [AdminController::class, 'destroyAllSubstitutions'])
+    ->middleware('admin')
+    ->name('admin.destroy-all-substitutions');
+
+// All Groups Destroy
+Route::delete('/groups', [AdminController::class, 'destroyAllGroups'])
+    ->middleware('admin')
+    ->name('admin.destroy-all-groups');
+
+// All Subjects Destroy
+Route::delete('/subjects', [AdminController::class, 'destroyAllSubjects'])
+    ->middleware('admin')
+    ->name('admin.destroy-all-subjects');
+
+// All Teachers Destroy
+Route::delete('/teachers', [AdminController::class, 'destroyAllTeachers'])
+    ->middleware('admin')
+    ->name('admin.destroy-all-teachers');

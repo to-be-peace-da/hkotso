@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreGroupRequest;
+use App\Http\Requests\UpdateGroupRequest;
 use App\Models\Group;
-use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
@@ -47,15 +47,19 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        //
+        return view('group.edit', [
+            'group' => $group,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Group $group)
+    public function update(UpdateGroupRequest $request, Group $group)
     {
-        //
+        $group->update($request->validated());
+
+        return redirect()->route('admin.group-create')->with('message', 'Группа изменена');
     }
 
     /**
@@ -63,6 +67,8 @@ class GroupController extends Controller
      */
     public function destroy(Group $group)
     {
-        //
+        $group->delete();
+
+        return back()->with('message', 'Группа удалена');
     }
 }

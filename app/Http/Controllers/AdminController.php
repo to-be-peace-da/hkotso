@@ -8,10 +8,13 @@ use App\Models\Course;
 use App\Models\Day;
 use App\Models\Department;
 use App\Models\Group;
+use App\Models\News;
 use App\Models\Order;
 use App\Models\Part;
+use App\Models\Schedule;
 use App\Models\Semester;
 use App\Models\Subject;
+use App\Models\Substitution;
 use App\Models\Teacher;
 
 class AdminController extends Controller
@@ -107,16 +110,75 @@ class AdminController extends Controller
 
     public function groupCreate()
     {
-        return view('admin.group-create');
+        $groups = Group::all();
+
+        return view('admin.group-create', [
+            'groups' => $groups,
+        ]);
     }
 
     public function subjectCreate()
     {
-        return view('admin.subject-create');
+        $subjects = Subject::all();
+
+        return view('admin.subject-create', [
+            'subjects' => $subjects,
+        ]);
     }
 
     public function teacherCreate()
     {
-        return view('admin.teacher-create');
+        $teachers = Teacher::all();
+
+        return view('admin.teacher-create', [
+            'teachers' => $teachers,
+        ]);
+    }
+
+    public function cleaning()
+    {
+        return view('admin.cleaning');
+    }
+
+    public function destroyAllSchedules()
+    {
+        Schedule::query()->delete();
+
+        return back()->with('message', 'Всё расписание удалено');
+    }
+
+    public function destroyAllSubstitutions()
+    {
+        Substitution::query()->delete();
+
+        return back()->with('message', 'Все замены удалены');
+    }
+
+    public function destroyAllTeachers()
+    {
+        Teacher::query()->delete();
+
+        return back()->with('message', 'Все преподаватели удалены');
+    }
+
+    public function destroyAllGroups()
+    {
+        Group::query()->delete();
+
+        return back()->with('message', 'Все группы удалены');
+    }
+
+    public function destroyAllSubjects()
+    {
+        Subject::query()->delete();
+
+        return back()->with('message', 'Все предметы удалены');
+    }
+
+    public function destroyAllNews()
+    {
+        News::query()->delete();
+
+        return back()->with('message', 'Все новости удалены');
     }
 }

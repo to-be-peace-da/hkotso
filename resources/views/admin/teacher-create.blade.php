@@ -34,4 +34,76 @@
             </div>
         </div>
     </div>
+    <div class="teacher-action">
+        <div class="odd">
+            <div class="container">
+                <div class="teacher-head">
+                    <div class="items">
+                        <div class="item">
+                            <p>ID</p>
+                        </div>
+                        <div class="item">
+                            <p>Фамилия</p>
+                        </div>
+                        <div class="item">
+                            <p>Имя</p>
+                        </div>
+                        <div class="item">
+                            <p>Отчество</p>
+                        </div>
+                        <div class="item">
+                            <p>Дата создания</p>
+                        </div>
+                        <div class="item">
+                            <p>Дата изменения</p>
+                        </div>
+                    </div>
+                </div>
+                @foreach($teachers->sortBy('surname') as $teacher)
+                    <div class="teacher-items">
+                        <div class="items">
+                            <div class="item">
+                                <p>{{ $teacher->id }}</p>
+                            </div>
+                            <div class="item">
+                                <p>{{ $teacher->surname }}</p>
+                            </div>
+                            <div class="item">
+                                <p>{{ $teacher->name }}</p>
+                            </div>
+                            <div class="item">
+                                <p>{{ $teacher->patronymic }}</p>
+                            </div>
+                            <div class="item">
+                                <p>{{ $teacher->created_at }}</p>
+                            </div>
+                            <div class="item">
+                                <p>{{ $teacher->updated_at }}</p>
+                            </div>
+                            <div class="item">
+                                <div class="admin-tools">
+                                    @if(auth()->check() && auth()->user()->is_admin)
+                                        <form
+                                            action="{{ route('teacher.destroy', $teacher) }}"
+                                            method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                    onclick="return confirm('Вы уверены, что хотите удалить это?')">
+                                                <i class="fa-solid fa-trash"></i></button>
+                                        </form>
+                                        <form action="{{ route('teacher.edit', $teacher) }}"
+                                              method="get">
+                                            <button type="submit"><i class="fa-solid fa-pen"></i>
+                                            </button>
+                                        </form>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
 </x-layout>

@@ -58,7 +58,7 @@
                                     <img src="{{ asset('storage/images/group.svg') }}" alt="group">
                                 </div>
                                 <div class="title">
-                                    <h2>Добавить группу</h2>
+                                    <h2>Группы</h2>
                                 </div>
                             </div>
                         </a>
@@ -70,7 +70,19 @@
                                     <img src="{{ asset('storage/images/subject.svg') }}" alt="subject">
                                 </div>
                                 <div class="title">
-                                    <h2>Добавить предмет</h2>
+                                    <h2>Предметы</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="tool-wrapper">
+                        <a href="{{ route('admin.cleaning') }}">
+                            <div class="tool">
+                                <div class="icon">
+                                    <img src="{{ asset('storage/images/cleaning.svg') }}" alt="cleaning">
+                                </div>
+                                <div class="title">
+                                    <h2>Большая чистка</h2>
                                 </div>
                             </div>
                         </a>
@@ -82,7 +94,7 @@
                                     <img src="{{ asset('storage/images/teacher.svg') }}" alt="teacher">
                                 </div>
                                 <div class="title">
-                                    <h2>Добавить преподавателя</h2>
+                                    <h2>Преподаватели</h2>
                                 </div>
                             </div>
                         </a>
