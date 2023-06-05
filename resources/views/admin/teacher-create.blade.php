@@ -2,7 +2,7 @@
     <div class="even">
         <div class="container">
             <div class="form-wrapper">
-                <h2>Добавление преподавателя</h2>
+                <h2>Преподаватели</h2>
                 <form class="form-fields" action="{{ route('teacher.store') }}" method="post">
                     @csrf
                     <div class="label-and-input">

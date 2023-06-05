@@ -59,26 +59,6 @@
         </div>
     </div>
 
-    <script>
-        let modal = document.querySelector('#modal');
-        let modalImage = document.querySelector('#modal-image');
-
-        function openModal(imageUrl) {
-            modal.style.display = "flex";
-            modalImage.src = imageUrl;
-        }
-
-        function closeModal() {
-            modal.style.display = "none";
-        }
-
-        window.addEventListener("click", function (e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-    </script>
-
     {{--    <script>--}}
     {{--        $('#news_text').summernote({--}}
     {{--            tabsize: 2,--}}
