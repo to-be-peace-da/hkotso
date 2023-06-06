@@ -84,6 +84,7 @@ html {
 
 button {
     cursor: pointer;
+
     &:hover {
         background: $darker-gray;
     }
@@ -449,7 +450,7 @@ html {
     cursor: pointer;
 
     appearance: none;
-    background: none;
+    background: none !important;
     outline: none;
     border: none;
     box-shadow: none;
@@ -486,8 +487,8 @@ html {
     height: 100vh;
     z-index: 30;
     background-color: white;
-    margin-top: 80px;
-    padding-top: 40px;
+    margin-top: 60px;
+    padding-top: 20px;
     transition: .4s;
 
     .admin {
@@ -744,7 +745,7 @@ html {
 .flash-message {
     width: 100%;
     position: fixed;
-    top: 80px;
+    top: 60px;
     padding: 20px;
     background: $dark-gray;
 
@@ -768,7 +769,7 @@ header {
     background: white;
 
     nav {
-        height: 80px;
+        height: 60px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -802,7 +803,7 @@ header {
             line-height: 0;
 
             img {
-                width: 200px;
+                width: 140px;
             }
         }
     }
@@ -1994,11 +1995,11 @@ footer {
                         }
 
                         &:nth-child(2) {
-                            width: 120px;
+                            width: 140px;
                         }
 
                         &:nth-child(3) {
-                            width: 120px;
+                            width: 140px;
                         }
 
                         &:nth-child(4) {

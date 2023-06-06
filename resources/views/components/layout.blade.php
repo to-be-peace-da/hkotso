@@ -5,7 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Хабаровский колледж отраслевых технологий и сферы обслуживания</title>
+    <meta name="author" content="Никита 'to_be_peace_da' Музыко">
+    <meta name="description" content="Новости и Расписание КГБ ПОУ 'ХКОТСО' в удобном формате">
+    <title>QQhkotso - Новости и Расписание КГБ ПОУ 'ХКОТСО' в удобном формате</title>
+    <link rel="icon" type="image/x-icon" href="{{ public_path('favicon.ico') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -16,7 +19,7 @@
         <nav>
             <div class="logo">
                 <a href="/">
-                    <img src="{{ asset('storage/images/hkotso-logo-v7.svg') }}" alt="hkotso-logo">
+                    <img src="{{ asset('storage/images/final-logo.svg') }}" alt="qqhkotso-logo">
                 </a>
             </div>
             @if(auth()->check() && auth()->user()->is_admin)
@@ -113,7 +116,7 @@
                                 КГБ ПОУ ХКОТСО 2023</p>
                         </div>
                         <div class="logo">
-                            <img src="{{ asset('storage/images/hkotso-logo-v7.svg') }}" alt="hkotso-logo">
+                            <img src="{{ asset('storage/images/final-logo.svg') }}" alt="qqhkotso-logo">
                         </div>
                         <div class="links">
                             <ul>

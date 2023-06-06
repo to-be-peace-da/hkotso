@@ -387,7 +387,7 @@ html::-webkit-scrollbar-track {
   width: 50px;
   cursor: pointer;
   appearance: none;
-  background: none;
+  background: none !important;
   outline: none;
   border: none;
   box-shadow: none;
@@ -423,8 +423,8 @@ html::-webkit-scrollbar-track {
   height: 100vh;
   z-index: 30;
   background-color: white;
-  margin-top: 80px;
-  padding-top: 40px;
+  margin-top: 60px;
+  padding-top: 20px;
   transition: 0.4s;
 }
 .mobile-nav .admin {
@@ -621,7 +621,7 @@ html::-webkit-scrollbar-track {
 .flash-message {
   width: 100%;
   position: fixed;
-  top: 80px;
+  top: 60px;
   padding: 20px;
   background: rgb(30, 30, 30);
   display: flex;
@@ -641,7 +641,7 @@ header {
   background: white;
 }
 header nav {
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -668,7 +668,7 @@ header nav div.logo {
   line-height: 0;
 }
 header nav div.logo img {
-  width: 200px;
+  width: 140px;
 }
 
 .great-purge .uniq-fields {
@@ -1510,10 +1510,10 @@ footer .copyright-logo-links .links ul a:hover {
     width: 50px;
   }
   .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(2), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(2) {
-    width: 120px;
+    width: 140px;
   }
   .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(3), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(3) {
-    width: 120px;
+    width: 140px;
   }
   .teacher-schedule-and-substitution .schedule .container .substitution-items .items .item:nth-child(4), .teacher-schedule-and-substitution .substitution .container .substitution-items .items .item:nth-child(4) {
     width: 200px;
