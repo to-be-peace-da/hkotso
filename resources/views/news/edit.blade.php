@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="name">
-                            <label for="news_name">Имя</label>
+                            <label for="news_name">Заголовок</label>
                             <input type="text" name="name" id="news_name" value="{{ $singleNews->name }}">
                             @error('name')
                             <p>{{ $message }}</p>

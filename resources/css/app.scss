@@ -1782,6 +1782,28 @@ footer {
             width: 100%;
         }
     }
+
+    .news {
+        .content {
+            .title, .text {
+                text-align: left !important;
+            }
+        }
+    }
+
+    .single-news {
+        .content {
+            .title h2, .text p {
+                text-align: left !important;
+            }
+        }
+    }
+
+    .single-news-edit {
+        .name input, .text textarea {
+            text-align: left !important;
+        }
+    }
 }
 
 @media (max-width: 1200px) {

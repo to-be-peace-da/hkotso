@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Никита 'to_be_peace_da' Музыко">
     <meta name="description" content="Новости и Расписание КГБ ПОУ 'ХКОТСО' в удобном формате">
     <title>QQhkotso - Новости и Расписание КГБ ПОУ 'ХКОТСО' в удобном формате</title>
-    <link rel="icon" type="image/x-icon" href="{{ public_path('favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -37,7 +37,7 @@
                 <li><a href="{{ route('news.index') }}">Новости</a></li>
                 <li><a href="{{ route('schedule.index') }}">Расписание</a></li>
             </ul>
-            <button class="hamburger">
+            <button id="hamburger-menu-button" class="hamburger">
                 <div class="bar"></div>
             </button>
         </nav>

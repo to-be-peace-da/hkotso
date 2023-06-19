@@ -1365,6 +1365,15 @@ footer .copyright-logo-links .links ul a:hover {
   .latest-news .card {
     width: 100%;
   }
+  .news .content .title, .news .content .text {
+    text-align: left !important;
+  }
+  .single-news .content .title h2, .single-news .content .text p {
+    text-align: left !important;
+  }
+  .single-news-edit .name input, .single-news-edit .text textarea {
+    text-align: left !important;
+  }
 }
 @media (max-width: 1200px) {
   .latest-news {
