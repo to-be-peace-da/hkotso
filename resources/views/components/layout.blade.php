@@ -45,7 +45,7 @@
             <div class="admin">
                 @if(auth()->check() && auth()->user()->is_admin)
                     <a href="{{ route('admin.index') }}">Админ панель</a>
-                    <a>
+                    <a class="admin-logout">
                         <form action="{{ route('admin.logout') }}" method="post">
                             @csrf
                             <button type="submit">Выйти</button>

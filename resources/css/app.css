@@ -425,16 +425,25 @@ html::-webkit-scrollbar-track {
   background-color: white;
   margin-top: 60px;
   padding-top: 20px;
-  transition: 0.4s;
 }
 .mobile-nav .admin {
   display: flex;
   flex-direction: column;
 }
-.mobile-nav .admin button {
+.mobile-nav .admin .admin-logout {
+  padding: 0;
+}
+.mobile-nav .admin form {
+  height: 100%;
+  width: 100%;
+}
+.mobile-nav .admin form button {
   box-shadow: none;
   background: none;
   font-weight: bold;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
 }
 .mobile-nav .items {
   margin-top: 30px;
