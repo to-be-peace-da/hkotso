@@ -82,7 +82,7 @@ class TeacherController extends Controller
     {
         $teacher->update($request->validated());
 
-        return redirect()->route('admin.group-create')->with('message', 'Преподаватель изменен');
+        return to_route('admin.group-create')->with('message', 'Преподаватель изменен');
     }
 
     /**

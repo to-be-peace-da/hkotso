@@ -29,7 +29,7 @@ class AdminController extends Controller
         if (auth()->attempt($request->validated())) {
             $request->session()->regenerate();
 
-            return redirect(route('admin.index'));
+            return to_route('admin.index');
         }
 
         return back()
@@ -42,7 +42,7 @@ class AdminController extends Controller
         session()->invalidate();
         session()->regenerateToken();
 
-        return redirect()->route('main.index');
+        return to_route('main.index');
     }
 
     public function index()

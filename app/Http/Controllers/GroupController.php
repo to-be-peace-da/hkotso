@@ -59,7 +59,7 @@ class GroupController extends Controller
     {
         $group->update($request->validated());
 
-        return redirect()->route('admin.group-create')->with('message', 'Группа изменена');
+        return to_route('admin.group-create')->with('message', 'Группа изменена');
     }
 
     /**

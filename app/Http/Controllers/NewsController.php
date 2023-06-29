@@ -91,6 +91,6 @@ class NewsController extends Controller
 
         $singleNews->delete();
 
-        return redirect()->route('main.index')->with('message', 'Новость удалена');
+        return to_route('main.index')->with('message', 'Новость удалена');
     }
 }

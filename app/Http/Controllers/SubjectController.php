@@ -59,7 +59,7 @@ class SubjectController extends Controller
     {
         $subject->update($request->validated());
 
-        return redirect()->route('admin.group-create')->with('message', 'Предмет изменен');
+        return to_route('admin.group-create')->with('message', 'Предмет изменен');
     }
 
     /**

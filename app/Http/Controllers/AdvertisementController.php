@@ -42,13 +42,13 @@ class AdvertisementController extends Controller
     {
         $advertisement->update($request->validated());
 
-        return redirect()->route('main.index');
+        return to_route('main.index');
     }
 
     public function destroy(Advertisement $advertisement)
     {
         $advertisement->delete();
 
-        return redirect()->route('main.index');
+        return to_route('main.index');
     }
 }
